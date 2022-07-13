@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import Loader from './components/Loader/Loader';
 
 function App() {
   return (
@@ -51,7 +50,6 @@ function App() {
             React Redux
           </a>
         </span>
-        <Loader />
       </header>
     </div>
   );
