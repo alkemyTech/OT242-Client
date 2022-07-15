@@ -1,0 +1,134 @@
+    /*  HEADER  */
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content:space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 100px;    
+    
+}
+
+
+    /*  logo  */
+img {
+    height: 110px;
+    width: 110px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+    /*  nav  */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li {
+    margin-left: 25px;
+}
+.navItem {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
+.navItem:hover {
+    color: #DB5752;
+}
+.navBtn {
+    border-width: 0.1em;
+    font-size: 0.8em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 15px;
+}
+.navLoginBtn {
+    background-color:white;
+    color: black;
+    border-color: black;
+}
+.navLoginBtn:hover {
+    background-color:#DB5752;
+    color: white;
+    border-color: white;
+}
+
+.navRegisBtn {
+    background-color:#DB5752;
+    color: white;
+    border: none;
+}
+.navRegisBtn:hover {
+    background-color:white;
+    color: #DB5752;
+    border-color: #DB5752;
+}
+
+    /* Menu Hamburguesa */
+.hamburger {
+    display: none;
+}
+
+
+    /* QUERY DE TAMAÑO DE PANTALLA */
+@media all and (max-width: 1290px) {
+    .hamburger {
+        display:flex;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-right: 10px;
+        height: 50px;
+
+    }
+    .mobileMenuOn {
+        background-color: white;
+        z-index: 100;
+        position: absolute;
+        top: 69px;
+        left: 0;
+        width: 100%;
+        height: 90vh;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s all ease; 
+
+    }
+    .mobileMenuOff {
+        background-color: grey;
+        z-index: 100;
+        position: absolute;
+        top: 69px;
+        left: -100%;
+        width: 100%;
+        height: 90vh;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s all ease; 
+    }
+    li {
+        margin-bottom: 10px;
+    }
+}
+    /*  BODY  */
+.texto {
+    margin-top: 80px;
+}
+
+
+
