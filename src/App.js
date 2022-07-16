@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
+        <Counter/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -52,7 +52,24 @@ function App() {
           </a>
         </span>
       </header>
-      <Slider />
+      <Slider 
+      slide1={[ //First Slide
+      'https://logos.flamingtext.com/City-Logos/Ong-Logo.png', // imageUrl
+      'Misión', // Title
+      'Trabajar articuladamente con los distintos aspectos de la vida de las familias.']} // Description
+
+      slide2={[ // Second Slide
+      'https://blog.digitalegia.com/hubfs/dinamicas-para-impulsar-ONG-redes-sociales.png',
+      'Visión',
+      'Mejorar la calidad de vida de niños y familias en situación de vulnerabilidad en el barrio La Cava.'
+      ]}
+
+      slide3={[ // Third Slide
+      'https://i.blogs.es/7cb90c/giving_week_2018-social-tm_1_copy_1.max-1000x1000/1366_2000.jpg',
+      'Nosotros',
+      'Desde 1997 vecinos del barrio La Cava.'
+      ]}>
+      </Slider>
     </div>
   );
 }
