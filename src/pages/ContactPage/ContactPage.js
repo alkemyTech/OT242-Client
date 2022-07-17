@@ -1,8 +1,11 @@
+import React from 'react';
 import '../ContactPage/ContactPage.css'
+import ContactForm from '../../components/form/Contact_form';
 
 const ContactPage = (props) => {
 
   return (
+    <>
     <main className="main_contact">
       <div className="text_contact">
         <h2>Texto aleatorio</h2>
@@ -28,10 +31,11 @@ const ContactPage = (props) => {
         </p>
       </div>
         
-    
+      <ContactForm></ContactForm>
 
 
     </main>
+  </>
   );
 };
 
