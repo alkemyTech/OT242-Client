@@ -5,7 +5,7 @@ import Nav from './components/Nav';
 import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
-import ContactPage from "./pages/ContactPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
 
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/AboutUs" element={<AboutUsPage />} />
-          <Route path="/activities" element={<ActivitiesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/Activities" element={<ActivitiesPage />} />
+          <Route path="/Contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </BrowserRouter>
