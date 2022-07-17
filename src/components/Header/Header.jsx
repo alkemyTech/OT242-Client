@@ -11,7 +11,15 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 function Header() {
 
- 
+    // traigo token de localStorage para render boton de login o logout
+    let token = sessionStorage.getItem('token');
+
+
+    
+
+
+    // array con los items de navegacion [key, "Nombre", "path"] (dejo fuera botones de loggeo xq quieren importarlos como componente externo)
+    const navItems = [[0, "Inicio", "/"],[1, "Nosotros", "/nosotros"],[2, "Novedades", "/novedades"],[3, "Testimonios", "/testimonios"],[4, "Contacto", "/contacto"], [5, "Contribuye", "/contribuye"]];
 
     //  DISPLAY DE MENU CUANDO PANTALLA CHICA
 
@@ -20,7 +28,7 @@ function Header() {
 
     // funcion que controla el display del menu
     const HandleMobileMenu = () => {
-        if (showMobileMenu == "mobileMenuOff") {
+        if (showMobileMenu === "mobileMenuOff") {
           setShowMobileMenu("mobileMenuOn");
         } else {
             setShowMobileMenu("mobileMenuOff");
@@ -45,14 +53,17 @@ function Header() {
                 }
 
                 <ul className={showMobileMenu}>
-                    <li><Link className='navItem' to="/" onClick={HandleMobileMenu}><b>Inicio</b></Link></li>
-                    <li><Link className='navItem' to="/nosotros"  onClick={HandleMobileMenu}>Nosotros</Link></li>
-                    <li><Link className='navItem' to="/novedades"  onClick={HandleMobileMenu}>Novedades</Link></li>
-                    <li><Link className='navItem' to="/testimonios"  onClick={HandleMobileMenu}>Testimonios</Link></li>
-                    <li><Link className='navItem' to="/contacto"  onClick={HandleMobileMenu}>Contacto</Link></li>
-                    <li><Link className='navItem' to="/contribuye"  onClick={HandleMobileMenu}>Contribuye</Link></li>
-                    <li><Link className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></Link></li>
-                    <li><Link className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></Link></li>
+                    {navItems.map(navItem => (
+                        <li key={navItem[0]}><Link className='navItem' onClick={HandleMobileMenu} to={navItem[2]}>{navItem[1]}</Link></li>
+                    ))}
+
+                    {token 
+                        ?   <li><Link className='navItem' to="/logout"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Logout</button></Link></li>
+                        :   <>  
+                                <li><Link className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></Link></li>
+                                <li><Link className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></Link></li>
+                            </>
+                    }
                 </ul>
                 
             </header>

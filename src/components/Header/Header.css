@@ -85,7 +85,7 @@ li {
 
 
     /* QUERY DE TAMAÑO DE PANTALLA */
-@media all and (max-width: 1290px) {
+@media all and (max-width: 1270px) {
     .hamburger {
         display:flex;
         vertical-align: middle;
