@@ -1,14 +1,14 @@
-img{
-    text-align: center;
-    width: 800px;
-    height: 450px;
+img {
+  text-align: center;
+  width: 800px;
+  height: 450px;
 }
 
-h1.text{
-    font-family: cursive;
+h1.text {
+  font-family: cursive;
 }
 
-p.text{
-    font-family: monospace;
-    color: rgb(147, 42, 182);
+p.text {
+  font-family: monospace;
+  color: rgb(147, 42, 182);
 }
