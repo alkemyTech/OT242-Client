@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import Home from './UI/UIHome.js';
 import Registration from './UI/UIRegistration';
 
 function App() {
   return (
     <div className="App">
-        <div><Registration /></div>
+        <div><Home /></div>
     </div>
   );
 }
