@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Home from './UI/UIHome.js';
+import Registration from './UI/UIRegistration';
 
 function App() {
   return (
