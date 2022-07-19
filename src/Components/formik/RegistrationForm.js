@@ -47,30 +47,35 @@ function RegistrationForm(props) {
               type='text'
               label='Nombre:'
               name='name'
+              place_holder='Nombre'
             />
             <FormikControl
               control='input'
               type='text'
               label='Apellido:'
               name='surname'
+              place_holder='Apellido'
             />
             <FormikControl
               control='input'
               type='email'
               label='Email:'
               name='email'
+              place_holder='Email'
             />
             <FormikControl
               control='input'
               type='password'
               label='Contraseña:'
               name='password'
+              place_holder='Contraseña'
             />
             <FormikControl
               control='input'
               type='password'
               label='Confirmar contraseña:'
               name='confirmPassword'
+              place_holder='Repetir contraseña'
             />
             <button type='submit' disabled={!formik.isValid} className='submit_btn'>
               Submit
