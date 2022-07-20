@@ -1,0 +1,108 @@
+.main_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+input, textarea{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+}
+
+.focus_error{
+  border: 1px solid #ff0000;
+}
+
+.form{
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomeTitle{
+  position: relative;
+  font-size: 1rem;
+  height: auto;
+  min-width: 80%;
+  text-align: center;
+}
+
+.welcomeText{
+  position: relative;
+  font-size: 1rem;
+  min-height: 150px;
+  min-width: 100%;
+  margin-top: 20px;
+}
+
+.slides_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  min-width: 80%;
+}
+
+.slide_fields{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid #ccc;
+  width: 60%;
+  min-width: 200px;
+  max-width: 800px;
+}
+
+.slide_fields > img {
+  align-self: center;
+  min-width: 200px;
+  max-width: 400px;
+  width: 50%;
+}
+
+.field_container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+.field_container > input {
+  text-align: center;
+}
+.field_container > textarea{
+  min-height: 70px;
+}
+
+.error{
+  color: red;
+  font-size: 0.8rem;
+}
+
+.slide_error{
+  position: absolute;
+  bottom: -35px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.field_title{
+  max-width: 80%;
+  align-self: center;
+  min-width: 200px;
+}
