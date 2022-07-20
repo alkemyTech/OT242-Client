@@ -39,7 +39,6 @@ function RegistrationForm(props) {
       try {
 
       // === this function has to be replaced later, it is only for testing
-
       // const {data} = await axiosPost('auth/register', "post", values)
       
     } catch (error) {
@@ -50,9 +49,9 @@ function RegistrationForm(props) {
           })
         })
         
-      // setTimeout(() =>{
-      //     setAlert({})
-      // }, 5000)
+      setTimeout(() =>{
+          setAlert({})
+      }, 5000)
     }
 
     }
