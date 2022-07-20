@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import Home from './UI/UIHome.js';
-import Registration from './UI/UIRegistration';
+import UserInfo from './components/UserInfo/UserInfo';
 
 function App() {
   return (
     <div className="App">
-        <div><Home /></div>
+        <div><UserInfo /></div>
     </div>
   );
 }
