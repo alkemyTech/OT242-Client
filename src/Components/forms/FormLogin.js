@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Formik} from 'formik'
 import Inputs from '../inputs/Inputs'
 import Button from '../buttons/Button'
+import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import './form.css'
 
+
 const FormLogin = () => {
+
+    const [alert, setAlert] = useState({})
+
+
   return (
             <>
                 <Formik
                 initialValues={{
-
                     email: '',
                     password: '',
 
@@ -19,7 +24,6 @@ const FormLogin = () => {
                     const errors = {}
 
                     if(!email) errors.email = 'Ingresa un email válido.'
-                    
 
                     if(!password){
                         errors.password = 'La contraseña debe tener al menos 6 caracteres.'
@@ -30,15 +34,28 @@ const FormLogin = () => {
                     
                     }
 
-
-
                     return errors
                 }}
 
                 onSubmit={async (values) => {
 
-                    console.log('Form data', values)
+                    try {
+                        // this function has to be replaced later, it is only for testing
+                        // const {data} = await axiosPost('auth/login', values)
+                        
+                        // localStorage.setItem('token', data.token)
 
+                        window.location.href= "/"  
+                        
+                    } catch (error) {
+                        setAlert({
+                            msg: "El usuario o contraseña son incorrectos."
+                        })
+                        setTimeout(() =>{
+                            setAlert({})
+                        }, 5000)
+                    }
+                    
                 }}
                 
                 >
@@ -71,13 +88,16 @@ const FormLogin = () => {
                                 />
 
                             <Button className="button-primary" text='Iniciar sesión' type="submit"/>
-                            
+                            <div>
+                                {alert.msg && <ErrorAlertAuth error={alert.msg}/>}
+                            </div>
                         </form>
 
                     )}
 
                 </Formik>
-            
+                
+                {/* add the register path when ready */}
                 <div className="dont_have_account">
                     <p >¿No tienes una cuenta? <span>Registrate</span></p>
                 </div>

@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import FormikControl from './FormikControl';
+import ErrorAlertAuth from './alerts/ErrorAlertAuth'
 
 function RegistrationForm(props) {
+
+  const [alert, setAlert] = useState({})
+
     const initialValues = {
-        name: '',
-        surname:'',
+        firstName: '',
+        lastName:'',
         email: '',
         password: '',
         confirmPassword: ''
     }
     const validationSchema = Yup.object({
-        name: Yup.string()
+        firstName: Yup.string()
         .required('Required'),
 
-        surname: Yup.string()
+        lastName: Yup.string()
         .required('Required'),
 
         email: Yup.string()
@@ -30,8 +34,27 @@ function RegistrationForm(props) {
         .required('Required'),
     })
 
-    const onSubmit = values => {
-        console.log('Form data', values)
+    const onSubmit = async values => {
+
+      try {
+
+      // === this function has to be replaced later, it is only for testing
+
+      // const {data} = await axiosPost('auth/register', "post", values)
+      
+    } catch (error) {
+        error.response.data.errors.map(err => {
+          
+          setAlert({
+            msg: err.msg
+          })
+        })
+        
+      // setTimeout(() =>{
+      //     setAlert({})
+      // }, 5000)
+    }
+
     }
 
     return (
@@ -46,13 +69,13 @@ function RegistrationForm(props) {
               control='input'
               type='text'
               label='Nombre:'
-              name='name'
+              name='firstName'
             />
             <FormikControl
               control='input'
               type='text'
               label='Apellido:'
-              name='surname'
+              name='lastName'
             />
             <FormikControl
               control='input'
@@ -73,8 +96,12 @@ function RegistrationForm(props) {
               name='confirmPassword'
             />
             <button type='submit' disabled={!formik.isValid} className='submit_btn'>
-              Submit
+              Registrate
             </button>
+
+            <div>
+                {alert.msg && <ErrorAlertAuth error={alert.msg}/>}
+            </div>
         </Form>
         )
       }}
