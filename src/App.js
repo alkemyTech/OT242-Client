@@ -1,14 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import Registration from './UI/UIRegistration';
+import LoginUser from './UI/login/LoginPage';
 
 function App() {
   return (
-    <div className="App">
-        <div><Registration /></div>
-    </div>
+    // <div className="">
+    //     <div><Registration /></div>
+    //     {/* <LoginUser /> */}
+    // </div>
+    <div></div>
   );
 }
 
