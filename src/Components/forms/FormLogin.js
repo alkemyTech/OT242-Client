@@ -4,6 +4,7 @@ import Inputs from '../inputs/Inputs'
 import Button from '../buttons/Button'
 import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import './form.css'
+import { postReq } from '../../helpers/ReqToApi'
 
 
 const FormLogin = () => {
@@ -40,10 +41,9 @@ const FormLogin = () => {
                 onSubmit={async (values) => {
 
                     try {
-                        // this function has to be replaced later, it is only for testing
-                        // const {data} = await axiosPost('auth/login', values)
+                        const {data} = await postReq('/auth/login', values)
                         
-                        // localStorage.setItem('token', data.token)
+                        localStorage.setItem('token', data.token)
 
                         window.location.href= "/"  
                         

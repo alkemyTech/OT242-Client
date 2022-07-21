@@ -3,6 +3,7 @@ import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import FormikControl from './FormikControl';
 import ErrorAlertAuth from './alerts/ErrorAlertAuth'
+import { postReq } from '../../helpers/ReqToApi'
 
 function RegistrationForm(props) {
 
@@ -39,7 +40,7 @@ function RegistrationForm(props) {
       try {
 
       // === this function has to be replaced later, it is only for testing
-      // const {data} = await axiosPost('auth/register', "post", values)
+      const {data} = await postReq('/auth/register', values)
       
     } catch (error) {
         error.response.data.errors.map(err => {
@@ -81,18 +82,21 @@ function RegistrationForm(props) {
               type='email'
               label='Email:'
               name='email'
+              place_holder='Email'
             />
             <FormikControl
               control='input'
               type='password'
               label='Contraseña:'
               name='password'
+              place_holder='Contraseña'
             />
             <FormikControl
               control='input'
               type='password'
               label='Confirmar contraseña:'
               name='confirmPassword'
+              place_holder='Repetir contraseña'
             />
             <button type='submit' disabled={!formik.isValid} className='submit_btn'>
               Registrate
