@@ -8,6 +8,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
+import NewPage from './pages/NewsPage/NewPage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/AboutUs" element={<AboutUsPage />} />
           <Route path="/Activities" element={<ActivitiesPage />} />
           <Route path="/Contact" element={<ContactPage />} />
+          <Route path="/news" element={<NewPage />} />
+          <Route path="/news/:id" element={<NewPage />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </BrowserRouter>
