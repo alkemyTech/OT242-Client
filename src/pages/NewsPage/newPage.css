@@ -1,0 +1,20 @@
+.container_news{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+    
+}
+
+
+.card_news{
+    background: rgba(152, 152, 152, 0.202);
+    margin: 0 auto;
+    cursor:pointer;
+}
+
+.title_new{
+    font-size: 16px;
+    font-weight: 500;
+}
