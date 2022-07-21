@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Registration from './UI/registration/UIRegistration';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nav from './components/Nav';
 import AboutUsPage from "./pages/AboutUsPage";
@@ -8,7 +9,6 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
 import Registration from './UI/UIRegistration';
 import Footer from './components/Footer/Footer';
-
 
 function App() {
   return (
