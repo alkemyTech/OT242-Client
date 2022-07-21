@@ -5,3 +5,11 @@
     margin: 0;
     padding: 0px 5px;
 }
+
+.error_alert_auth{
+    background: #ed9345;
+    padding: 10px;
+    color: #ffff;
+    font-weight: 500;
+    border: 10px;
+}

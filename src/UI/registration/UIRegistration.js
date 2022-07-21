@@ -1,6 +1,6 @@
 import React from 'react';
-import RegistrationForm from '../Components/RegistrationForm';
-import '../UI/CSSRegistration.css';
+import RegistrationForm from '../../components/formik/RegistrationForm';
+import './CSSRegistration.css';
 
 function Registration(
 ){
@@ -12,7 +12,7 @@ function Registration(
             <RegistrationForm />
         </div>
         <div className="Half_div"><img className='Main_img' 
-            src="https://thumbs.dreamstime.com/b/hands-stacked-pile-symbol-teamwork-trust-business-people-87756917.jpg"
+            src="https://www.transandloc.com/wp-content/uploads/traduccion_voluntaria_solidaridad_ONG.jpg"
             alt="Piled_hands_img" /></div>
     </div>
     
