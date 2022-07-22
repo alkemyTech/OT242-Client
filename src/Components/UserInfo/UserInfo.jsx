@@ -55,7 +55,7 @@ const UserInfo = () => {
         <div>{formik.errors.email}</div>
       ) : null}
       <br /><br />
-      <button type="submit">Guardar como</button>
+      <button type="submit">Guardar cambios</button>
       <br /><br />
       <button type="button" onClick={eraseAccountHandler}>Eliminar cuenta</button>
     </form>
