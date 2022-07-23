@@ -1,0 +1,27 @@
+.btnUpdate{
+    color:green
+}
+
+
+@media screen and (max-width: 600px) {
+    .tableHead {
+        display: none;
+    }
+    .tableTr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    .tableTr .tableTd:first-child {
+        background: #f0f0f0;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    .tableBody .tableTd {
+        display: block;
+        text-align:center;
+    }
+    .tableBody .tableTd:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
+}

@@ -7,15 +7,17 @@ import Nav from './components/Nav';
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import ActList from './UI/activitiesList/actList'
 import Home from './UI/UIHome.js';
+
 
 function App() {
   return (
-
     <div className="App">
      <BrowserRouter>
     <Nav></Nav>
         <Routes>
+          <Route path="/backoffice/activities" element={<ActList />} />
           <Route path="/" element={<Home />} />
           <Route path="/AboutUs" element={<AboutUsPage />} />
           <Route path="/Activities" element={<ActivitiesPage />} />
