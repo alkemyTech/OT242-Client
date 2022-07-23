@@ -20,7 +20,7 @@ function Header() {
 
 
     // array con los items de navegacion [key, "Nombre", "path"] (dejo fuera botones de loggeo xq quieren importarlos como componente externo)
-    const navItems = [[0, "Inicio", "/"],[1, "Nosotros", "/nosotros"],[2, "Novedades", "/novedades"],[3, "Testimonios", "/testimonios"],[4, "Contacto", "/contacto"], [5, "Contribuye", "/contribuye"]];
+    const navItems = [[0, "Inicio", "/"],[1, "Nosotros", "/aboutUs"],[2, "Novedades", "/news"],[3, "Testimonios", "/testimonies"],[4, "Contacto", "/contact"], [5, "Contribuye", "/contribute"]];
 
     //  DISPLAY DE MENU CUANDO PANTALLA CHICA
 
