@@ -26,12 +26,16 @@ import './BackOffice.css';
 
 
 function BackOffice() {
+
   // para actualizar store y renderizar el state actualizado
   const dispatch = useDispatch();
-
   // dentro de los reducers solo uso el que se llama user y me traigo la list que defini en initialState y le cambio el nombre
   const { currentUser } = useSelector(state => state.userLogged);
-  console.log(currentUser);
+
+
+  // guardo variable rol para render condicional
+  const rol = currentUser.rol;
+  console.log(rol);
 
   // traigo del store el listado de usuarios
   
@@ -56,16 +60,22 @@ function BackOffice() {
   return (
     <>
       <body className="backOffice">
-        <h1>{currentUser.rol}</h1>
-        {secciones.map(seccion => (
-            <div className="backOffColumn" key={seccion[0]}>
-              <div className="backOffCard" >
-                <h3>{seccion[0]}</h3>
-                <div>{seccion[1]}</div>
-                <Link to={seccion[2]}><button className="backOffButton">Ir</button></Link>
+        {rol === 'administrador' ? 
+          <>
+          {secciones.map(seccion => (
+              <div className="backOffColumn" key={seccion[0]}>
+                <div className="backOffCard" >
+                  <h3>{seccion[0]}</h3>
+                  <div>{seccion[1]}</div>
+                  <Link to={seccion[2]}><button className="backOffButton">Ir</button></Link>
+                </div>
               </div>
-            </div>
-        ))}
+          ))}
+          </>
+          : <>
+            <h1>no es un admin</h1>
+          </>
+        }
       </body>
     </>
   );
