@@ -25,14 +25,14 @@ function BackOffice() {
 
   // listado con cada seccion a mostrar
   const secciones = [
-    ["Novedades", <FaRegNewspaper className="backOffIcon" />, "/novedades"], 
-    ["Actividades", <TbListCheck className="backOffIcon" />, "/actividades"],
-    ["Categorias", <BiCategory className="backOffIcon" />, "/categorias"],
-    ["Testimonios", <BiMessageDetail className="backOffIcon" />, "/testimonios"],
-    ["Organizacion", <RiOrganizationChart className="backOffIcon" />, "/organizacion"],
+    ["Novedades", <FaRegNewspaper className="backOffIcon" />, "/news"], 
+    ["Actividades", <TbListCheck className="backOffIcon" />, "/activities"],
+    ["Categorias", <BiCategory className="backOffIcon" />, "/categories"],
+    ["Testimonios", <BiMessageDetail className="backOffIcon" />, "/testimonies"],
+    ["Organizacion", <RiOrganizationChart className="backOffIcon" />, "/organization"],
     ["Slides", <BiSlideshow className="backOffIcon" />, "/slides"],
-    ["Usuarios", <FaRegUser className="backOffIcon" />, "/usuarios"],
-    ["Miembros", <FiUsers className="backOffIcon" />, "/miembros"]
+    ["Usuarios", <FaRegUser className="backOffIcon" />, "/users"],
+    ["Miembros", <FiUsers className="backOffIcon" />, "/members"]
   ]
 
 
