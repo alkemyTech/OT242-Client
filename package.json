@@ -22,6 +22,8 @@
     "react-scripts": "3.4.3",
     "sweetalert2": "^11.4.22",
     "yarn": "^1.22.19",
+    "react-scripts": "3.4.3",
+    "sweetalert2": "^11.4.22",
     "yup": "^0.32.11"
   },
   "scripts": {

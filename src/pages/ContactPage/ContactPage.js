@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '../ContactPage/ContactPage.css'
 
 const ContactPage = (props) => {
