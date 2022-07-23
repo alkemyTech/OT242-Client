@@ -1,7 +1,7 @@
 import React from 'react';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import Registration from './UI/registration/UIRegistration';
+// import Registration from './UI/registration/UIRegistration'; Module not found: Can't resolve './alerts/ErrorAlertAuth'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
