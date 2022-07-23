@@ -1,25 +1,30 @@
 import React from 'react'
 import './newsPage.css'
+import { Link } from 'react-router-dom'
 
-// replace by request to the news service
+// this is an array created by me to do the tests, DO NOT UNCOMMENT
 // import data from '../../helpers/Api'
 
-import { Link } from 'react-router-dom'
 
 const NewsPage = () => {
 
   return (
     <div className="container_news">
-          {/* replace by request to the news service */}
+          {/* replacement by request to the news service,
+          I'm mapping an array I created, so it should be changed when it's ready.*/}
+
+          <ul className="card_news" >
+
             {/* {data?.map(data => (
-                <div className="card_news" key={data.id}>
+                  <li key={data.id}>
                     <Link to={`/news/${data.id}`}>
                         <img src={data.image} width={300}/>
                         <h3 className="title_new">{data.title}</h3>
-                    
                     </Link>
-                </div>
+                  </li>
             ))} */}
+
+          </ul>
 
     </div>
   )
