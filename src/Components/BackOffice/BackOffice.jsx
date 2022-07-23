@@ -10,6 +10,8 @@ import { RiOrganizationChart } from "react-icons/ri"; // icono organixzacion
 import { FiUsers } from "react-icons/fi"; // icono usuarios
 import { Link } from 'react-router-dom'; // uso los links para redirigir
 
+import { BiEditAlt } from 'react-icons/bi';
+
 // redux
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserLogged } from "../../app/slices/userLogged/index";
@@ -73,7 +75,13 @@ function BackOffice() {
           ))}
           </>
           : <>
-            <h1>no es un admin</h1>
+            <div className="backOffColumn">
+              <div className="backOffCard">
+                  <h3>Edit</h3>
+                  <div><BiEditAlt className="backOffIcon"/></div>
+                  <Link to="/userInfo"><button className="backOffButton">Ir</button></Link>
+                </div>
+              </div>
           </>
         }
       </body>
