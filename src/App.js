@@ -8,20 +8,22 @@ import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
 
     <div className="App">
-    <BrowserRouter>
-      <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/aboutUs" element={<AboutUsPage />} />
-          <Route path="/activities" element={<ActivitiesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<Navigate replace to="/" />} />
-        </Routes>
+      <BrowserRouter>
+        <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutUs" element={<AboutUsPage />} />
+            <Route path="/activities" element={<ActivitiesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate replace to="/" />} />
+          </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
