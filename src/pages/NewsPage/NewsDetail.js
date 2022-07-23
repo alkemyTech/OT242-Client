@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-// replace by request to the news service
+// this is an array created by me to do the tests, DO NOT UNCOMMENT
 // import Api from '../../helpers/Api'
 
 const NewsDetail = () => {
@@ -12,9 +12,7 @@ const NewsDetail = () => {
 
       // replace by request to the news service
       // const detailNew = Api?.find(data => data.id === id)
-
       // setNews(detailNew)
-
 
     }, [])
 
@@ -22,12 +20,11 @@ const NewsDetail = () => {
 
   return (
     <div className="container_news">
-      {/* <Link to="/news">Volver</Link>
+      <Link to="/news">Volver</Link>
       <div className="card_news">
-          <img src={news.image} width={300}/>
-          <h3 className="title_new">{news.title}</h3>
-      </div> */}
-
+          <img src={news?.image} width={300}/>
+          <h3 className="title_new">{news?.title}</h3>
+      </div>
     </div>
   )
 }

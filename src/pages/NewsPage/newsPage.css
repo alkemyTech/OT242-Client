@@ -1,17 +1,16 @@
 .container_news{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 10px;
-    
 }
 
 
 .card_news{
-    background: rgba(152, 152, 152, 0.202);
-    margin: 0 auto;
+    /* background: rgba(152, 152, 152, 0.202); */
     cursor:pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+
 }
 
 .title_new{
