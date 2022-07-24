@@ -11,6 +11,7 @@ const Nav = (props) => {
                   <li><Link to="/">Inicio</Link></li>
                   <li><Link to="/aboutUs">Nosotros</Link></li>
                   <li><Link to="/activities">Nuestras Actividades</Link></li>
+                  <li><Link to="/news">Novedades</Link></li>
                   <li><Link to="/contact">Contacto</Link></li>
                 </ul>
             </div>
