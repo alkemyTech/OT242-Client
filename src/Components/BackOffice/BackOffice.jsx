@@ -17,14 +17,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserLogged } from "../../app/slices/userLogged/index";
 
 
-
-
 // estilos
 import './BackOffice.css';
-
-// llamo a api para traer get req de toda la info de todos
-// lo guardo todo en una lista para cada seccion como [titulo, descripcion y imagen],[]....
-// renderizo cada uno como un card
 
 
 function BackOffice() {
@@ -40,8 +34,7 @@ function BackOffice() {
   const rol = currentUser.rol;
   console.log(rol);
 
-  // traigo del store el listado de usuarios
-  
+  // actualizo el state del userLogged en el store
   useEffect(() => {
     dispatch(fetchUserLogged());
   }, [dispatch])
