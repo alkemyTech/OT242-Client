@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap';
 import DataTable from 'react-data-table-component';
 
 import { useState, useEffect } from 'react';
@@ -8,25 +7,30 @@ import axios from 'axios';
 
 const columnas = [
     {
-        name: 'Hackathon', //texto de la columna
-        selector: 'title',//debe machear al nombre de la propiedad
+        name: 'Nombre', //texto de la columna
+        selector: row => row.firstName,
         sortable: true, // para sortear en base a esto
     },
     {
-        name: 'First Place',
-        selector: 'developers[0]',
+        name: 'Apellido',
+        selector: row => row.lastName,
         sortable: true,
     },
     {
-        name: 'Second Place',
-        selector: 'developers[1]',
+        name: 'Email',
+        selector: row => row.email,
+        sortable: true,
+    },
+    /*{
+        name: 'Editar',
+        selector: 'prueba[0]',
         sortable: true,
     },
     {
-        name: 'Third Place',
-        selector: 'developers[2]',
+        name: 'Eliminar',
+        selector: 'prueba[0]',
         sortable: true,
-    },
+    }*/
 ]
 
 const paginacionOpciones = {    // para la paginacion en español
@@ -42,9 +46,11 @@ const BackOfficeUsers = () => {
 
     const [posts, setPosts] = useState([]);
 
+
     useEffect(() => {
+        setPosts(prueba);
         /*axios
-            .get("http://localhost:8080/hacklist")
+            .get("http://localhost:8080/backoffice/users")  //chequear si el path es correcto
             .then(res => {
                 console.log(res);
                 setPosts(res.data);
@@ -60,11 +66,11 @@ const BackOfficeUsers = () => {
 
     return ( 
         <>
-            <main className='table-responsive'>
+            <main className='table-responsive table-users'>
                 <DataTable    
                 columns={columnas}
                 data={posts}
-                title="Top Developers Ranking"
+                title="Listado de usuarios"
                 pagination
                 paginationComponentOptions={paginacionOpciones}
                 fixedHeader
@@ -77,3 +83,26 @@ const BackOfficeUsers = () => {
 
 
 export default BackOfficeUsers;
+
+
+// data de prueba
+const prueba = [
+    {
+        id: 1,
+        firstName: "Josesito",
+        lastName: "Josefo",
+        email: "ejemplo@gmail.com",
+    },
+    {
+        id: 2,
+        firstName: "Josesito",
+        lastName: "Goku",
+        email: "chinchulin@gmail.com",
+    },
+    {
+        id: 3,
+        firstName: "Henry",
+        lastName: "Albert",
+        email: "fideos@gmail.com",
+    }
+]
