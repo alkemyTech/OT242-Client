@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import FormikControl from './FormikControl';
-import ErrorAlertAuth from './alerts/ErrorAlertAuth'
+import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import { postReq } from '../../helpers/ReqToApi'
 
 function RegistrationForm(props) {
@@ -39,7 +39,6 @@ function RegistrationForm(props) {
 
       try {
 
-      // === this function has to be replaced later, it is only for testing
       const {data} = await postReq('/auth/register', values)
       
     } catch (error) {
