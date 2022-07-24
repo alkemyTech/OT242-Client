@@ -1,10 +1,13 @@
+// librerias
 import React from 'react';
-import DataTable from 'react-data-table-component';
 
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import DataTable from 'react-data-table-component'; // para mostrar la tabla
+import { useState, useEffect } from 'react';    // para llamado a api y renderizar data
+import axios from 'axios';  //para llamado a la api
+import { Link } from 'react-router-dom';
+import { string } from 'prop-types';
 
-
+// columnas de tabla
 const columnas = [
     {
         name: 'Nombre', //texto de la columna
@@ -21,24 +24,44 @@ const columnas = [
         selector: row => row.email,
         sortable: true,
     },
-    /*{
-        name: 'Editar',
-        selector: 'prueba[0]',
+    {
+        name: 'Editar Usuario',
+        // no se aclara asi que manejo el Edit como una redireccion
+        selector: row => <Link to={"/backoffice/users:" + String(row.id)}>Edit</Link>,
         sortable: true,
     },
     {
-        name: 'Eliminar',
-        selector: 'prueba[0]',
+        name: 'Eliminar Usuario',
+        selector: row => <p onClick={() => handleDelUser(String(row.id))}>Eliminar</p>,
         sortable: true,
-    }*/
-]
+    }
+];
 
-const paginacionOpciones = {    // para la paginacion en español
+
+
+// manejo de delete
+const handleDelUser = (id) => {
+    console.log(id);
+    /*axios
+        .delete("http://localhost:8080/backoffice/userDelete", id) //chequear si el path es correcto
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log(err)
+        }
+    )*/
+    
+};
+
+
+// para la paginacion en español
+const paginacionOpciones = {    
     rowsPerPageText: 'Filas por Página',
     rangeSeparatorText: 'de',
     selectAllRowsItem: true,
     selectAllRowsItemText: 'Todos',
-}
+};
 
 
 
@@ -47,7 +70,7 @@ const BackOfficeUsers = () => {
     const [posts, setPosts] = useState([]);
 
 
-    useEffect(() => {
+    useEffect(() => {   
         setPosts(prueba);
         /*axios
             .get("http://localhost:8080/backoffice/users")  //chequear si el path es correcto
@@ -57,7 +80,8 @@ const BackOfficeUsers = () => {
             })
             .catch(err => {
                 console.log(err)
-            })*/
+            }
+        )*/
     }, []);     //la lista vacia es para que solo haga la accion una vez
 
     
@@ -66,7 +90,7 @@ const BackOfficeUsers = () => {
 
     return ( 
         <>
-            <main className='table-responsive table-users'>
+            <div className='table-responsive table-users'>
                 <DataTable    
                 columns={columnas}
                 data={posts}
@@ -76,10 +100,11 @@ const BackOfficeUsers = () => {
                 fixedHeader
                 fixedHeaderScrollHeight='600px'
                 />
-            </main>
+                
+            </div>
         </>
     );
-}
+};
 
 
 export default BackOfficeUsers;
