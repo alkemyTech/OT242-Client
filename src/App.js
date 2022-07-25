@@ -1,5 +1,4 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 // import Registration from './UI/registration/UIRegistration'; Module not found: Can't resolve './alerts/ErrorAlertAuth'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -9,6 +8,7 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import BackNewsPage from './pages/BackOffice/news/Page/backofficeNews';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
             <Route path="/aboutUs" element={<AboutUsPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/backoffice/news" element={<BackNewsPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />
           </Routes>
         <Footer />
