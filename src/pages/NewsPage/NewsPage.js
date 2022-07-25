@@ -1,5 +1,5 @@
 // files
-import './newsPage.css'
+import './NewsPage.css'
 
 
 // hooks
