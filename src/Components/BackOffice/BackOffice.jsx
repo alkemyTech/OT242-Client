@@ -32,7 +32,6 @@ function BackOffice() {
 
   // guardo variable rol para render condicional
   const rol = currentUser.rol;
-  console.log(rol);
 
   // actualizo el state del userLogged en el store
   useEffect(() => {
