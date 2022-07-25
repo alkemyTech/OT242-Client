@@ -3,13 +3,52 @@ import {Formik} from 'formik'
 import Inputs from '../inputs/Inputs'
 import Button from '../buttons/Button'
 import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
-import './form.css'
 import { postReq } from '../../helpers/ReqToApi'
+import {useDispatch} from 'react-redux'
+import { login} from '../../app/slices/userAuth'
+import './form.css'
 
 
 const FormLogin = () => {
 
     const [alert, setAlert] = useState({})
+    
+    const dispatch = useDispatch()
+
+    const handleLogin = async (values) => {
+
+        try {
+            const {data} = await postReq('/auth/login', values)
+            const {firstName, lastName, email, image, roleId } = data.subject
+            
+            localStorage.setItem('token', data.token)
+
+
+            localStorage.setItem("dataUser002", JSON.stringify({firstName, lastName, email, image, roleId}))
+
+            dispatch(login({
+                firstName,
+                lastName,
+                email,
+                image,
+                roleId,
+                loggedIn: true,
+            }))
+
+            window.location.href= "/" 
+            
+        } catch (error) {
+            setAlert({
+                msg: "El usuario o contraseña son incorrectos."
+            })
+            setTimeout(() =>{
+                setAlert({})
+            }, 5000)
+
+            console.log(error)
+        }
+            
+    }
 
 
   return (
@@ -29,7 +68,8 @@ const FormLogin = () => {
                     if(!password){
                         errors.password = 'La contraseña debe tener al menos 6 caracteres.'
 
-                    }else if(password.length < 6){
+                    }
+                    else if(password.length < 6){
 
                         errors.password = 'La contraseña debe tener al menos 6 caracteres.'
                     
@@ -38,25 +78,7 @@ const FormLogin = () => {
                     return errors
                 }}
 
-                onSubmit={async (values) => {
-
-                    try {
-                        const {data} = await postReq('/auth/login', values)
-                        
-                        localStorage.setItem('token', data.token)
-
-                        window.location.href= "/"  
-                        
-                    } catch (error) {
-                        setAlert({
-                            msg: "El usuario o contraseña son incorrectos."
-                        })
-                        setTimeout(() =>{
-                            setAlert({})
-                        }, 5000)
-                    }
-                    
-                }}
+                onSubmit={handleLogin}
                 
                 >
 
@@ -101,6 +123,7 @@ const FormLogin = () => {
                 <div className="dont_have_account">
                     <p >¿No tienes una cuenta? <span>Registrate</span></p>
                 </div>
+
             </>
   )
 }
