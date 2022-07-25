@@ -45,7 +45,7 @@ const NewsPage = () => {
 
             {news.map(oneNews => (
                   <li key={oneNews.id}>
-                    <Link to={`/news/${oneNews.id}`}>
+                    <Link to={`/news/:${oneNews.id}`}>
                         <img src={oneNews.image} width={300} />
                         <h3 className="title_new">{oneNews.title}</h3>
                     </Link>
