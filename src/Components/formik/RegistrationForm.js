@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import FormikControl from './FormikControl';
-import ErrorAlertAuth from './alerts/ErrorAlertAuth'
+import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import { postReq } from '../../helpers/ReqToApi'
 
 function RegistrationForm(props) {

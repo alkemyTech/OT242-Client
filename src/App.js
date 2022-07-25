@@ -7,7 +7,7 @@ import Nav from './components/Nav';
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
-import ActList from './UI/activitiesList/actList'
+import UIactList from './UI/activitiesList/UIactList'
 import Home from './UI/UIHome.js';
 
 
@@ -17,7 +17,7 @@ function App() {
      <BrowserRouter>
     <Nav></Nav>
         <Routes>
-          <Route path="/backoffice/activities" element={<ActList />} />
+          <Route path="/backoffice/activities" element={<UIactList />} />
           <Route path="/" element={<Home />} />
           <Route path="/AboutUs" element={<AboutUsPage />} />
           <Route path="/Activities" element={<ActivitiesPage />} />
