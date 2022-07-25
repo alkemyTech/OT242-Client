@@ -7,7 +7,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
-import Header from './components/Header/Header';
+import Header from './Components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 function App() {

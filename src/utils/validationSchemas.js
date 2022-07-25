@@ -19,3 +19,8 @@ export const HomeDataSchema = Yup.object().shape({
       .required('Requerido')
   }))
 });
+
+export const ActivitiesSchema = Yup.object().shape({
+  name: Yup.string().required('Requerido'),
+  content: Yup.string().required('Requerido'),
+})
