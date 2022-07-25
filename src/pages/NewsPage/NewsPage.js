@@ -1,6 +1,14 @@
-import React from 'react'
+// files
 import './newsPage.css'
+
+
+// hooks
+import React, { useEffect, useState } from 'react'
+
+
+// dependencies
 import { Link } from 'react-router-dom'
+
 
 // this is an array created by me to do the tests, DO NOT UNCOMMENT
 // import data from '../../helpers/Api'
@@ -8,10 +16,16 @@ import { Link } from 'react-router-dom'
 
 const NewsPage = () => {
 
+  // declaring data variable
+  const [data, setData] = useState([]);
+
+  
+
   return (
     <div className="container_news">
           {/* replacement by request to the news service,
           I'm mapping an array I created, so it should be changed when it's ready.*/}
+
 
           <ul className="card_news" >
 
