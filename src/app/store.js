@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import userReducer from './slices/userAuth/index'
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    user: userReducer,
   },
 });
