@@ -13,7 +13,6 @@ const ContactForm = () => {
       }}
         validate={(values) => {
           const errors = {};
-          if (values !== '') {
             if (!values.name) {
               errors.name = "Por favor, indique su nombre";
             } else if (!values.email) {
@@ -24,15 +23,13 @@ const ContactForm = () => {
               errors.email = "Dirección de mail invalida";
             } else if (!values.message) {
               errors.message = "El mensaje no puede enviarse vacio"
-            }
-          
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
             resetForm();
-            alert(JSON.stringify(values, null, 2));
+            console.log(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 400);
         }}
