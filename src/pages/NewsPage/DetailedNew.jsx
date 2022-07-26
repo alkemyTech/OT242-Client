@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { getReq } from "../../helpers/ReqToApi";
 
 const DetailedNew = () => {
-  const URI = "http://localhost:3000/novedad/";
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -16,7 +15,7 @@ const DetailedNew = () => {
 
   const obtenerDatos = async () => {
     try {
-      const res = await axios.get(`${URI}${id}`);
+      const res = await getReq(`/novedad/${id}`);
       setNovedad(res.data);
     } catch (err) {
       Swal.fire("Error 404", "Esta novedad no existe", "error");

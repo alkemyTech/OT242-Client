@@ -7,8 +7,8 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import DetailedNew from './pages/NewsPage/DetailedNew';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
             <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />
-            <Route path="novedad/id" element={<DetailedNew/>} />
+            <Route path="/novedad/:id" element={<DetailedNew/>} />
           </Routes>
         <Footer />
       </BrowserRouter>
