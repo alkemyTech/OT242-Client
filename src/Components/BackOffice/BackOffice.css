@@ -17,7 +17,7 @@
 
 
 /* COlumnas Responsive */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 935px) {
   .backOffColumn {
     width: 100%;
     display: block;
