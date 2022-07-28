@@ -1,7 +1,7 @@
 import React from 'react';
-
+import ContactForm from '../../components/forms/Contact_form';
 import '../ContactPage/ContactPage.css'
-import React from 'react'
+
 
 const ContactPage = (props) => {
 
@@ -31,7 +31,7 @@ const ContactPage = (props) => {
         </p>
       </div>
         
-    
+      <ContactForm />
 
 
     </main>
