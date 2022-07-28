@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+.backOffice {
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Con el width controlo cuantas columnas x fila */
+.backOffColumn {
+  float: left;
+  width: 25%;
+  padding: 0 35px;
+  margin-bottom: 45px;
+}
+
+
+/* COlumnas Responsive */
+@media screen and (max-width: 935px) {
+  .backOffColumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilo cards */
+.backOffCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.backOffCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Estilo iconos */
+.backOffIcon {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+
+/* Estilo boton */
+.backOffButton {
+  border-radius: 5px;
+  border-color: white;
+  border-width: 0.1em;
+  background-color: red;
+  color: white;
+  width: 40px;
+}

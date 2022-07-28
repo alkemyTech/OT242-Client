@@ -39,7 +39,6 @@ function RegistrationForm(props) {
 
       try {
 
-      // === this function has to be replaced later, it is only for testing
       const {data} = await postReq('/auth/register', values)
       
     } catch (error) {
