@@ -14,6 +14,12 @@
       margin-bottom: 100px;    
       
   }
+
+  .active {
+    background-color: rgba(154,201,251,0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
   
   
       /*  logo  */
