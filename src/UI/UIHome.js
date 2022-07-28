@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from '../components/Title.js';
-import Card from '../components/Card.js';
+import Card from '../components/Card';
 import './UIHome.css';
 
 // Replace this with information from database

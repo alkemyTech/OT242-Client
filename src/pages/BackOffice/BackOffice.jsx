@@ -2,53 +2,61 @@
 
 
 // dependencias
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegNewspaper, FaRegUser } from "react-icons/fa"; // icono novedades, miembros
 import { TbListCheck } from "react-icons/tb";  // icono actividades
 import { BiCategory, BiMessageDetail, BiSlideshow } from "react-icons/bi";  // icono categorias, testimonios, slides
 import { RiOrganizationChart } from "react-icons/ri"; // icono organixzacion
 import { FiUsers } from "react-icons/fi"; // icono usuarios
-import { Link, Navigate } from 'react-router-dom'; // uso los links para redirigir
+import { Link, Navigate, useNavigate } from 'react-router-dom'; // uso los links para redirigir
 
-import { BiEditAlt } from 'react-icons/bi';
-
-// redux
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUserLogged } from "../../app/slices/userLogged/index";
+import { BiEditAlt } from 'react-icons/bi'; // edit
 
 
 // estilos
 import './BackOffice.css';
 
 
+
 function BackOffice() {
-  let token = sessionStorage.getItem('token');
 
-  // para actualizar store y renderizar el state actualizado
-  const dispatch = useDispatch();
-  // dentro de los reducers solo uso el que se llama user y me traigo la list que defini en initialState y le cambio el nombre
-  const { currentUser } = useSelector(state => state.userLogged);
+  // defino useNav para redirigir si no esta logeado y variable rol
+  const navigate = useNavigate();
+  const [rol, setRol] = useState('');
 
 
-  // guardo variable rol para render condicional
-  const rol = currentUser.rol;
+  // control de login y paso rol a variable
+  useEffect( () => {
 
-  // actualizo el state del userLogged en el store
-  useEffect(() => {
-    dispatch(fetchUserLogged());
-  }, [dispatch])
+    // traigo token para chequeo de login
+    const token = localStorage.getItem('token');
+    if ( token === undefined ) {
+      navigate("/");
+    };
+
+    // defino rol
+    const user = localStorage.getItem('dataUser002');
+    setRol(user.roleId);
+
+
+  },[])
+
+
+
+  // traigo usuario y de ahi extraigo 
+  const user = localStorage.getItem('dataUser002');
 
 
   // listado con cada seccion a mostrar
   const secciones = [
-    ["Novedades", <FaRegNewspaper className="backOffIcon" />, "/novedades"], 
-    ["Actividades", <TbListCheck className="backOffIcon" />, "/actividades"],
-    ["Categorias", <BiCategory className="backOffIcon" />, "/categorias"],
-    ["Testimonios", <BiMessageDetail className="backOffIcon" />, "/testimonios"],
-    ["Organizacion", <RiOrganizationChart className="backOffIcon" />, "/organizacion"],
+    ["Novedades", <FaRegNewspaper className="backOffIcon" />, "/news"], 
+    ["Actividades", <TbListCheck className="backOffIcon" />, "/activities"],
+    ["Categorias", <BiCategory className="backOffIcon" />, "/categories"],
+    ["Testimonios", <BiMessageDetail className="backOffIcon" />, "/testimonies"],
+    ["Organizacion", <RiOrganizationChart className="backOffIcon" />, "/organization"],
     ["Slides", <BiSlideshow className="backOffIcon" />, "/slides"],
-    ["Usuarios", <FaRegUser className="backOffIcon" />, "/usuarios"],
-    ["Miembros", <FiUsers className="backOffIcon" />, "/miembros"]
+    ["Usuarios", <FaRegUser className="backOffIcon" />, "/users"],
+    ["Miembros", <FiUsers className="backOffIcon" />, "/members"]
   ]
 
 
