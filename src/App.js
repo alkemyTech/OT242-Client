@@ -7,8 +7,14 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
+
+// public
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+
+// BackOffice
+import BackOffice from './components/BackOffice/BackOffice';
+import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
 
 function App() {
   return (
@@ -22,6 +28,11 @@ function App() {
             <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />
+
+            // BackOffice
+            <Route path="/backoffice" element={<BackOffice />} />
+            <Route path="/backoffice/users" element={<BackOfficeUsers />} />
+
           </Routes>
         <Footer />
       </BrowserRouter>
