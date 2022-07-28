@@ -27,7 +27,7 @@ const columnas = [
     {
         name: 'Editar Usuario',
         // no se aclara asi que manejo el Edit como una redireccion
-        selector: row => <Link to={"/backoffice/users:" + String(row.id)}>Edit</Link>,
+        selector: row => <Link to={"/backoffice/users/:" + String(row.id)}>Edit</Link>,
         sortable: true,
     },
     {
