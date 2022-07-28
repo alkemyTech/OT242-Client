@@ -76,3 +76,4 @@ yarn-error.log*
 # conflicts solved
 package-lock.json
 yarn.lock
+.env
