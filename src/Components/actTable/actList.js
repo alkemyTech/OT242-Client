@@ -41,46 +41,4 @@ function ActList() {
         </div>
     )
 }
-
-/*
-            {activity.map(activity => (
-                <div key={activity.id}>
-                    <h1>{activity.name}</h1>
-                    <p>{activity.content}</p>
-                    <p>{activity.deletedAt}</p>
-                    <Link to={`/backoffice/activities/edit/${activity.id}`}> Edit </Link>
-                    <button>delete</button>
-                </div>
-            ))}
-*/
-/*
-<div className="table-responsive-md">
-                    <Table className="table">
-                        <thead className="tableHead">
-                            <tr className="tableTr">
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Contenido</th>
-                                <th>Eliminado</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody className="tableBody">
-                            {state.data.map((activity) => (
-                                <tr className="tableTr">
-                                    <td className="tableTd">{activity.id}</td>
-                                    <td className="tableTd">{activity.name}</td>
-                                    <td className="tableTd">{activity.content}</td>
-                                    <td className="tableTd">{activity.deletedAt}</td>
-                                    <td className="tableTd">
-                                        <Button color="success" onClick={() => showUpdateModal(activity)}>Editar</Button>
-                                        <Button color="danger" onClick={() => deleteActivity(activity)}>Eliminar</Button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </Table>
-
-                </div>
-*/
 export default ActList;
