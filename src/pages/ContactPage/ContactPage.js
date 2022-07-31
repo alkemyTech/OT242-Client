@@ -3,7 +3,6 @@ import React from 'react';
 import ContactForm from '../../components/forms/Contact_form';
 import '../ContactPage/ContactPage.css'
 
-
 const ContactPage = (props) => {
 
   return (
