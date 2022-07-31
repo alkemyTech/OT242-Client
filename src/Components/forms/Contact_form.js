@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
+import AlertForm from "../alerts/AlertForm";
+import { postReq } from "../../helpers/ReqToApi";
+import Success from "../alerts/Success";
 
 
 const ContactForm = () => {
+
+  const [alert, setAlert] = useState(false)
+  const [confirmation, setConfirmation] = useState(false)
 
   return (
     <>
@@ -26,13 +32,28 @@ const ContactForm = () => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setTimeout(() => {
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          
+          try {
+            await postReq('/contacts', values)
             resetForm();
             console.log(JSON.stringify(values, null, 2));
             setSubmitting(false);
-          }, 400);
-        }}
+            setConfirmation(true)
+            setTimeout(() =>{
+              setConfirmation(false)
+            }, 5000)
+          } catch (error) {
+              setAlert(true);
+              console.log(error)
+            }
+            setTimeout(() =>{
+              setAlert(false)
+            }, 5000)
+        }
+    
+        }
+      
       >
        
         {({
@@ -70,7 +91,13 @@ const ContactForm = () => {
 
           <button type="submit" disabled={isSubmitting} className="submit_btn">
              Enviar
-           </button>
+          </button>
+
+          <div>
+                {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
+                {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
+          </div>
+
          </Form>
        )}
      </Formik>
