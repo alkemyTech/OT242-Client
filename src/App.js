@@ -9,12 +9,14 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
 
 // public
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 
 // BackOffice
-import BackOffice from './components/BackOffice/BackOffice';
-import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import BackOffice from './Components/BackOffice/BackOffice';
+import BackOfficeUsers from './Components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import Login from './UI/login/LoginPage'
+import Register from './UI/registration/UIRegistration'
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             // BackOffice
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registrate" element={<Register />} />
 
           </Routes>
         <Footer />

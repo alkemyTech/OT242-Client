@@ -10,10 +10,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
+// Logout
+import { useDispatch } from 'react-redux'
+import { logout } from '../../app/slices/userAuth'
+
 function Header() {
 
+    const dispatch = useDispatch()
+
     // traigo token de localStorage para render boton de login o logout
-    let token = sessionStorage.getItem('token');
+    let token = localStorage.getItem('token');
 
 
     
@@ -59,7 +65,9 @@ function Header() {
                     ))}
 
                     {token 
-                        ?   <li><Link className='navItem' to="/logout"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Logout</button></Link></li>
+                        ?   <li>
+                                <button className='button' onClick={() => dispatch(logout())}>Logout</button>
+                            </li>
                         :   <>  
                                 <li><Link className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></Link></li>
                                 <li><Link className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></Link></li>

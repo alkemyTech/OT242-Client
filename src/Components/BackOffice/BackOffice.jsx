@@ -62,7 +62,7 @@ function BackOffice() {
 
   return (
     <>
-      {token === false ? <Navigate to="/" /> :
+      {//token === false ? <Navigate to="/" /> :   lo comento porque me registra error token undefined
         <>
           <div className="backOffice">
             {rol === 'administrador' ? 
