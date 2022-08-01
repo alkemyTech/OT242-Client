@@ -30,7 +30,7 @@ function BackOffice() {
 
     // traigo token para chequeo de login
     const token = localStorage.getItem('token');
-    if ( token === undefined ) {
+    if ( token === false ) {
       navigate("/");
     };
 
@@ -39,13 +39,7 @@ function BackOffice() {
     setRol(user.roleId);
 
 
-  },[])
-
-
-
-  // traigo usuario y de ahi extraigo 
-  const user = localStorage.getItem('dataUser002');
-
+  },[]);
 
   // listado con cada seccion a mostrar
   const secciones = [
@@ -57,12 +51,16 @@ function BackOffice() {
     ["Slides", <BiSlideshow className="backOffIcon" />, "/slides"],
     ["Usuarios", <FaRegUser className="backOffIcon" />, "/users"],
     ["Miembros", <FiUsers className="backOffIcon" />, "/members"]
-  ]
+  ];
+
+
+  // traigo token para chequeo de login
+  const token = localStorage.getItem('token');
 
 
   return (
     <>
-      {//token === false ? <Navigate to="/" /> :   lo comento porque me registra error token undefined
+      {!token ? <Navigate to="/" /> : token === false ? <Navigate to="/" /> :  
         <>
           <div className="backOffice">
             {rol === 'administrador' ? 
