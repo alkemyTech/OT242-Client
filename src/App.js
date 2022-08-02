@@ -12,7 +12,7 @@ import Footer from './components/Footer/Footer';
 import BackNewsPage from './pages/BackOffice/news/Page/backofficeNews';
 import DetailedNew from './pages/NewsPage/DetailedNew';
 // BackOffice
-import BackOffice from './components/BackOffice/BackOffice';
+import BackOffice from './pages/BackOffice/BackOffice';
 import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
 
 function App() {
