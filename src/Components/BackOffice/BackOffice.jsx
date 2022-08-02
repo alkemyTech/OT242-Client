@@ -59,6 +59,7 @@ function BackOffice() {
     ["Miembros", <FiUsers className="backOffIcon" />, "/members"]
   ]
 
+  const token = localStorage.getItem('token');
 
   return (
     <>
