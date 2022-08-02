@@ -15,7 +15,7 @@ import Footer from './components/Footer/Footer';
 // BackOffice
 import BackOffice from './components/BackOffice/BackOffice';
 import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
-
+import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
 function App() {
   return (
 
@@ -32,7 +32,7 @@ function App() {
             // BackOffice
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
-
+            <Route path="/backoffice/contacts" element={<ContactsTable />} />
           </Routes>
         <Footer />
       </BrowserRouter>
