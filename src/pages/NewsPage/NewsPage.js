@@ -7,8 +7,7 @@ import React, { useEffect, useState } from 'react'
 
 
 // dependencies
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios';
+import { Link } from 'react-router-dom'
 import Swal from "sweetalert2";
 import { getReq } from "../../helpers/ReqToApi";
 
@@ -19,7 +18,6 @@ import { getReq } from "../../helpers/ReqToApi";
 
 const NewsPage = () => {
 
-  const navigate = useNavigate();
 
   // declaring data variable
   const [news, setNews] = useState([]);
@@ -34,8 +32,7 @@ const NewsPage = () => {
       const res = await getReq(`/news/`);
       setNews(res.data);
     } catch (err) {
-      Swal.fire("Error 404", "Esta novedad no existe", "error");
-      navigate("/");
+      Swal.fire("Error 404", "No hay novedades", "error");
     }
   };
 
