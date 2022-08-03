@@ -7,8 +7,10 @@ import React, { useEffect, useState } from 'react'
 
 
 // dependencies
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import Swal from "sweetalert2";
+import { getReq } from "../../helpers/ReqToApi";
 
 
 // this is an array created by me to do the tests, DO NOT UNCOMMENT
@@ -17,23 +19,25 @@ import axios from 'axios';
 
 const NewsPage = () => {
 
+  const navigate = useNavigate();
+
   // declaring data variable
   const [news, setNews] = useState([]);
 
-  // traigo listado de novedades del backend
-  useEffect(() => {   
-    axios
-        .get("http://localhost:8080/news")  //chequear si el path es correcto
-        .then(res => {
-            console.log(res);
-            setNews(res.data);
-        })
-        .catch(err => {
-            console.log(err)
-        }
-    )
-}, []);     //la lista vacia es para que solo haga la accion una vez
-  
+  // traigo listado de novedades del backend 
+  useEffect(() => {
+    getNewsDetail();
+  }, []);
+
+  const getNewsDetail = async () => {
+    try {
+      const res = await getReq(`/news/`);
+      setNews(res.data);
+    } catch (err) {
+      Swal.fire("Error 404", "Esta novedad no existe", "error");
+      navigate("/");
+    }
+  };
 
   return (
     <div className="container_news">
@@ -47,7 +51,7 @@ const NewsPage = () => {
                   <li key={oneNews.id}>
                     <Link to={`/news/:${oneNews.id}`}>
                         <img src={oneNews.image} width={300} />
-                        <h3 className="title_new">{oneNews.title}</h3>
+                        <h3 className="title_new">{oneNews.name}</h3>
                     </Link>
                   </li>
             ))}

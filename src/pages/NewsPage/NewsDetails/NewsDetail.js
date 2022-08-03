@@ -1,47 +1,43 @@
-// hooks
-import React, { useEffect, useState } from 'react'
-
-// dependencias
-import { Link, useParams } from 'react-router-dom'
-
-// archivos
-import './NewsDetail.css';
-
-// this is an array created by me to do the tests, DO NOT UNCOMMENT
-// import Api from '../../helpers/Api'
+import React, { useState, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { getReq } from "../../../helpers/ReqToApi";
 
 const NewsDetail = () => {
-    
+  
+  // read id property from url
+  const {id} = useParams()
+  
+  const navigate = useNavigate();
+
   // declaring news variable
   const [ news, setNews] = useState({})
 
-  // read id property from url
-  const {id} = useParams()
+  useEffect(() => {
+    getNewsDetail();
+  }, []);
 
-  // fetch news data from api
-  useEffect(() => {   
-    axios
-        .get(`http://localhost:8080/news/:${id}`)
-        .then(res => {
-            console.log(res);
-            setNews(res.data);
-        })
-        .catch(err => {
-            console.log(err)
-        }
-    )
-}, []);
-
+  const getNewsDetail = async () => {
+    try {
+      const res = await getReq(`/news/${id}`);
+      setNews(res.data);
+    } catch (err) {
+      Swal.fire("Error 404", "Esta novedad no existe", "error");
+      navigate("/");
+    }
+  };
 
   return (
-    <div className="container_news">
+    <div>
+      <h1>Detalle de novedad con id {id}</h1>
+      <h2>{news.name}</h2>
+      <h5>{news.type}</h5>
+      <img src={news.image}></img>
+      <h3>{news.content}</h3>
+      <br /><br />
       <Link to="/news">Volver</Link>
-      <div className="card_news">
-          <img src={news?.image} width={300}/>
-          <h3 className="title_new">{news?.title}</h3>
-      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsDetail
+export default NewsDetail;
