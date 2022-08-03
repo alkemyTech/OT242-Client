@@ -23,7 +23,7 @@ const NewsDetail = () => {
       setNews(res.data);
     } catch (err) {
       Swal.fire("Error 404", "Esta novedad no existe", "error");
-      navigate("/");
+      navigate("/news");
     }
   };
 
