@@ -1,0 +1,32 @@
+.news-form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+.news-field{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    margin: 0.7rem;
+    outline: none;
+    padding: 0.5rem;
+    width: 70%;
+}
+
+.newsFormContainer{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5rem;
+  }
+  
+  
+.error{
+    color: red;
+    margin: 0.5rem;
+}

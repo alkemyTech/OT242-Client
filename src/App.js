@@ -43,6 +43,7 @@ function App() {
             // BackOffice
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/registrate" element={<Register />} />
 
