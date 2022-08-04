@@ -11,6 +11,7 @@ describe("Render table with contacts", () => {
         expect(screen.queryByText("Nombre"))
         expect(screen.queryByText("Telefono"))
         expect(screen.queryByText("Email"))
+        expect(screen.queryByText("Mensaje"))
     });
 
     it("must display table rows", () => {
