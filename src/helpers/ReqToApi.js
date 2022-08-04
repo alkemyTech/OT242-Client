@@ -14,8 +14,9 @@ axiosService.interceptors.request.use((config) => {
   if (token) {
     config.headers["Authorization"] = `Bearer ${token}`;
   }
-  return config;
-});
+    return config;
+  });
+
 
 export const getReq = (path) => {
   return axiosService.get(path);
