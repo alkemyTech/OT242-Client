@@ -1,0 +1,28 @@
+
+.holder {
+
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.news-table thead {
+    background-color: #DB5752;
+    color: #ffffff;
+}
+
+.news-table th,
+.news-table td {
+    padding: 12px 15px;
+}
