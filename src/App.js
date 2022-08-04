@@ -9,6 +9,7 @@ import NewsDetail from './pages/NewsPage/NewsDetails/NewsDetail';
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+
 import Home from './UI/UIHome.js';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -18,10 +19,11 @@ import BackNewsPage from './pages/BackOffice/news/Page/backofficeNews';
 // BackOffice
 import BackOffice from './pages/BackOffice/BackOffice';
 import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import ActList from './components/actTable/actList';
+import ActForm from './components/actTable/actForm';
 
 function App() {
   return (
-
     <div className="App">
       <BrowserRouter>
         <Header />
@@ -39,7 +41,8 @@ function App() {
             // BackOffice
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
-
+            <Route path="/backoffice/activities" element={<ActList />} />
+            <Route path="/backoffice/activities/edit/:id" element={<ActForm />} />
           </Routes>
         <Footer />
       </BrowserRouter>
