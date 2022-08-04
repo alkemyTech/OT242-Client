@@ -18,11 +18,12 @@ import BackNewsPage from './pages/BackOffice/news/Page/backofficeNews';
 
 // BackOffice
 import BackOfficeUsers from './Components/BackOffice/BackOfficeUsers/BackOfficeUsers';
-import NewsFormPage from './pages/NewsPage/NewsFormPage';
+import Login from './UI/login/LoginPage'
+import Register from './UI/registration/UIRegistration'
 import BackOffice from './pages/BackOffice/BackOffice';
 import ActList from './Components/actTable/actList';
 import ActForm from './Components/actTable/actForm';
-
+import NewsFormPage from './pages/NewsPage/NewsFormPage';
 function App() {
   return (
     <div className="App">
@@ -43,12 +44,16 @@ function App() {
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
 
+            <Route path="/login" element={<Login />} />
+            <Route path="/registrate" element={<Register />} />
+
+            <Route path="/backoffice/activities" element={<ActList />} />
+            <Route path="/backoffice/activities/edit/:id" element={<ActForm />} />
+
             // News creation and update
             <Route path="/newsForm/:id" element={<NewsFormPage />} />
             <Route path="/newsForm/" element={<NewsFormPage />} />
 
-            <Route path="/backoffice/activities" element={<ActList />} />
-            <Route path="/backoffice/activities/edit/:id" element={<ActForm />} />
           </Routes>
         <Footer />
       </BrowserRouter>
@@ -57,3 +62,4 @@ function App() {
 }
 
 export default App;
+

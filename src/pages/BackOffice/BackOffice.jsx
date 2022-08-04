@@ -59,7 +59,7 @@ function BackOffice() {
 
   return (
     <>
-      {token === false ? <Navigate to="/" /> :
+      {!token ? <Navigate to="/" /> : token === false ? <Navigate to="/" /> :  
         <>
           <div className="backOffice">
             {rol === 'administrador' ? 
