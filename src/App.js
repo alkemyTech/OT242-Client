@@ -36,6 +36,8 @@ function App() {
             <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/Actividades/:id" element={<UIActivityDetails />} />
+            
+            // BackOffice
             <Route path="/backoffice/news" element={<BackNewsPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />
