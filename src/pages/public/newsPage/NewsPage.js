@@ -9,7 +9,8 @@ import React, { useEffect, useState } from 'react'
 // dependencies
 import { Link } from 'react-router-dom'
 import Swal from "sweetalert2";
-import { getReq } from "../../helpers/ReqToApi";
+import { getReq } from '../../../helpers/ReqToApi';
+
 
 
 // this is an array created by me to do the tests, DO NOT UNCOMMENT
@@ -29,7 +30,8 @@ const NewsPage = () => {
 
   const getNewsDetail = async () => {
     try {
-      const res = await getReq(`/news/`);
+      const res = await getReq(`/admin/news`);
+      console.log(res.data)
       setNews(res.data);
     } catch (err) {
       Swal.fire("Error 404", "No hay novedades", "error");
@@ -46,8 +48,8 @@ const NewsPage = () => {
 
             {news.map(oneNews => (
                   <li key={oneNews.id}>
-                    <Link to={`/news/:${oneNews.id}`}>
-                        <img src={oneNews.image} width={300} />
+                    <Link to={`/news/${oneNews.id}`}>
+                        <img src={oneNews.image} width={300} alt={oneNews.name} />
                         <h3 className="title_new">{oneNews.name}</h3>
                     </Link>
                   </li>

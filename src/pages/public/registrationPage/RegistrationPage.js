@@ -1,6 +1,6 @@
 import React from 'react';
-import RegistrationForm from '../../Components/formik/RegistrationForm';
-import './CSSRegistration.css';
+import RegistrationForm from '../../../components/formik/RegistrationForm';
+import './RegistrationPage.css';
 
 function Registration(
 ){

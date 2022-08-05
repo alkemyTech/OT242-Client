@@ -1,7 +1,7 @@
 import React from 'react';
-import Title from '../Components/Title.js';
-import Card from '../Components/Card';
-import './UIHome.css';
+import Title from '../../../components/Title.js';
+import Card from '../../../components/Card';
+import './HomePage.css';
 
 // Replace this with information from database
 const cards = [
@@ -39,7 +39,7 @@ const cards = [
 ////////////////////////////////
 
 
-function Home(
+function HomePage (
 ){
     return(
     <div >
@@ -64,4 +64,4 @@ function Home(
     
     );
 }
-export default Home;
+export default HomePage;

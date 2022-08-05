@@ -42,7 +42,7 @@ function BackOffice() {
     setRol(user.roleId);
 
 
-  },[]);
+  };
 
   // listado con cada seccion a mostrar
   const secciones = [
@@ -92,6 +92,6 @@ function BackOffice() {
       }
     </>
   );
+})
 }
-
 export default BackOffice;

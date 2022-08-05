@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import NewsItem from '../../../../components/backNewsList/NewsItem';
+import NewsItem from '../../../components/backNewsList/NewsItem';
 import React from 'react';
 import './backofficeNews.css'
-import { getReq } from '../../../../helpers/ReqToApi';
+import { getReq } from '../../../helpers/ReqToApi';
 
 const BackNewsPage = (props) => {
     const [loading, setLoading] = useState(false);

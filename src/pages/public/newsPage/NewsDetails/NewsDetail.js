@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { getReq } from "../../../helpers/ReqToApi";
+import { getReq } from "../../../../helpers/ReqToApi";
+
 
 const NewsDetail = () => {
   
   // read id property from url
   const {id} = useParams()
+  console.log(id);
   
   const navigate = useNavigate();
 
@@ -19,7 +21,8 @@ const NewsDetail = () => {
 
   const getNewsDetail = async () => {
     try {
-      const res = await getReq(`/news/${id}`);
+      const res = await getReq(`/admin/news/${id}`);
+      console.log(res.data)
       setNews(res.data);
     } catch (err) {
       Swal.fire("Error 404", "Esta novedad no existe", "error");

@@ -1,13 +1,13 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import ActivityDetails from '../../components/activityDetails/ActivityDetails'
+import ActivityDetails from './../../../../components/activityDetails/ActivityDetails'
 
-function UIActivityDetails() {
+function ActivitiesDetails() {
   const activities = useSelector(state => state.activity)
   const params = useParams();
-  const activity = activities.find((activity) => activity.id == params.id)
-  if (activity != undefined) {
+  const activity = activities.find((activity) => activity.id === params.id)
+  if (activity !== undefined) {
     return (
       <ActivityDetails activity={activity} />
     )
@@ -19,4 +19,4 @@ function UIActivityDetails() {
   )
 }
 
-export default UIActivityDetails
+export default ActivitiesDetails
