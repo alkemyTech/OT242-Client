@@ -4,7 +4,6 @@ import React from "react";
 import "./backofficeNews.css";
 import { getReq } from "../../../../helpers/ReqToApi";
 import Button from "../../../../components/buttons/Button";
-import { DeleteCat } from "../../../../components/backNewsList/DeleteCat";
 
 const BackNewsPage = (props) => {
   const [loading, setLoading] = useState(false);
