@@ -60,10 +60,9 @@ function BackOffice() {
   // traigo token para chequeo de login
   const token = localStorage.getItem('token');
 
-
   return (
     <>
-      {token === false ? <Navigate to="/" /> :
+      {!token ? <Navigate to="/" /> : token === false ? <Navigate to="/" /> :  
         <>
           <div className="backOffice">
             {rol === 'administrador' ? 

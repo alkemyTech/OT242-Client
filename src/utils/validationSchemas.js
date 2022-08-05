@@ -24,3 +24,11 @@ export const ActivitiesSchema = Yup.object().shape({
   name: Yup.string().required('Requerido'),
   content: Yup.string().required('Requerido'),
 })
+
+export const NewsValidationSchema = Yup.object().shape({
+  name: Yup.string().required('*Requerido'),
+  image: Yup.string().required('*Requerido')
+  .test('is-url', 'Debe ser una URL válida', value => testImage(value,1000).then(res => res === 'success')),
+  content: Yup.string().required('*Requerido'),
+  categoryId: Yup.number().required('*Requerido'),
+})
