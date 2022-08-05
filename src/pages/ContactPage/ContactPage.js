@@ -1,34 +1,53 @@
 
-import React from 'react';
-import ContactForm from '../../Components/forms/Contact_form';
+import { React, useEffect, useState } from 'react';
+import MemberCard from '../../components/cards/members_card/MemberCard';
+import ContactForm from '../../components/forms/Contact_form';
+import { getReq } from '../../helpers/ReqToApi';
 import '../ContactPage/ContactPage.css'
 
 const ContactPage = (props) => {
+
+    const [loading, setLoading] = useState(false);
+    const [members, setMembers] = useState([]);
+
+    useEffect (() => {
+      const loadMembers = async () => {
+        setLoading (true);
+        //const response = await getReq(`/admin/news`);
+        const response = [
+          {
+            id: 1,
+            name: "Gonzalo",
+            image: 'https://fotografias.lasexta.com/clipping/cmsimages01/2021/11/04/0D7921CD-4ABE-4B8F-9F2D-961C98060E86/98.jpg?crop=3500,1969,x0,y0&width=1900&height=1069&optimize=low&format=webply',
+          },
+          {
+            id: 2,
+            name: "David",
+            image: './public/images/Miembros del Equipo/Rodrigo Fuente.jpg',
+          },
+
+        ]
+        setMembers(response);
+        setLoading(false);
+      };
+
+      loadMembers();
+
+    }, []);
+
 
   return (
     <main className="main_contact">
       <div className="text_contact">
         <h2>Texto aleatorio</h2>
-        <p>
-          What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-          and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. It has survived
-          not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in
-          the 1960s with the release of Letraset sheets containing Lorem Ipsum
-          passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum. Why do we use it?
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
-        </p>
+
+        {loading ? (
+          <p>Cargando...</p>
+        ) : (
+            members.map(item => <MemberCard key={item.id}
+              name={item.name} image={item.image}
+               />)
+        )}
       </div>
         
       <ContactForm />
