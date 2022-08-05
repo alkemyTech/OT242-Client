@@ -9,6 +9,8 @@ import NewsDetail from './pages/NewsPage/NewsDetails/NewsDetail';
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import Home from './UI/UIHome.js';
+import UIActivityDetails from "./UI/activities/UIActivityDetails";
 
 import Home from './UI/UIHome.js';
 import Header from './components/Header/Header';
@@ -35,6 +37,9 @@ function App() {
             <Route path="/aboutUs" element={<AboutUsPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/Actividades/:id" element={<UIActivityDetails />} />
+            
+            // BackOffice
             <Route path="/backoffice/news" element={<BackNewsPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />
