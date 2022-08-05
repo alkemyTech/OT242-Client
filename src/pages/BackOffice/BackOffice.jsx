@@ -16,7 +16,7 @@ import { BiEditAlt } from 'react-icons/bi'; // edit
 // estilos
 import './BackOffice.css';
 
-
+const token = localStorage.getItem('token')
 
 function BackOffice() {
 
@@ -29,8 +29,11 @@ function BackOffice() {
   useEffect( () => {
 
     // traigo token para chequeo de login
-    const token = localStorage.getItem('token');
+
+    if ( token === undefined ) {
+
     if ( token === false ) {
+
       navigate("/");
     };
 

@@ -1,38 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
+import AlertForm from "../alerts/AlertForm";
+import { postReq } from "../../helpers/ReqToApi";
+import Success from "../alerts/Success";
+import * as Yup from 'yup';
 
 
 const ContactForm = () => {
+
+  const [alert, setAlert] = useState(false)
+  const [confirmation, setConfirmation] = useState(false)
+
+  const phoneYup = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+
+  const validationSchema = Yup.object({
+    name: Yup.string()
+    .min(2, 'Demasiado corto!')
+    .max(50, 'Demasiado largo!')
+    .required('Campo requerido'),
+
+    phone: Yup.string().matches(phoneYup, 'El numero ingresado es inválido'),
+
+    email: Yup.string()
+    .email('Formato de email invalido')
+    .required('Campo requerido'),
+    
+    message: Yup.string()
+    .required('Campo requerido')
+    .min(2, 'Su mensaje es demasiado breve!'),
+
+
+})
 
   return (
     <>
       <Formik initialValues= {{
         name:'',
         email:'',
+        phone: '',
         message:''
       }}
-        validate={(values) => {
-          const errors = {};
-            if (!values.name) {
-              errors.name = "Por favor, indique su nombre";
-            } else if (!values.email) {
-              errors.email = "Campo obligatorio";
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
-              errors.email = "Dirección de mail invalida";
-            } else if (!values.message) {
-              errors.message = "El mensaje no puede enviarse vacio"
-          }
-          return errors;
-        }}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setTimeout(() => {
+        
+
+        validationSchema={validationSchema}
+
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          
+          try {
+            await postReq('/contacts', values)
             resetForm();
             console.log(JSON.stringify(values, null, 2));
             setSubmitting(false);
-          }, 400);
-        }}
+            setConfirmation(true)
+            setTimeout(() =>{
+              setConfirmation(false)
+            }, 5000)
+          } catch (error) {
+              setAlert(true);
+              console.log(error)
+            }
+            setTimeout(() =>{
+              setAlert(false)
+            }, 5000)
+        }
+    
+        }
+      
       >
        
         {({
@@ -48,9 +82,21 @@ const ContactForm = () => {
                className = "form_input"
                name="name"
                type="name"
-               placeholder="Escriba su nombre aqui"
+               placeholder="Ingrese su nombre aqui"
                 /> 
-              {errors.name && touched.name && errors.name}
+              {errors.name && touched.name ? (
+             <AlertForm error={errors.name}/>
+             ) : null}
+
+              <Field 
+               className = "form_input"
+               name="phone"
+               type="text"
+               placeholder="Ingrese un telefono de contacto"
+                /> 
+              {errors.phone && touched.phone ? (
+             <AlertForm error={errors.phone}/>
+             ) : null}
 
                <Field 
                className = "form_input"
@@ -58,7 +104,9 @@ const ContactForm = () => {
                type="email"
                placeholder="Ingrese una direccion de e-mail"
                 /> 
-              {errors.email && touched.email && errors.email}
+              {errors.email && touched.email ? (
+             <AlertForm error={errors.email}/>
+             ) : null}
 
                <Field 
                className = "form_input text"
@@ -66,11 +114,19 @@ const ContactForm = () => {
                type="message"
                placeholder="Escriba aqui su mensaje"
                 /> 
-              {errors.message && touched.message && errors.message}
+              {errors.message && touched.message ? (
+             <AlertForm error={errors.message}/>
+             ) : null}
 
           <button type="submit" disabled={isSubmitting} className="submit_btn">
              Enviar
-           </button>
+          </button>
+
+          <div>
+                {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
+                {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
+          </div>
+
          </Form>
        )}
      </Formik>
