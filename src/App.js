@@ -23,8 +23,10 @@ import BackOfficeUsers from './Components/BackOffice/BackOfficeUsers/BackOfficeU
 import Login from './UI/login/LoginPage'
 import Register from './UI/registration/UIRegistration'
 import BackOffice from './pages/BackOffice/BackOffice';
-import ActList from './Components/actTable/actList';
-import ActForm from './Components/actTable/actForm';
+import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
+import ActList from './components/actTable/actList';
+import ActForm from './components/actTable/actForm';
 import NewsFormPage from './pages/NewsPage/NewsFormPage';
 function App() {
   return (
@@ -48,10 +50,10 @@ function App() {
             // BackOffice
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
+            <Route path="/backoffice/contacts" element={<ContactsTable />} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/registrate" element={<Register />} />
-
             <Route path="/backoffice/activities" element={<ActList />} />
             <Route path="/backoffice/activities/edit/:id" element={<ActForm />} />
 

@@ -23,7 +23,7 @@
     "react-loader-spinner": "^5.1.5",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^5.0.1",
     "reactstrap": "^9.1.2",
     "sweetalert2": "^11.4.22",
     "yarn": "^1.22.19",
@@ -49,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
   }
 }
