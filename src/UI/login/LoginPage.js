@@ -1,5 +1,5 @@
 import React from 'react'
-import FormLogin from '../../components/forms/FormLogin'
+import FormLogin from '../../Components/forms/FormLogin'
 import './login.css'
 
 

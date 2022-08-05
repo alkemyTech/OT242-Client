@@ -16,7 +16,11 @@ import { BiEditAlt } from 'react-icons/bi'; // edit
 // estilos
 import './BackOffice.css';
 
+<<<<<<< HEAD:src/Components/BackOffice/BackOffice.jsx
 const token = localStorage.getItem('token');
+=======
+const token = localStorage.getItem('token')
+>>>>>>> 23977eac1f09da84dd78e4212bc09fcd1e124b0c:src/pages/BackOffice/BackOffice.jsx
 
 function BackOffice() {
 
@@ -31,6 +35,9 @@ function BackOffice() {
     // traigo token para chequeo de login
 
     if ( token === undefined ) {
+
+    if ( token === false ) {
+
       navigate("/");
     };
 
@@ -39,13 +46,7 @@ function BackOffice() {
     setRol(user.roleId);
 
 
-  },[])
-
-
-
-  // traigo usuario y de ahi extraigo 
-  const user = localStorage.getItem('dataUser002');
-
+  },[]);
 
   // listado con cada seccion a mostrar
   const secciones = [
@@ -57,12 +58,15 @@ function BackOffice() {
     ["Slides", <BiSlideshow className="backOffIcon" />, "/slides"],
     ["Usuarios", <FaRegUser className="backOffIcon" />, "/users"],
     ["Miembros", <FiUsers className="backOffIcon" />, "/members"]
-  ]
+  ];
 
+
+  // traigo token para chequeo de login
+  const token = localStorage.getItem('token');
 
   return (
     <>
-      {token === false ? <Navigate to="/" /> :
+      {!token ? <Navigate to="/" /> : token === false ? <Navigate to="/" /> :  
         <>
           <div className="backOffice">
             {rol === 'administrador' ? 

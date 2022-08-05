@@ -13,3 +13,11 @@
     font-weight: 500;
     border: 10px;
 }
+
+.success{
+    font-size: 14px;
+    color: #19ae3e;
+    text-align: left;
+    margin: 0;
+    padding: 0px 5px;
+}

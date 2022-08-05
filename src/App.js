@@ -1,39 +1,62 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 // import Registration from './UI/registration/UIRegistration'; Module not found: Can't resolve './alerts/ErrorAlertAuth'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// public
+import NewsPage from "./pages/NewsPage/NewsPage";
+import NewsDetail from './pages/NewsPage/NewsDetails/NewsDetail';
 import AboutUsPage from "./pages/AboutUsPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Home from './UI/UIHome.js';
-
-// public
+import UIActivityDetails from "./UI/activities/UIActivityDetails";
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import BackNewsPage from './pages/BackOffice/news/Page/backofficeNews';
+
 
 // BackOffice
-import BackOffice from './components/BackOffice/BackOffice';
-import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import BackOfficeUsers from './Components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import Login from './UI/login/LoginPage'
+import Register from './UI/registration/UIRegistration'
+import BackOffice from './pages/BackOffice/BackOffice';
 import BackTestimonialPage from './pages/BackOffice/testimonial/BackOfficeTestimonials';
+import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
+import ActList from './components/actTable/actList';
+import ActForm from './components/actTable/actForm';
+import NewsFormPage from './pages/NewsPage/NewsFormPage';
 
 function App() {
   return (
-
     <div className="App">
       <BrowserRouter>
         <Header />
           <Routes>
+
             <Route path="/" element={<Home />} />
             <Route path="/aboutUs" element={<AboutUsPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<Navigate replace to="/" />} />
+            <Route path="/Actividades/:id" element={<UIActivityDetails />} />
+            
 
-            // BackOffice
+            <Route path="/backoffice/news" element={<BackNewsPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="*" element={<Navigate replace to="/" />} />
+            <Route path="/news/:id" element={<NewsDetail/>} />
+
             <Route path="/backoffice" element={<BackOffice />} />
             <Route path="/backoffice/users" element={<BackOfficeUsers />} />
             <Route path="/backoffice/testimonials" element={<BackTestimonialPage />} />
+            <Route path="/backoffice/contacts" element={<ContactsTable />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registrate" element={<Register />} />
+            <Route path="/backoffice/activities" element={<ActList />} />
+            <Route path="/backoffice/activities/edit/:id" element={<ActForm />} />
+
+            <Route path="/newsForm/:id" element={<NewsFormPage />} />
+            <Route path="/newsForm/" element={<NewsFormPage />} />
 
           </Routes>
         <Footer />
