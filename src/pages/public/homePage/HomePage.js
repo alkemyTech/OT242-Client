@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedPage from '../../../components/AnimatedPage';
 import Card from '../../../components/cards/Card';
 import './HomePage.css';
 
@@ -41,24 +42,25 @@ const cards = [
 function HomePage (
 ){
     return(
-    <div >
+    <AnimatedPage>
+        <div >
 
-        <div className='Container'>
-            <img
-                src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png"
-                alt=" Slider placeholder" />
-        </div>
-        <div className="container d-flex justify-content-center align-items-center h-100 Container">
-            <div className="row">
-                {cards.map(({ title, image, url, id, text }) => (
-                    <div className="col-md-3 cards" key={id}>
-                        <Card imageSource={image} title={title} url={url} text= {text} />
-                    </div>
-                ))}
+            <div className='Container'>
+                <img
+                    src="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png"
+                    alt=" Slider placeholder" />
+            </div>
+            <div className="container d-flex justify-content-center align-items-center h-100 Container">
+                <div className="row">
+                    {cards.map(({ title, image, url, id, text }) => (
+                        <div className="col-md-3 cards" key={id}>
+                            <Card imageSource={image} title={title} url={url} text= {text} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
-    
+    </AnimatedPage>    
     );
 }
 export default HomePage;

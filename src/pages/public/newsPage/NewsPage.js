@@ -10,6 +10,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from "sweetalert2";
 import { getReq } from '../../../helpers/ReqToApi';
+import AnimatedPage from '../../../components/AnimatedPage';
 
 
 
@@ -39,25 +40,27 @@ const NewsPage = () => {
   };
 
   return (
-    <div className="container_news">
-          {/* replacement by request to the news service,
-          I'm mapping an array I created, so it should be changed when it's ready.*/}
+    <AnimatedPage>
+      <div className="container_news">
+            {/* replacement by request to the news service,
+            I'm mapping an array I created, so it should be changed when it's ready.*/}
 
 
-          <ul className="card_news" >
+            <ul className="card_news" >
 
-            {news.map(oneNews => (
-                  <li key={oneNews.id}>
-                    <Link to={`/news/${oneNews.id}`}>
-                        <img src={oneNews.image} width={300} alt={oneNews.name} />
-                        <h3 className="title_new">{oneNews.name}</h3>
-                    </Link>
-                  </li>
-            ))}
+              {news.map(oneNews => (
+                    <li key={oneNews.id}>
+                      <Link to={`/news/${oneNews.id}`}>
+                          <img src={oneNews.image} width={300} alt={oneNews.name} />
+                          <h3 className="title_new">{oneNews.name}</h3>
+                      </Link>
+                    </li>
+              ))}
 
-          </ul>
+            </ul>
 
-    </div>
+      </div>
+    </AnimatedPage>
   )
 }
 

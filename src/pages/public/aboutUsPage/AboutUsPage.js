@@ -1,10 +1,13 @@
 import React from 'react';
+import AnimatedPage from '../../../components/AnimatedPage';
 
 const AboutUsPage = (props) => {
     return (
+    <AnimatedPage>
         <div>
            <h1>test</h1>
         </div>
+    </AnimatedPage>
     )
 }
 
