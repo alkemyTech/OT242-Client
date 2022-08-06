@@ -1,5 +1,5 @@
 import React from 'react'
-import AlertForm from '../alerts/AlertForm'
+import AlertForm from '../../alerts/AlertForm'
 import './inputs.css'
 
 const Inputs = ({value, onChange, type, name, onBlur, touched, error, label}) => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // public
-import Header from './components/Header/Header';
+import Header from './components/header/Header';
 import HomePage from './pages/public/homePage/HomePage';
 import NewsPage from "./pages/public/newsPage/NewsPage";
 import NewsDetail from './pages/public/newsPage/NewsDetails/NewsDetail';
@@ -12,14 +12,14 @@ import ActivitiesPage from "./pages/public/activitiesPage/ActivitiesPage";
 import ActivitiesDetails from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetails';
 import TestimonialsPage from './pages/public/testimonialsPage/TestimonialsPage';
 import ContactPage from "./pages/public/contactPage/ContactPage";
-import Footer from './components/Footer/Footer';
+import Footer from './components/footer/Footer';
 
 // BackOffice
 import BackOfficeUsers from './pages/backOffice/BackOfficeUsers/BackOfficeUsers';
 import Login from './pages/public/loginPage/LoginPage'
 import Register from './pages/public/registrationPage/RegistrationPage'
 import BackOffice from './pages/backOffice/BackOffice';
-import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
+import ContactsTable from './components/backOffice/ContactsTable/ContactsTable';
 import ActList from './components/actTable/actList';
 import ActForm from './components/actTable/actForm';
 import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';

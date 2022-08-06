@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field, ErrorMessage, useFormik, FormikProvider} from 'formik';
-import { NewsValidationSchema } from '../../utils/validationSchemas';
-import { postReq, putReq } from '../../helpers/ReqToApi';
+import { NewsValidationSchema } from '../../../utils/validationSchemas';
+import { postReq, putReq } from '../../../helpers/ReqToApi';
 import customEditor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import './NewsForm.css'

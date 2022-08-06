@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field, ErrorMessage, useFormik, FormikProvider} from 'formik';
-import { ActivitiesSchema } from '../../utils/validationSchemas';
-import { postReq, patchReq } from '../../helpers/ReqToApi';
+import { ActivitiesSchema } from '../../../utils/validationSchemas';
+import { postReq, patchReq } from '../../../helpers/ReqToApi';
 
 import customEditor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from "@ckeditor/ckeditor5-react";
