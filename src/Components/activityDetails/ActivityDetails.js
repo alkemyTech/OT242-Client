@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { getReq } from "../../helpers/ReqToApi";
 import "./ActivityDetails.css";
@@ -17,7 +17,6 @@ import "./ActivityDetails.css";
 
 function ActivityDetails() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [activity, setActivity] = useState({});
 
   useEffect(() => {
