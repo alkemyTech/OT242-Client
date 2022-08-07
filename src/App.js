@@ -10,6 +10,7 @@ import NewsDetail from './pages/public/newsPage/NewsDetails/NewsDetail';
 import AboutUsPage from "./pages/public/aboutUsPage/AboutUsPage";
 import ActivitiesPage from "./pages/public/activitiesPage/ActivitiesPage";
 import ActivitiesDetails from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetails';
+import ActivityDetails from './components/activityDetails/ActivityDetails';
 import TestimonialsPage from './pages/public/testimonialsPage/TestimonialsPage';
 import ContactPage from "./pages/public/contactPage/ContactPage";
 import Footer from './components/footer/Footer';
@@ -35,8 +36,8 @@ function App() {
             {/* public routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/aboutUs" element={<AboutUsPage />} />
-            <Route path="/activities" element={<ActivitiesPage />} />
-            <Route path="/activities/:id" element={<ActivitiesDetails />} />
+            <Route path="/actividades" element={<ActivitiesPage />} />
+            <Route path="/actividades/:id" element={<ActivityDetails />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/login" element={<Login />} />
