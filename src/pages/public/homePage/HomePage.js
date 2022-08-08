@@ -1,12 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD:src/UI/UIHome.js
-import Title from '../components/Title.js';
-import Card from '../components/Card';
-import './UIHome.css';
-=======
 import Card from '../../../components/cards/Card';
 import './HomePage.css';
->>>>>>> main:src/pages/public/homePage/HomePage.js
 
 // Replace this with information from database
 const cards = [

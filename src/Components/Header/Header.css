@@ -15,11 +15,6 @@
       
   }
 
-  .active {
-    background-color: rgba(154,201,251,0.3);
-    border-radius: 0.5rem;
-    padding: 1rem;
-  }
   
   
       /*  logo  */
@@ -45,6 +40,10 @@
   li {
       margin-left: 25px;
   }
+  li .active {
+    color: #fe1d1deb;
+    font-weight: bold;
+}
   .navItem {
       text-decoration: none;
       color: black;

@@ -1,11 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD:src/UI/registration/UIRegistration.js
-import RegistrationForm from '../../components/formik/RegistrationForm';
-import './CSSRegistration.css';
-=======
 import RegistrationForm from '../../../components/forms/RegistrationForm';
 import './RegistrationPage.css';
->>>>>>> main:src/pages/public/registrationPage/RegistrationPage.js
 
 function Registration(
 ){

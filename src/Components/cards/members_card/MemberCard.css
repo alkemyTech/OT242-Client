@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,17 +10,16 @@
 
 
 .card{
-    width: 150px;
-    min-height: 150px;
+    width: 250px;
+    min-height: 250px;
     margin: 10px;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-    transition: all 400ms ease-out;
+    transition: all 500ms ease-out;
     cursor: default;
-    display: flex;
 }
 
 
@@ -28,43 +29,15 @@
 }
 
 
-.card h4{
-    margin-bottom: 15px;
+.card_text {
     color: #fff;
-}
-.card .contenido-card p{
-    line-height: 1.8;
-    color: #6a6a6a;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-.card .contenido-card a{
-    display: inline-block;
-    padding: 10px;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #2fb4cc;
-    border: 1px solid #2fb4cc;
-    border-radius: 4px;
-    transition: all 400ms ease;
-    margin-bottom: 5px;
-}
-.card .contenido-card a:hover{
-    background: #2fb4cc;
-    color: #fff;
+    position: relative;
+    top: 180px;
+    text-align: center;
+    text-shadow: 0 0 5px #000;
+    background-color: rgba(0, 0, 0, 0.444);
 }
 
-
-.flex-container {
-  flex-wrap: wrap;
+.card_text h5 {
+    font-size: 1.7rem;
 }
-
-@media only screen and (min-width:320px) and (max-width:768px){
-    .container-card1{
-        flex-wrap: wrap;
-    }
-    .card1{
-        margin: 15px;
-    }
-}
-/*Fin-Cards*/
