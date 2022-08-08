@@ -26,9 +26,10 @@ function ActivityDetails() {
   const getActivityDetail = async () => {
     try {
       const res = await getReq(`/admin/activities/${id}`);
-      console.log(res.data);
       setActivity(res.data);
-    } catch (err) {}
+    } catch (err) {
+      return(<h1 className="activity-container">ERROR</h1>) 
+    }
   };
   return (
     <div className="activity-container">
