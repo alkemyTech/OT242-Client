@@ -17,12 +17,12 @@ import BackNewsPage from './pages/BackOffice/news/Page/backofficeNews';
 
 
 // BackOffice
-import BackOfficeUsers from './Components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
 import Login from './UI/login/LoginPage'
 import Register from './UI/registration/UIRegistration'
 import BackOffice from './pages/BackOffice/BackOffice';
-import ActList from './Components/actTable/actList';
-import ActForm from './Components/actTable/actForm';
+import ActList from './components/actTable/actList';
+import ActForm from './components/actTable/actForm';
 import NewsFormPage from './pages/NewsPage/NewsFormPage';
 function App() {
   return (

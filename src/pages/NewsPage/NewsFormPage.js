@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {getReq} from '../../helpers/ReqToApi'
-import Form from '../../Components/NewsForm/NewsForm'
+import Form from '../../components/NewsForm/NewsForm'
 
 const NewsFormPage = () => {
     const [ newsDetail, setNewsDetail] = useState([])

@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { getReq } from "../../../helpers/ReqToApi";
+import "./NewsDetail.css";
 
 const NewsDetail = () => {
-  
-  // read id property from url
   const {id} = useParams()
-  
   const navigate = useNavigate();
-
-  // declaring news variable
   const [ news, setNews] = useState({})
+
 
   useEffect(() => {
     getNewsDetail();
@@ -28,14 +25,13 @@ const NewsDetail = () => {
   };
 
   return (
-    <div>
-      <h1>Detalle de novedad con id {id}</h1>
-      <h2>{news.name}</h2>
-      <h5>{news.type}</h5>
-      <img src={news.image}></img>
-      <h3>{news.content}</h3>
+    <div className="container">
+      <h1 className="New-Details-title">{news.name}</h1>
+      <h5 className="New-Details-type">{news.type}</h5>
+      <img src={news.image} className="New-Details-img"></img>
+      <h3 className="New-Details-content">{news.content}</h3>
       <br /><br />
-      <Link to="/news">Volver</Link>
+      <Link to="/news" className="New-Details-go-back">Volver</Link>
     </div>
   );
 };
