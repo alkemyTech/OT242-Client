@@ -43,7 +43,7 @@ function HomePage (
 ){
     return(
     <AnimatedPage>
-        <div >
+        <div className='general'>
 
             <div className='Container'>
                 <img

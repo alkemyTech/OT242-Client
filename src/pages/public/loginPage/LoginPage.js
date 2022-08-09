@@ -7,7 +7,7 @@ import './LoginPage.css'
 const Login = () => {
   return (
     <AnimatedPage>
-      <div className="container_login">
+      <div className="container_login general">
           <div className="form_login_container">
               <div className="text_login">
                   <p>Bienvenido</p>

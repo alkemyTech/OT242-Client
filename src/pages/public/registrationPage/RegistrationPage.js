@@ -7,7 +7,7 @@ function Registration(
 ){
     return(
     <AnimatedPage>
-        <div >
+        <div className='general'>
             <div className="Half_div">
                 <p>Bienvenido</p>
                 <h1>Crea tu cuenta</h1>

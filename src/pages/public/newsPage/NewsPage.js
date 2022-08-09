@@ -41,7 +41,7 @@ const NewsPage = () => {
 
   return (
     <AnimatedPage>
-      <div className="container_news">
+      <div className="container_news general">
             {/* replacement by request to the news service,
             I'm mapping an array I created, so it should be changed when it's ready.*/}
 

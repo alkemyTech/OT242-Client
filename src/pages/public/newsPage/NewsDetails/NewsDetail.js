@@ -31,7 +31,7 @@ const NewsDetail = () => {
   };
 
   return (
-    <div>
+    <div className="general">
       <h1>Detalle de novedad con id {id}</h1>
       <h2>{news.name}</h2>
       <h5>{news.type}</h5>
