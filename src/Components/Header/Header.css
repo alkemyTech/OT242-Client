@@ -5,25 +5,23 @@
       background-color: white;
       width: 100%;
       height: 70px;
-      position: fixed;
       left: 0;
       top: 0;
       align-items: center;
       justify-content:space-between;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      margin-bottom: 100px;    
+      margin-bottom: 10px;  
       
   }
 
   .active {
-    background-color: rgba(154,201,251,0.3);
-    border-radius: 0.5rem;
+    border-bottom: #DB5752 solid 3px;
     padding: 1rem;
   }
   
   
       /*  logo  */
-  img {
+  .img-header {
       height: 110px;
       width: 110px;
       margin: 0;
@@ -33,7 +31,7 @@
   
   
       /*  nav  */
-  ul {
+  .ul-header {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -42,7 +40,7 @@
       font-size: 1.25em;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  li {
+  .li-header {
       margin-left: 25px;
   }
   .navItem {
@@ -127,7 +125,7 @@
           align-items: center;
           transition: 0.5s all ease; 
       }
-      li {
+      .li-header {
           margin-bottom: 10px;
       }
   }

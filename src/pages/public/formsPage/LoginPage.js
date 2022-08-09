@@ -1,6 +1,6 @@
 import React from 'react'
-import FormLogin from '../../../components/forms/FormLogin'
-import './LoginPage.css'
+import FormLogin from '../../../Components/forms/FormLogin'
+import './FormPage.css'
 
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
             <FormLogin/>
         </div>
 
-          <img src='https://www.transandloc.com/wp-content/uploads/traduccion_voluntaria_solidaridad_ONG.jpg' className='img-responsive' />
+        <img src='https://www.transandloc.com/wp-content/uploads/traduccion_voluntaria_solidaridad_ONG.jpg' className='img-responsive' />
     </div>
 
   )
