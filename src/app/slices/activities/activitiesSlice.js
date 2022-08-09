@@ -56,4 +56,4 @@ const activitySlice = createSlice({
     }
 })
 export const { addActivity, editActivity, softDeleteActivity } = activitySlice.actions
-export default activitySlice.reducer
+export default activitySlice.reducer 
