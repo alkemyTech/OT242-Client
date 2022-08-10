@@ -16,7 +16,9 @@ import { BiEditAlt } from 'react-icons/bi'; // edit
 // estilos
 import './BackOffice.css';
 
+
 const token = localStorage.getItem('token')
+
 
 function BackOffice() {
 

@@ -5,7 +5,11 @@ import './ContactPage.css'
 
 const ContactPage = (props) => {
 
+
+
+
   return (
+<<<<<<< HEAD
     <AnimatedPage>
       <main className="main_contact">
         <div className="text_contact">
@@ -33,6 +37,16 @@ const ContactPage = (props) => {
         </div>
           
         <ContactForm />
+=======
+    <main className="main_contact">
+      <div className="text_contact">
+        <h2>Texto aleatorio</h2>
+
+        
+      </div>
+        
+      <ContactForm />
+>>>>>>> main
 
 
       </main>
