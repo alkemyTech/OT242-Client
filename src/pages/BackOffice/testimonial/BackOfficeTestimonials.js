@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import './testimonials.css'
 import { getReq } from '../../../helpers/ReqToApi';
-import TestimonialItem from '../../../components/BackOffice/BackOfficeUsers/TestimonialItem';
+import TestimonialItem from '../../backOffice/BackOfficeUsers/TestimonialItem';
 
 const BackTestimonialPage = (props) => {
     const [loading, setLoading] = useState(false);
