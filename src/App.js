@@ -20,7 +20,7 @@ import BackOfficeUsers from './pages/backOffice/BackOfficeUsers/BackOfficeUsers'
 import Login from './pages/public/loginPage/LoginPage'
 import Register from './pages/public/registrationPage/RegistrationPage'
 import BackOffice from './pages/backOffice/BackOffice';
-import ContactsTable from './components/backOffice/ContactsTable/ContactsTable';
+import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
 import ActList from './components/actTable/actList';
 import ActForm from './components/actTable/actForm';
 import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
