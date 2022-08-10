@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Formik} from 'formik'
-import Inputs from '../inputs/Inputs'
+import Inputs from './inputs/Inputs'
 import Button from '../buttons/Button'
 import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import { postReq } from '../../helpers/ReqToApi'
