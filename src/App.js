@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // public
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
 import HomePage from './pages/public/homePage/HomePage';
 import NewsPage from "./pages/public/newsPage/NewsPage";
 import NewsDetail from './pages/public/newsPage/NewsDetails/NewsDetail';
