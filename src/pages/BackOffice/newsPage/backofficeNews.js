@@ -77,6 +77,7 @@ const BackNewsPage = (props) => {
           news.map((item) => (
             <NewsItem
               key={item.id}
+              id={item.id}
               name={item.name}
               image={item.image}
               createdAt={item.createdAt.slice(0, 10)}
