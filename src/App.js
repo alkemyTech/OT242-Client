@@ -28,7 +28,7 @@ import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App general">
       <BrowserRouter>
         <Header />
           <Routes>

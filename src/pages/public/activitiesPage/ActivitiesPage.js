@@ -4,7 +4,7 @@ import AnimatedPage from '../../../components/AnimatedPage';
 const ActivitiesPage = (props) => {
     return (
     <AnimatedPage>
-        <div className='general'>
+        <div>
             <h1>Our activities</h1>
         </div>
     </AnimatedPage>

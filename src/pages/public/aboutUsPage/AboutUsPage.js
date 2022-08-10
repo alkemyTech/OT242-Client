@@ -4,7 +4,7 @@ import './AboutUs.css'
 const AboutUsPage = (props) => {
     return (
     <AnimatedPage>
-        <div className='general'>
+        <div>
            <h1>test</h1>
         </div>
     </AnimatedPage>

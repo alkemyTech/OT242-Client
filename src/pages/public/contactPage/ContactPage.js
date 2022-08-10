@@ -7,7 +7,7 @@ const ContactPage = (props) => {
 
   return (
     <AnimatedPage>
-      <main className="main_contact general">
+      <main className="main_contact">
         <div className="text_contact">
           <h2>Texto aleatorio</h2>
           <p>
