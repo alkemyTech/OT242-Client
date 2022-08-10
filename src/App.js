@@ -40,6 +40,7 @@ function App() {
             <Route path="/actividades/:id" element={<ActivityDetails />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/registrate" element={<Register />} />
             <Route path="/news" element={<NewsPage />} />
