@@ -1,12 +1,7 @@
 
 import React from 'react';
-<<<<<<< HEAD:src/pages/ContactPage/ContactPage.js
-import ContactForm from '../../components/forms/Contact_form';
-import '../ContactPage/ContactPage.css'
-=======
 import ContactForm from '../../../components/forms/Contact_form';
 import './ContactPage.css'
->>>>>>> main:src/pages/public/contactPage/ContactPage.js
 
 const ContactPage = (props) => {
 
