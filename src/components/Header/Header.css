@@ -20,6 +20,7 @@
     border-bottom: #DB5752 solid 3px;
     padding: 1rem;
   }
+
   
   
       /*  logo  */
@@ -45,6 +46,10 @@
   .li-header {
       margin-left: 25px;
   }
+  li .active {
+    color: #fe1d1deb;
+    font-weight: bold;
+}
   .navItem {
       text-decoration: none;
       color: black;
