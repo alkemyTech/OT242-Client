@@ -1,8 +1,14 @@
+// react
 import { React, useState, useEffect } from "react";
-import MemberCard from "./../../../components/cards/members_card/MemberCard";
+
+// files and components
+import MemberCard from "../../../components/cards/membersCard/MemberCard";
+import ClickedMemberCard from "../../../components/cards/membersCard/clickedMemberCard/ClickedMemberCard";
 import { getReq } from "./../../../helpers/ReqToApi";
-import '../aboutUsPage/AboutUs.css';
+import '../aboutUsPage/AboutUsPage.css';
 import Button from '../../../components/buttons/Button';
+
+// Dependencies
 import { Link } from 'react-router-dom';
 
 const AboutUsPage = (props) => {
@@ -70,20 +76,23 @@ const AboutUsPage = (props) => {
         ) : (
 
         <>
-          <Link to="/contact"><Button className="serParteBtn" text='Quiero ser parte!' type="button"/></Link>
-          <MemberCard key={clickedMember.id} name={clickedMember.name} image={clickedMember.image} />
+          <div className="clickedMemberContainer">
+            <div className="clickedMemberAndBtn">
+                <h5 className="clickedMemberName">{clickedMember.name}</h5>
+                <Link to="/contact"><Button className="serParteBtn" text='Quiero ser parte!' type="button"/></Link>
+            </div>
+            <ClickedMemberCard className="clickedMemberCard" key={clickedMember.id} image={clickedMember.image} />
+          </div>
 
+          
           {members.map(member => (
-            <>
-                <div  key={member.id} className="aboutRow">
-                    <div className="aboutColumn">
-                        <div onClick={() => setClickedMember(member)}>
-                            <MemberCard key={member.id} name={member.name} image={member.image} />
-                        </div>
+                <>
+                    <div className="memberCardContainer" onClick={() => setClickedMember(member)}>
+                        <MemberCard key={member.id} name={member.name} image={member.image} />
                     </div>
-                </div>
-            </>
+                </>
           ))}
+          
         </>
         )}
       </div>

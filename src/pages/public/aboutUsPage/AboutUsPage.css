@@ -1,24 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
+/* GENERAL INFO */
 .aboutSection {
     margin-top: 100px;
 }
 
+/* TITLE */
 .aboutContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .aboutTitle {
     font-family: 'Montserrat';
     text-align: center;
     font-weight: bold;
+    margin-bottom: 50px;
+}
+
+
+/* CLICKED MEMBER */
+.clickedMemberContainer {
+    width: 100%;
+
+    margin-bottom: 50px;
+    
+}
+
+.clickedMemberAndBtn {
+    width: 40%;
+    float: left;
+}
+
+.clickedMemberName {
+    font-size: 2em;
+    height: 358px;
+    padding-top: 10px;
 }
 
 .serParteBtn {
     width: 300px;
-    margin: 50px 0px 100px 130px;
     font-size: 1.8rem;
     background-color: #d3241e;
     color: #fff;
@@ -26,9 +50,24 @@
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    
+
 }
 
 .serParteBtn:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.clickedMemberCard {
+  height: 400px;
+  width: 300px;
+  float: right;
+
+}
+
+
+
+/* ALL MEMBERS */
+.memberCardContainer {
+    width: 20%;
+    padding-right: 1%;
 }
