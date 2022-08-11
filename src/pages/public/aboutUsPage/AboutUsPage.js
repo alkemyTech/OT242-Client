@@ -11,45 +11,9 @@ const AboutUsPage = (props) => {
   useEffect(() => {
     const loadMembers = async () => {
       setLoading(true);
-      //const response = await getReq(`/admin/members`);
-      const response = [
-        {
-          id: 1,
-          name: "Cecilia Mendez",
-          image: "Cecilia Mendez.jpeg",
-        },
-        {
-          id: 2,
-          name: "Marco Fernandez",
-          image: "Marco Fernandez.jpg",
-        },
-        {
-          id: 3,
-          name: "María Garcia",
-          image: "María Garcia.jpg",
-        },
-        {
-          id: 4,
-          name: "María Irola",
-          image: "María Irola.jpg",
-        },
-        {
-          id: 5,
-          name: "Marita Gomez",
-          image: "Marita Gomez.jpeg",
-        },
-        {
-          id: 6,
-          name: "Mariam Rodriguez",
-          image: "Miriam Rodriguez.jpg",
-        },
-        {
-          id: 7,
-          name: "Rodrigo Fuente",
-          image: "Rodrigo Fuente.jpg",
-        },
-      ];
-      setMembers(response);
+      const response = await getReq(`/members`);
+      
+      setMembers(response.data);
       setLoading(false);
     };
 
