@@ -42,3 +42,9 @@
 .memberCardName {
     font-size: 1rem;
 }
+
+@media all and (max-width: 800px) {
+    .memberCardName {
+        font-size: 0.9rem;
+    }    
+}
