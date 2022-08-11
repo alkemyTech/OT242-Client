@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import {Formik, Form} from 'formik';
 import Inputs from './inputs/Inputs'
 import * as Yup from 'yup';
-import FormikControl from './FormikControl';
 import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import { postReq } from '../../helpers/ReqToApi'
-import './form.css'
+import { useNavigate } from 'react-router-dom';
 
 function RegistrationForm(props) {
 
   const [alert, setAlert] = useState({})
+  const navigate = useNavigate();
 
     const initialValues = {
         firstName: '',
@@ -42,7 +42,18 @@ function RegistrationForm(props) {
       try {
 
       const {data} = await postReq('/auth/register', values)
+      await postReq('/auth/login', values)
       
+      const {firstName, lastName, email, image, roleId } = data.subject
+      
+      localStorage.setItem('token', data.token)
+
+
+      localStorage.setItem("dataUser002", JSON.stringify({firstName, lastName, email, image, roleId}))
+
+      navigate('/');
+      window.location.reload();
+
     } catch (error) {
         error.response.data.errors.map(err => {
           

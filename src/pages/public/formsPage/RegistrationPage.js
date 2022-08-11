@@ -1,5 +1,5 @@
 import React from 'react';
-import RegistrationForm from '../../../Components/forms/RegistrationForm';
+import RegistrationForm from '../../../components/forms/RegistrationForm';
 import './FormPage.css';
 
 function Registration(
