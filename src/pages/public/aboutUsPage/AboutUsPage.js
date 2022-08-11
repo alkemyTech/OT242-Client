@@ -3,10 +3,12 @@ import MemberCard from "./../../../components/cards/members_card/MemberCard";
 import { getReq } from "./../../../helpers/ReqToApi";
 import '../aboutUsPage/AboutUs.css';
 import Button from '../../../components/buttons/Button';
+import { Link } from 'react-router-dom';
 
 const AboutUsPage = (props) => {
   const [loading, setLoading] = useState(false);
   const [members, setMembers] = useState([]);
+  const [clickedMember, setClickedMember] = useState({});
 
   useEffect(() => {
     const loadMembers = async () => {
@@ -50,6 +52,7 @@ const AboutUsPage = (props) => {
         },
       ];
       setMembers(response);
+      setClickedMember(response[0]);
       setLoading(false);
     };
 
@@ -57,21 +60,34 @@ const AboutUsPage = (props) => {
   }, []);
 
   return (
-    <div className="div_main">
-      <h1>¡Nuestro Staff!</h1>
+    <section className="aboutSection">
+      <h1 className="aboutTitle">¡Nuestro Staff!</h1>
 
-      <a href="/contact"><Button className="btn-AU" text='Quiero ser parte!' type="button"/></a>
 
-      <div className="card_container">
+      <div className="aboutContainer">
         {loading ? (
           <p>Cargando...</p>
         ) : (
-          members.map((item) => (
-            <MemberCard key={item.id} name={item.name} image={item.image} />
-          ))
+
+        <>
+          <Link to="/contact"><Button className="serParteBtn" text='Quiero ser parte!' type="button"/></Link>
+          <MemberCard key={clickedMember.id} name={clickedMember.name} image={clickedMember.image} />
+
+          {members.map(member => (
+            <>
+                <div  key={member.id} className="aboutRow">
+                    <div className="aboutColumn">
+                        <div onClick={() => setClickedMember(member)}>
+                            <MemberCard key={member.id} name={member.name} image={member.image} />
+                        </div>
+                    </div>
+                </div>
+            </>
+          ))}
+        </>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-.div_main {
+.aboutSection {
     margin-top: 100px;
 }
 
-.card_container {
+.aboutContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-h1 {
+.aboutTitle {
     font-family: 'Montserrat';
     text-align: center;
     font-weight: bold;
 }
 
-.btn-AU {
+.serParteBtn {
     width: 300px;
     margin: 50px 0px 100px 130px;
     font-size: 1.8rem;
@@ -24,9 +24,11 @@ h1 {
     color: #fff;
     border: none;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
 }
 
-.btn-AU:hover {
-    box-shadow: 5px 5px 20px #000   ;
-    transform: translateY(-1%);
+.serParteBtn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
