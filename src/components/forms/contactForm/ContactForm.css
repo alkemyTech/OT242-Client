@@ -20,12 +20,22 @@
 }
 
 /* BUTTON */
-.contactBtn {
+.contactSubmit {
     width: 150px;
     background-color: blue;
     color: white;
     border-radius: 10px;
     border-width: 0;
     border-style: none;
+    height: 30px;
+}
+
+.contactInicioBtn {
+    width: 100px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
     height: 30px;
 }

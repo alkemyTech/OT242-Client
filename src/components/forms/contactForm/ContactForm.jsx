@@ -10,12 +10,14 @@ import './ContactForm.css';
 //dependencies
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 
 const ContactForm = () => {
 
-  const [alert, setAlert] = useState(false)
-  const [confirmation, setConfirmation] = useState(false)
+  const [alert, setAlert] = useState(false);
+  const [confirmation, setConfirmation] = useState(false);
+  const navigate = useNavigate();
 
   const phoneYup = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -124,8 +126,12 @@ const ContactForm = () => {
              <AlertForm error={errors.message}/>
              ) : null}
 
-          <button type="submit" disabled={isSubmitting} className="contactBtn">
+          <button type="submit" disabled={isSubmitting} className="contactSubmit">
              Enviar consulta
+          </button>
+          <br /><br />
+          <button  className="contactInicioBtn" onClick={() => navigate("/")}>
+            Ir al inicio
           </button>
 
           <div>
