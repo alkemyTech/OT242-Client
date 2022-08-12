@@ -1,7 +1,13 @@
-import React from "react";
+import {React, useContext } from "react";
 import Card from "../../../components/cards/Card";
 import "./HomePage.css";
+import "../testimonialsPage/TestimonialsPage.css"
 import Button from "../../../components/buttons/Button";
+import { MembersContext } from "../../../context/MembersContext";
+import Loader from "../../../components/Loader/Loader";
+import MemberCard from "../../../components/cards/members_card/MemberCard";
+import { TestimonialsContext } from "../../../context/TestimonialsContext";
+
 
 // Replace this with information from database
 const cards = [
@@ -26,6 +32,10 @@ const cards = [
 ////////////////////////////////
 
 function HomePage() {
+
+  const { members, loading } = useContext(MembersContext)
+  const { testimonials, loadingt } = useContext(TestimonialsContext);
+
   return (
     <div className="main_container">
       <div className="sub_container">
@@ -56,14 +66,41 @@ function HomePage() {
         <h2>Nuestro Staff</h2>
         <a href="/aboutUs">Ver todos...</a>
         </div>
-        <div className="card_container"></div>
+        <div className="card_container">
+        {loading ? (
+          <div>
+          <Loader className='loader' size='small' colors={[]} children={<p>Cargando...</p>}/>
+
+          </div>
+        ) : (
+          members.map((item) => (
+            <MemberCard key={item.id} name={item.name} image={item.image} />
+          ))
+        )}
+        
+
+        </div>
 
       
       <div className="titles_container">
       <h2>Testimonios</h2>
         <a href="/testimonials">Ver todos...</a>
         </div>
-        <div className="card_container"></div>
+        <div className="card_container">
+        {loading ? (
+          <div>
+          <Loader className='loader' size='small' colors={[]} children={<p>Cargando...</p>}/>
+          </div>
+        ) : (
+
+          testimonials.map((item) => (
+            <div className="testimonials-item"key={item.id}>
+              <img src={item.image}></img>
+              <h2>{item.name}</h2>
+              <h4>{item.content}</h4>
+            </div>
+          )))}
+        </div>
         
       
 

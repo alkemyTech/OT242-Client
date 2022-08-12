@@ -1,34 +1,27 @@
-import { React, useState, useEffect } from "react";
+import { React, useContext } from "react";
 import MemberCard from "./../../../components/cards/members_card/MemberCard";
-import { getReq } from "./../../../helpers/ReqToApi";
 import '../aboutUsPage/AboutUs.css';
 import Button from '../../../components/buttons/Button';
+import Loader from "../../../components/Loader/Loader";
+import { MembersContext } from "../../../context/MembersContext";
+
 
 const AboutUsPage = (props) => {
-  const [loading, setLoading] = useState(false);
-  const [members, setMembers] = useState([]);
-
-  useEffect(() => {
-    const loadMembers = async () => {
-      setLoading(true);
-      const response = await getReq(`/members`);
-      
-      setMembers(response.data);
-      setLoading(false);
-    };
-
-    loadMembers();
-  }, []);
+  const { members, loading } = useContext(MembersContext);
 
   return (
+
     <div className="div_main">
       <h1>¡Nuestro Staff!</h1>
 
       <a href="/contact"><Button className="btn-AU" text='Quiero ser parte!' type="button"/></a>
 
-      <div className="card_container">
+      <div className="aboutcard_container" id="member_card_container">
         {loading ? (
-          <p>Cargando...</p>
+          <div>
+          <Loader className='loader' size='small' colors={[]} children={<p>Cargando...</p>}/>
+
+          </div>
         ) : (
           members.map((item) => (
             <MemberCard key={item.id} name={item.name} image={item.image} />

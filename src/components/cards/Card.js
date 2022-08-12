@@ -5,13 +5,13 @@ import "./Card.css";
 
 function Card({ imageSource, title, text, url }) {
   return (
-    <div className="card_cont">
-      <div className="card_image_cont">
-        <img src={imageSource} alt="SomosMas_Novedad" className="card_img"/>
+    <div className="newcard_cont">
+      <div className="newcard_image_cont">
+        <img src={imageSource} alt="SomosMas_Novedad" className="newcard_img"/>
       </div>
-      <div className="card_text">
-        <h4 className="card_title">{title}</h4>
-        <p className="card_secondary">
+      <div className="newcard_text">
+        <h4 className="newcard_title">{title}</h4>
+        <p className="newcard_secondary">
           {text
             ? text
             : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga accusantium excepturi quia,"+
@@ -20,7 +20,7 @@ function Card({ imageSource, title, text, url }) {
         <a
           href={url ? url : "#!"}
           target="_blank"
-          className="card_btn"
+          className="newcard_btn"
           rel="noopener noreferrer"
         >
           Ver {title}

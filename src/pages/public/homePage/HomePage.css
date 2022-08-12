@@ -54,9 +54,16 @@
 }
 .card_container {
     display: flex;
-    height: 300px;
-    width: 80%;
-    margin: 30px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: left;
+    height: 270px;
+    width: 70%;
+    margin-left: 50px;
+}
+
+.card_container h5 {
+    visibility: hidden;
 }
 
 .news_cards {

@@ -4,6 +4,7 @@ body{
 .main_contact {
     display: flex;
     justify-content: space-around;
+    margin-top: 100px;
 }
 
 .form {
@@ -51,6 +52,11 @@ body{
     height: 10rem;
     text-align: center;
 
+  }
+  
+  .state_msg {
+    margin-top: 20px;
+    height: 50px;
   }
 
   @media screen and (max-width: 1200px) {

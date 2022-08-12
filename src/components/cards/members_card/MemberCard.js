@@ -12,7 +12,7 @@ const MemberCard = (props) => {
           backgroundImage: `url('images/Miembros_del_equipo/${image}')`,
         }}
       >
-        <div className="card_text">
+        <div>
           <h5>{name}</h5>
         </div>
       </div>

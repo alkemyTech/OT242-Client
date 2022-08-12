@@ -10,8 +10,8 @@
 
 
 .card{
-    width: 250px;
-    min-height: 250px;
+    min-width: 250px !important;
+    min-height: 250px !important;
     margin: 10px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,15 +29,14 @@
 }
 
 
-.card_text {
+.card h5 {
     color: #fff;
     position: relative;
-    top: 180px;
+    top: 200px;
     text-align: center;
     text-shadow: 0 0 5px #000;
     background-color: rgba(0, 0, 0, 0.444);
+    font-size: 1.5rem;
+    padding: 0;
 }
 
-.card_text h5 {
-    font-size: 1.7rem;
-}

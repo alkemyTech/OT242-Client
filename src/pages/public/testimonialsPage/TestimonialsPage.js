@@ -23,11 +23,11 @@ const TestimonialsPage = () => {
       <h1 className="testimonials-title">Testimonios</h1>
       <ul className="testimonials-container">
         {testimonials.map((item) => (
-          <li className="testimonials-item"key={item.id}>
+          <div className="testimonials-item"key={item.id}>
             <img src={item.image}></img>
             <h2>{item.name}</h2>
             <h4>{item.content}</h4>
-          </li>
+          </div>
         ))}
       </ul>
         <Button variant="danger" href="/" className="btn-add">

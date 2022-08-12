@@ -15,7 +15,7 @@ let cx = classNames.bind(s)
  */
 
 const Loader = ({children, className, colors, size}) => {
-  if (colors.length !== 3) colors = [null, null, null];
+  if (colors.length !== 3) colors = ['#DB5752', '#9AC9FB', '#FAFA88'];
   return (
     <div className={cx('loader_container')}>
       <div className={cx('loader_content')}>

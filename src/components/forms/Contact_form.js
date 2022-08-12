@@ -4,6 +4,7 @@ import AlertForm from "../alerts/AlertForm";
 import { postReq } from "../../helpers/ReqToApi";
 import Success from "../alerts/Success";
 import * as Yup from 'yup';
+import Loader from "../Loader/Loader";
 
 
 const ContactForm = () => {
@@ -122,9 +123,11 @@ const ContactForm = () => {
              Enviar
           </button>
 
-          <div>
+          <div className="state_msg">
+                {isSubmitting && <Loader className='loader' size='small' colors={[]} children={<p>Enviando...</p>}/>}
                 {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
                 {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
+
           </div>
 
          </Form>

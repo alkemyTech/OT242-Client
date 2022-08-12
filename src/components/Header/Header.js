@@ -61,7 +61,7 @@ function Header() {
 
                     {token 
                         ?   <li className='li-header'>
-                                <button className='button' onClick={() => dispatch(logout())}>Logout</button>
+                                <button className='navBtn navLoginBtn' onClick={() => dispatch(logout())}>Logout</button>
                             </li>
                         :   <>  
                                 <li className='li-header'><NavLink activeClassName='active' className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></NavLink></li>

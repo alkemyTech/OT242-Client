@@ -26,26 +26,24 @@ import ActForm from './components/actTable/actForm';
 import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
 import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
 import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestimonials';
+import MembersContextProvider from './context/MembersContext';
+import TestimonialsContextProvider from './context/TestimonialsContext';
 
-// BackOffice
-import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
-import Login from './UI/login/LoginPage'
-import Register from './UI/registration/UIRegistration'
-import BackOffice from './pages/BackOffice/BackOffice';
-import ActList from './components/actTable/actList';
-import ActForm from './components/actTable/actForm';
-import NewsFormPage from './pages/NewsPage/NewsFormPage';
 
 function App() {
   return (
     <div className="App">
+      <MembersContextProvider>
+        <TestimonialsContextProvider>
       <BrowserRouter>
         <Header />
           <Routes>
 
             {/* public routes */}
+   
             <Route path="/" element={<HomePage />} />
             <Route path="/aboutUs" element={<AboutUsPage />} />
+
             <Route path="/actividades" element={<ActivitiesPage />} />
             <Route path="/actividades/:id" element={<ActivityDetails />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
@@ -73,6 +71,8 @@ function App() {
           </Routes>
         <Footer />
       </BrowserRouter>
+      </TestimonialsContextProvider>
+      </MembersContextProvider>
     </div>
   );
 }

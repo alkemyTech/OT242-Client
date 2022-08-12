@@ -1,33 +1,35 @@
 
-  .card_cont {
+  .newcard_cont {
     width: 450px;
+    height: 230px !important;
     background-color: #9AC9FB;
     margin: 20px;
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
     border: 1px solid #0038FF ;
+    padding-top: 10px;
   }
   
-  .card_image_cont {
-    width: 50%;
+  .newcard_image_cont {
+    width: 200px !important;
     align-items: center;
   }
 
-  .card_img {
-    height: 80%;
-    width: 80%;
+  .newcard_img {
+    height: 150px !important;
+    width: 150px !important;
     border-radius: 5%;
     margin: 25px 15px;
   }
 
 
-  .card_text {
+  .newcard_text {
     font-size: 0.8rem;
-    width: 50%;
+    overflow: hidden;
   }
 
-  .card_btn {
+  .newcard_btn {
     background-color: #0038FF;
     color: #fff;
     padding: 10px 30px;
