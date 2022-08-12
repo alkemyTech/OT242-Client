@@ -1,24 +1,15 @@
 import React from 'react';
-import ContactForm from '../../../components/forms/Contact_form';
+import ContactForm from '../../../components/forms/contactForm/ContactForm';
 import './ContactPage.css'
 
-const ContactPage = (props) => {
-
-
-
+const ContactPage = () => {
 
   return (
-    <main className="main_contact">
-      <div className="text_contact">
-        <h2>Texto aleatorio</h2>
-
-        
-      </div>
-        
+    <section className="contactPage">
+                
       <ContactForm />
 
-
-    </main>
+    </section>
   );
 };
 
