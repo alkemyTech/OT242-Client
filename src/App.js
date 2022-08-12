@@ -26,6 +26,14 @@ import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
 import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
 import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestimonials';
 
+// BackOffice
+import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
+import Login from './UI/login/LoginPage'
+import Register from './UI/registration/UIRegistration'
+import BackOffice from './pages/BackOffice/BackOffice';
+import ActList from './components/actTable/actList';
+import ActForm from './components/actTable/actForm';
+import NewsFormPage from './pages/NewsPage/NewsFormPage';
 
 function App() {
   return (
