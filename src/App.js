@@ -1,6 +1,7 @@
 import React from 'react';
-// import Registration from './UI/registration/UIRegistration'; Module not found: Can't resolve './alerts/ErrorAlertAuth'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import PrivateRoute from './components/ProtectedRoutes/PrivateRoute';
+import LoggedRoute from './components/ProtectedRoutes/LoggedRoute';
 
 // public
 import Header from './components/header/Header';
@@ -42,25 +43,24 @@ function App() {
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registrate" element={<Register />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/news/:id" element={<NewsDetail/>} />
 
             {/* BackOffice */}
-            <Route path="/backoffice/news" element={<BackNewsPage />} />
+            <Route path="/backoffice/news" element={<PrivateRoute><BackNewsPage /></PrivateRoute>} />
             <Route path="*" element={<Navigate replace to="/" />} />
-            <Route path="/backoffice" element={<BackOffice />} />
-            <Route path="/backoffice/users" element={<BackOfficeUsers />} />
-            <Route path="/backoffice/contacts" element={<ContactsTable />} />
-            <Route path="/backoffice/activities" element={<ActList />} />
-            <Route path="/backoffice/activities/edit/:id" element={<ActForm />} />
-            <Route path="/backoffice/testimonials" element={<BackTestimonialPage />} />
+            <Route path="/backoffice" element={<PrivateRoute><BackOffice /></PrivateRoute>} />
+            <Route path="/backoffice/users" element={<PrivateRoute><BackOfficeUsers /></PrivateRoute>} />
+            <Route path="/backoffice/contacts" element={<PrivateRoute><ContactsTable /></PrivateRoute>} />
+            <Route path="/backoffice/activities" element={<PrivateRoute><ActList /></PrivateRoute>} />
+            <Route path="/backoffice/activities/edit/:id" element={<PrivateRoute><ActForm /></PrivateRoute>} />
+            <Route path="/backoffice/testimonials" element={<PrivateRoute><BackTestimonialPage /></PrivateRoute>} />
+            <Route path="/newsForm/:id" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
+            <Route path="/newsForm/" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
 
-
-            {/* News creation and update */}
-            <Route path="/newsForm/:id" element={<NewsFormPage />} />
-            <Route path="/newsForm/" element={<NewsFormPage />} />
+            {/* Users */}
+            <Route path="/login" element={<LoggedRoute><Login /></LoggedRoute>} />
+            <Route path="/registrate" element={<LoggedRoute><Register /></LoggedRoute>} />
 
           </Routes>
         <Footer />
