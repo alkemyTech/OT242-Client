@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import {Formik, Form} from 'formik';
+import Inputs from './inputs/Inputs'
 import * as Yup from 'yup';
-import FormikControl from './FormikControl';
 import ErrorAlertAuth from '../alerts/ErrorAlertAuth'
 import { postReq } from '../../helpers/ReqToApi'
+import { useNavigate } from 'react-router-dom';
 
 function RegistrationForm(props) {
 
   const [alert, setAlert] = useState({})
+  const navigate = useNavigate();
 
     const initialValues = {
         firstName: '',
@@ -40,7 +42,18 @@ function RegistrationForm(props) {
       try {
 
       const {data} = await postReq('/auth/register', values)
+      await postReq('/auth/login', values)
       
+      const {firstName, lastName, email, image, roleId } = data.subject
+      
+      localStorage.setItem('token', data.token)
+
+
+      localStorage.setItem("dataUser002", JSON.stringify({firstName, lastName, email, image, roleId}))
+
+      navigate('/');
+      window.location.reload();
+
     } catch (error) {
         error.response.data.errors.map(err => {
           
@@ -63,41 +76,41 @@ function RegistrationForm(props) {
             onSubmit={onSubmit}
         >
         {formik => {
-        return (<Form className='RegistrationForm'>
-            <FormikControl
+        return (<Form className='form'>
+            <Inputs
               control='input'
               type='text'
               label='Nombre:'
               name='firstName'
             />
-            <FormikControl
+            <Inputs
               control='input'
               type='text'
               label='Apellido:'
               name='lastName'
             />
-            <FormikControl
+            <Inputs
               control='input'
               type='email'
               label='Email:'
               name='email'
               place_holder='Email'
             />
-            <FormikControl
+            <Inputs
               control='input'
               type='password'
               label='Contraseña:'
               name='password'
               place_holder='Contraseña'
             />
-            <FormikControl
+            <Inputs
               control='input'
               type='password'
               label='Confirmar contraseña:'
               name='confirmPassword'
               place_holder='Repetir contraseña'
             />
-            <button type='submit' disabled={!formik.isValid} className='submit_btn'>
+            <button type='submit' disabled={!formik.isValid} className="button-primary">
               Registrate
             </button>
 

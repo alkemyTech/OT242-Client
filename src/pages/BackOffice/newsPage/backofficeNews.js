@@ -12,14 +12,14 @@ const BackNewsPage = (props) => {
   const [cats, setCats] = useState([]);
   const [value, setValue] = useState("");
 
-  useEffect(() => {
-    const loadNews = async () => {
-      setLoading(true);
-      const response = await getReq(`/admin/news`);
-      setNews(response.data);
-      setLoading(false);
-    };
+  const loadNews = async () => {
+    setLoading(true);
+    const response = await getReq(`/admin/news`);
+    setNews(response.data);
+    setLoading(false);
+  };
 
+  useEffect(() => {
     loadNews();
   }, []);
 
@@ -77,8 +77,10 @@ const BackNewsPage = (props) => {
           news.map((item) => (
             <NewsItem
               key={item.id}
+              id={item.id}
               name={item.name}
               image={item.image}
+              loadNews={loadNews}
               createdAt={item.createdAt.slice(0, 10)}
             />
           ))

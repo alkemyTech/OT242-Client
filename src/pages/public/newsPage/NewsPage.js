@@ -1,30 +1,16 @@
-// files
-import './NewsPage.css'
-
-
-// hooks
+import './newsPage.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react'
-
-
-// dependencies
 import { Link } from 'react-router-dom'
 import Swal from "sweetalert2";
 import { getReq } from '../../../helpers/ReqToApi';
 import AnimatedPage from '../../../components/AnimatedPage';
 
 
-
-// this is an array created by me to do the tests, DO NOT UNCOMMENT
-// import data from '../../helpers/Api'
-
-
 const NewsPage = () => {
 
-
-  // declaring data variable
   const [news, setNews] = useState([]);
 
-  // traigo listado de novedades del backend 
   useEffect(() => {
     getNewsDetail();
   }, []);
@@ -41,27 +27,23 @@ const NewsPage = () => {
 
   return (
     <AnimatedPage>
-      <div className="container_news">
-            {/* replacement by request to the news service,
-            I'm mapping an array I created, so it should be changed when it's ready.*/}
-
-
-            <ul className="card_news" >
-
-              {news.map(oneNews => (
-                    <li key={oneNews.id}>
-                      <Link to={`/news/${oneNews.id}`}>
-                          <img src={oneNews.image} width={300} alt={oneNews.name} />
-                          <h3 className="title_new">{oneNews.name}</h3>
-                      </Link>
-                    </li>
-              ))}
-
-            </ul>
+    <div className="container_news">
+      <h1 className="NewsTitle">Novedades</h1>
+      <div className="container">
+        <div className="row">
+          {news.map(oneNews => (
+            <div className="db-item col-md-6 newsItem">
+              <Link to={`/news/:${oneNews.id}`}>
+                <img className="img_new" src={oneNews.image} width={300} />
+                <h3 className="title_new">{oneNews.name}</h3>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
 
       </div>
     </AnimatedPage>
   )
 }
-
 export default NewsPage
