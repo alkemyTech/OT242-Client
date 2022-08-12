@@ -1,0 +1,38 @@
+.container{
+    margin-top: 100px;
+}
+.New-Details-img{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+.New-Details-title{
+    font-size: 2.5em;
+}
+.New-Details-type{
+    color: gray;
+    margin-top: -10px;
+}
+.New-Details-go-back{
+    background-color:#DB5752;
+    color: white;
+    border-color: white;
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.New-Details-content{
+    padding-top: 50px;
+}
+
+@media (min-width: 760px) {
+    .New-Details-title{
+        font-size: 6em;
+    }
+    .New-Details-go-back{
+        font-size: 2em;
+    }
+    .New-Details-content{
+        font-size: 2em;
+    }
+}

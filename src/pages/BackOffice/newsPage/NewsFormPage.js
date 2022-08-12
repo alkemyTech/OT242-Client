@@ -4,6 +4,7 @@ import { getReq } from '../../../helpers/ReqToApi'
 
 import Form from '../../../components/forms/NewsForm/NewsForm'
 
+
 const NewsFormPage = () => {
     const [ newsDetail, setNewsDetail] = useState([])
     const {id} = useParams();

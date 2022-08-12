@@ -1,19 +1,17 @@
 import React from 'react';
 import { FaTrash, FaEdit } from 'react-icons/fa';
 
-const NewsItem = (props) => {
-    const { id, name, image, createdAt } = props;
+const TestimonialItem = (props) => {
+    const { id, name } = props;
 
     return (
       <>
         <tbody>
           <th scope="row" style={{display:'none',}}>{id}</th>
           <td>{name}</td>
-          <td>{image}</td>
-          <td>{createdAt}</td>
           <td class="acciones">
              <FaTrash></FaTrash>
-             <FaEdit></FaEdit>
+             <FaEdit> </FaEdit>
           </td>
         </tbody>
       </>
@@ -21,4 +19,4 @@ const NewsItem = (props) => {
     );
 }
 
-export default NewsItem;
+export default TestimonialItem;

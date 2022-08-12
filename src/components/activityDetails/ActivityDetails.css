@@ -1,0 +1,36 @@
+.activity-container {
+  margin-top: 93px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  align-items: center;
+  background-color: #f0e98b;
+  width: 75%;
+  height: auto;
+  border-radius: 15px;
+  padding-left: 2px;
+}
+.activity-container h1 {
+  font-size: 35px;
+  text-align: center;
+}
+.activity-container p {
+  font-size: 20px;
+  color: rgb(10, 10, 10);
+  padding: 15px;
+  text-align: left;
+}
+.activity-container img {
+  width: 60%;
+  height: 90%;
+  border-radius: 80px;
+  padding: 20px;
+}
+
+.btn {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
