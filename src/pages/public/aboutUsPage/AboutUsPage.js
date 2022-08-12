@@ -20,7 +20,7 @@ const AboutUsPage = (props) => {
     const loadMembers = async () => {
       setLoading(true);
       const response = await getReq(`/members`);
-      setClickedMember(response[0]);
+      setClickedMember(response.data[0]);
       setMembers(response.data);
       setLoading(false);
     };
