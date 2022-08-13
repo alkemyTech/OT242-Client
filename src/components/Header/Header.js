@@ -45,7 +45,7 @@ function Header() {
 
             <header className="header">
                 <figure className="logo-container">
-                    <NavLink to="/"><img src={logo} /></NavLink>
+                    <img className='img-header' src={logo} />
                 </figure>
         
                 {/* Responsive Icons */}
@@ -54,18 +54,18 @@ function Header() {
                     : <FaTimes className="hamburger" onClick={HandleMobileMenu}/>
                 }
 
-                <ul className={showMobileMenu}>
+                <ul className={showMobileMenu + " ul-header"}>
                     {navItems.map(navItem => (
-                        <li key={navItem[0]}><NavLink activeClassName='active' className='navItem' to={navItem[2]} onClick={HandleMobileMenu}>{navItem[1]}</NavLink></li>
+                        <li className='li-header' key={navItem[0]}><NavLink activeClassName='active' className='navItem' to={navItem[2]} onClick={HandleMobileMenu}>{navItem[1]}</NavLink></li>
                     ))}
 
                     {token 
-                        ?   <li>
-                                <button className='button' onClick={() => dispatch(logout()) }>Logout</button>
+                        ?   <li className='li-header'>
+                                <button className='button' onClick={() => dispatch(logout())}>Logout</button>
                             </li>
                         :   <>  
-                                <li><NavLink activeClassName='active' className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></NavLink></li>
-                                <li><NavLink activeClassName='active' className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></NavLink></li>
+                                <li className='li-header'><NavLink activeClassName='active' className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></NavLink></li>
+                                <li className='li-header'><NavLink activeClassName='active' className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></NavLink></li>
                             </>
                     }
                 </ul>
