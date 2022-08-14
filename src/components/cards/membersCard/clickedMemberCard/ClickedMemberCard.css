@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.clickedMemberCard {
+    width: 250px;
+    min-height: 250px;
+    margin: 10px;
+    margin-right: 1%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+}

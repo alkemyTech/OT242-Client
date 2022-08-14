@@ -1,15 +1,23 @@
+// react
 import React, { useState } from "react";
+
+// files, components and functions
+import AlertForm from "../../alerts/AlertForm";
+import { postReq } from "../../../helpers/ReqToApi";
+import Success from "../../alerts/Success";
+import './ContactForm.css';
+
+//dependencies
 import { Formik, Form, Field } from "formik";
-import AlertForm from "../alerts/AlertForm";
-import { postReq } from "../../helpers/ReqToApi";
-import Success from "../alerts/Success";
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 
 const ContactForm = () => {
 
-  const [alert, setAlert] = useState(false)
-  const [confirmation, setConfirmation] = useState(false)
+  const [alert, setAlert] = useState(false);
+  const [confirmation, setConfirmation] = useState(false);
+  const navigate = useNavigate();
 
   const phoneYup = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -76,50 +84,54 @@ const ContactForm = () => {
           isSubmitting,
         }) => (
 
-          <Form className="form">
-                <h2>Pongase en contacto con nosotros</h2>
+          <Form className="contactForm">
+                <h2 className="contactTitle">Contactate con nosotros!</h2>
                <Field 
-               className = "form_input"
+               className = "contactInput"
                name="name"
                type="name"
-               placeholder="Ingrese su nombre aqui"
-                /> 
+               placeholder="Nombre y Apellido"
+                /> <br /><br />
               {errors.name && touched.name ? (
              <AlertForm error={errors.name}/>
              ) : null}
 
               <Field 
-               className = "form_input"
+               className = "contactInput"
                name="phone"
                type="text"
-               placeholder="Ingrese un telefono de contacto"
-                /> 
+               placeholder="Telefono"
+                /> <br /><br />
               {errors.phone && touched.phone ? (
              <AlertForm error={errors.phone}/>
              ) : null}
 
                <Field 
-               className = "form_input"
+               className = "contactInput"
                name="email"
                type="email"
-               placeholder="Ingrese una direccion de e-mail"
-                /> 
+               placeholder="Email"
+                /> <br /><br />
               {errors.email && touched.email ? (
              <AlertForm error={errors.email}/>
              ) : null}
 
                <Field 
-               className = "form_input text"
+               className = "contactText"
                name="message"
                type="message"
-               placeholder="Escriba aqui su mensaje"
-                /> 
+               placeholder="Escribe tu consulta"
+                /> <br /><br />
               {errors.message && touched.message ? (
              <AlertForm error={errors.message}/>
              ) : null}
 
-          <button type="submit" disabled={isSubmitting} className="submit_btn">
-             Enviar
+          <button type="submit" disabled={isSubmitting} className="contactSubmit">
+             Enviar consulta
+          </button>
+          <br /><br />
+          <button  className="contactInicioBtn" onClick={() => navigate("/")}>
+            Ir al inicio
           </button>
 
           <div>

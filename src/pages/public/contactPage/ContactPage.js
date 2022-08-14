@@ -1,27 +1,17 @@
 import React from 'react';
-import AnimatedPage from '../../../components/AnimatedPage';
-import ContactForm from '../../../components/forms/Contact_form';
+import ContactForm from '../../../components/forms/contactForm/ContactForm';
 import './ContactPage.css'
+import AnimatedPage from '../../../components/AnimatedPage';
 
-const ContactPage = (props) => {
-
-
-
+const ContactPage = () => {
 
   return (
     <AnimatedPage>
-          
-    <main className="main_contact">
-      <div className="text_contact">
-        <h2>Texto aleatorio</h2>
+      <section className="contactPage">
+                  
+        <ContactForm />
 
-        
-      </div>
-        
-      <ContactForm />
-
-
-      </main>
+      </section>
     </AnimatedPage>
   );
 };
