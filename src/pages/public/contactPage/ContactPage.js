@@ -1,15 +1,18 @@
 import React from 'react';
 import ContactForm from '../../../components/forms/contactForm/ContactForm';
 import './ContactPage.css'
+import AnimatedPage from '../../../components/AnimatedPage';
 
 const ContactPage = () => {
 
   return (
-    <section className="contactPage">
-                
-      <ContactForm />
+    <AnimatedPage>
+      <section className="contactPage">
+                  
+        <ContactForm />
 
-    </section>
+      </section>
+    </AnimatedPage>
   );
 };
 

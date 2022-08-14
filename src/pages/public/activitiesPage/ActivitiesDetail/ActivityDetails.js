@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import ActivityDetails from './../../../../components/activityDetails/ActivityDetails'
+import ActivityDetails from '../../../../components/activityDetails/ActivityDetails'
 
 function ActivitiesDetails() {
   const activities = useSelector(state => state.activity)

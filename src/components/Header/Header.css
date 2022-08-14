@@ -140,3 +140,7 @@
   .texto {
       margin-top: 80px;
   }
+/* Margin top de la app general para no superponer el header */
+.general {
+    margin-top: 70px;
+}

@@ -4,7 +4,7 @@ import PrivateRoute from './components/ProtectedRoutes/PrivateRoute';
 import LoggedRoute from './components/ProtectedRoutes/LoggedRoute';
 
 // public
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
 import HomePage from './pages/public/homePage/HomePage';
 import NewsPage from "./pages/public/newsPage/NewsPage";
 import NewsDetail from './pages/public/newsPage/NewsDetails/NewsDetail';
@@ -38,7 +38,7 @@ import NewsFormPage from './pages/NewsPage/NewsFormPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App general">
       <BrowserRouter>
         <Header />
           <Routes>
