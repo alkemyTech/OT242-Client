@@ -40,13 +40,13 @@ useEffect(() => {
               <ClickedMemberCard className="clickedMemberCard" key={clickedMember.id} image={clickedMember.image} />
             </div>
             
-            {membersList.map(member => (
+            {( membersList.map(member => (
                   <>
                       <div className="memberCardContainer" onClick={() => setClickedMember(member)}>
                           <MemberCard key={member.id} name={member.name} image={member.image} />
                       </div>
                   </>
-            ))}
+            )))}
             
           </>
           )}
