@@ -26,15 +26,10 @@ import ActForm from './components/actTable/actForm';
 import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
 import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
 import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestimonials';
-import MembersContextProvider from './context/MembersContext';
-import TestimonialsContextProvider from './context/TestimonialsContext';
-
 
 function App() {
   return (
     <div className="App">
-      <MembersContextProvider>
-        <TestimonialsContextProvider>
       <BrowserRouter>
         <Header />
           <Routes>
@@ -71,8 +66,7 @@ function App() {
           </Routes>
         <Footer />
       </BrowserRouter>
-      </TestimonialsContextProvider>
-      </MembersContextProvider>
+
     </div>
   );
 }

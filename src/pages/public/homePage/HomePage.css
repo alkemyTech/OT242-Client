@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 
 }
-.sub_container {
+.welcome_container {
     width: 90%;
     display: flex;
     justify-content: space-around;
@@ -43,7 +43,7 @@
     height: 50px;
 }
 
-.titles_container a {
+.titles_container Link {
     text-decoration: none;
     color: #000;
 }
@@ -68,5 +68,6 @@
 
 .news_cards {
     display: flex;
+    margin-right: 50px;
 }
 
