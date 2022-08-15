@@ -3,12 +3,13 @@ import Card from "../../../components/cards/Card";
 import "./HomePage.css";
 import "../testimonialsPage/TestimonialsPage.css"
 import Button from "../../../components/buttons/Button";
-import MemberCard from "../../../components/cards/members_card/MemberCard";
+import MemberCard from "../../../components/cards/membersCard/MemberCard";
 import { loadMembers } from "../../../app/slices/members";
 import { loadTestimonials } from "../../../app/slices/testimonials";
 import { loadNews } from "../../../app/slices/news";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
+import AnimatedPage from '../../../components/AnimatedPage';
 
 
 
@@ -26,9 +27,8 @@ useEffect(() => {
   dispatch(loadNews());
 }, [dispatch]);
 
-
-
   return (
+    <AnimatedPage>
     <div className="main_container">
       <div className="welcome_container">
         <div className="welcome_text">
@@ -74,24 +74,15 @@ useEffect(() => {
       <h2>Testimonios</h2>
         <Link to="/testimonials"><Button text='Ver todos...' className='button-secondary' /></Link>
         </div>
-        <div className="card_container">
-      {/* {loading ? (
-          <div>
-          <Loader className='loader' size='small' colors={[]} children={<p>Cargando...</p>}/>
-          </div>
-      ) : (*/} {(
 
-          testimonialList.map((item) => (
+        <div className="card_container">
+          {testimonialList.map((item) => (
             <div className="testimonials-item"key={item.id}>
               <img src={item.image} alt={item.name}></img>
               <h2>{item.name}</h2>
               <h4>{item.content}</h4>
-            </div>
-          ))
-          )} 
+            </div>))};
         </div>
-        
-      
 
       <div className="titles_container">
       <h2>Últimas novedades</h2>
@@ -106,6 +97,9 @@ useEffect(() => {
           </div>
         
       </div>
-  );
+
+    </AnimatedPage>    
+    );
+
 }
 export default HomePage;

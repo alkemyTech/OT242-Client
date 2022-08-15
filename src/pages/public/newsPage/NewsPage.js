@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from "sweetalert2";
 import { getReq } from '../../../helpers/ReqToApi';
+import AnimatedPage from '../../../components/AnimatedPage';
 
 
 const NewsPage = () => {
@@ -25,6 +26,7 @@ const NewsPage = () => {
   };
 
   return (
+    <AnimatedPage>
     <div className="container_news">
       <h1 className="NewsTitle">Novedades</h1>
       <div className="container">
@@ -40,7 +42,8 @@ const NewsPage = () => {
         </div>
       </div>
 
-    </div>
+      </div>
+    </AnimatedPage>
   )
 }
 export default NewsPage

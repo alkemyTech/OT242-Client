@@ -1,5 +1,5 @@
 import React from "react";
-import "../members_card/MemberCard.css";
+import "./MemberCard.css";
 
 const MemberCard = (props) => {
   const { id, name, image } = props;
@@ -7,16 +7,18 @@ const MemberCard = (props) => {
   return (
     <>
       <div
-        className="card"
+        key={id}
+        className="memberCard"
         style={{
           backgroundImage: `url('images/Miembros_del_equipo/${image}')`,
         }}
       >
-        <div>
-          <h5>{name}</h5>
+        <div className="memberCardInfo">
+          <h5 className="memberCardName">{name}</h5>
         </div>
       </div>
     </>
+
   );
 };
 

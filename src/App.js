@@ -13,12 +13,12 @@ import ActivitiesPage from "./pages/public/activitiesPage/ActivitiesPage";
 import ActivityDetails from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetails';
 import TestimonialsPage from './pages/public/testimonialsPage/TestimonialsPage';
 import ContactPage from "./pages/public/contactPage/ContactPage";
+import Login from './pages/public/formsPage/LoginPage';
+import Register from './pages/public/formsPage/RegistrationPage';
 import Footer from './components/footer/Footer';
 
 // BackOffice
 import BackOfficeUsers from './pages/backOffice/BackOfficeUsers/BackOfficeUsers';
-import Login from './pages/public/formsPage/LoginPage'
-import Register from './pages/public/formsPage/RegistrationPage'
 import BackOffice from './pages/backOffice/BackOffice';
 import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
 import ActList from './components/actTable/actList';
@@ -29,7 +29,7 @@ import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestim
 
 function App() {
   return (
-    <div className="App">
+    <div className="App general">
       <BrowserRouter>
         <Header />
           <Routes>
