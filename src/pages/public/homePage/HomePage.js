@@ -77,7 +77,7 @@ useEffect(() => {
         <div className="card_container">
           {testimonialList.map((item) => (
             <div className="testimonials-item"key={item.id}>
-              <img src={item.image} alt={item.name}></img>
+              <img src={"./images/Testimonios/" + item.image} alt={item.name}></img>
               <h2>{item.name}</h2>
               <h4>{item.content}</h4>
             </div>))};
