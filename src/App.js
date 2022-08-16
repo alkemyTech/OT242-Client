@@ -4,7 +4,7 @@ import PrivateRoute from './components/ProtectedRoutes/PrivateRoute';
 import LoggedRoute from './components/ProtectedRoutes/LoggedRoute';
 
 // public
-import Header from './components/Header/Header';
+import Header from './components/header/Header';
 import HomePage from './pages/public/homePage/HomePage';
 import NewsPage from "./pages/public/newsPage/NewsPage";
 import NewsDetail from './pages/public/newsPage/NewsDetails/NewsDetail';
@@ -13,8 +13,8 @@ import ActivitiesPage from "./pages/public/activitiesPage/ActivitiesPage";
 import ActivityDetails from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetails';
 import TestimonialsPage from './pages/public/testimonialsPage/TestimonialsPage';
 import ContactPage from "./pages/public/contactPage/ContactPage";
-import Login from './pages/public/loginPage/LoginPage';
-import Register from './pages/public/registrationPage/RegistrationPage';
+import Login from './pages/public/formsPage/LoginPage';
+import Register from './pages/public/formsPage/RegistrationPage';
 import Footer from './components/footer/Footer';
 
 // BackOffice
@@ -27,15 +27,6 @@ import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
 import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
 import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestimonials';
 
-// BackOffice
-import BackOfficeUsers from './components/BackOffice/BackOfficeUsers/BackOfficeUsers';
-import Login from './UI/login/LoginPage'
-import Register from './UI/registration/UIRegistration'
-import BackOffice from './pages/BackOffice/BackOffice';
-import ActList from './components/actTable/actList';
-import ActForm from './components/actTable/actForm';
-import NewsFormPage from './pages/NewsPage/NewsFormPage';
-
 function App() {
   return (
     <div className="App general">
@@ -44,8 +35,10 @@ function App() {
           <Routes>
 
             {/* public routes */}
+   
             <Route path="/" element={<HomePage />} />
             <Route path="/aboutUs" element={<AboutUsPage />} />
+
             <Route path="/actividades" element={<ActivitiesPage />} />
             <Route path="/actividades/:id" element={<ActivityDetails />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
@@ -73,6 +66,7 @@ function App() {
           </Routes>
         <Footer />
       </BrowserRouter>
+
     </div>
   );
 }

@@ -46,7 +46,7 @@ const NewsForm = (props) => {
                 <Form className="news-form">
                     <Field placeholder='Título' name="name" className="news-field"/> 
                     <ErrorMessage name='name'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
-                    <Field placeholder='Imagen' name="image" className="news-field"/> 
+                    <Field type='file' placeholder='Imagen' name="image" className="news-field"/> 
                     <ErrorMessage name='image'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
                     <CKEditor
                         name="content"

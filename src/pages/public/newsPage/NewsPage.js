@@ -1,4 +1,4 @@
-import './newsPage.css'
+import './NewsPage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'

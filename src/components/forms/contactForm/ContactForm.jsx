@@ -10,7 +10,9 @@ import './ContactForm.css';
 //dependencies
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
+import Loader from "../../Loader/Loader";
 import { useNavigate } from 'react-router-dom';
+
 
 
 const ContactForm = () => {
@@ -134,9 +136,11 @@ const ContactForm = () => {
             Ir al inicio
           </button>
 
-          <div>
+          <div className="state_msg">
+                {isSubmitting && <Loader className='loader' size='small' colors={[]} children={<p>Enviando...</p>}/>}
                 {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
                 {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
+
           </div>
 
          </Form>

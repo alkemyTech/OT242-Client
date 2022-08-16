@@ -17,6 +17,7 @@
     margin-top: 93px;
     text-align: center;
 }
+
 .testimonials-item img{
     max-width: 75px;
     max-height: 75px;
@@ -24,6 +25,8 @@
     padding: 2px;
     float: left;
     margin-right: 300px;
+    min-width: 75px;
+    min-height: 75px;
 }
 .testimonials-item h4{
     font-size: 12px;

@@ -1,44 +1,35 @@
-// react
-import { React, useState, useEffect } from "react";
-
-// files and components
-import MemberCard from "../../../components/cards/membersCard/MemberCard";
-import ClickedMemberCard from "../../../components/cards/membersCard/clickedMemberCard/ClickedMemberCard";
-import { getReq } from "./../../../helpers/ReqToApi";
-import '../aboutUsPage/AboutUsPage.css';
+import { React, useEffect, useState } from "react";
+import MemberCard from "./../../../components/cards/membersCard/MemberCard";
+import '../aboutUsPage/AboutUs.css';
 import Button from '../../../components/buttons/Button';
-import AnimatedPage from '../../../components/AnimatedPage'
+import { useSelector, useDispatch } from "react-redux";
+import { loadMembers } from "../../../app/slices/members";
+import ClickedMemberCard from "../../../components/cards/membersCard/clickedMemberCard/ClickedMemberCard";
+import AnimatedPage from '../../../components/AnimatedPage';
+import {Link} from 'react-router-dom';
 
-// Dependencies
-import { Link } from 'react-router-dom';
+
 
 const AboutUsPage = (props) => {
-  const [loading, setLoading] = useState(false);
-  const [members, setMembers] = useState([]);
-  const [clickedMember, setClickedMember] = useState({});
 
-  useEffect(() => {
-    const loadMembers = async () => {
-      setLoading(true);
-      const response = await getReq(`/members`);
-      setClickedMember(response.data[0]);
-      setMembers(response.data);
-      setLoading(false);
-    };
+const { membersList } = useSelector(state => state.members)
+const [clickedMember, setClickedMember] = useState({});
 
-    loadMembers();
-  }, []);
+const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch(loadMembers());
+
+}, [dispatch]);
 
   return (
+
     <AnimatedPage>
       <section className="aboutSection">
         <h1 className="aboutTitle">¡Nuestro Staff!</h1>
 
-
         <div className="aboutContainer">
-          {loading ? (
-            <p>Cargando...</p>
-          ) : (
+          {(
 
           <>
             <div className="clickedMemberContainer">
@@ -48,21 +39,21 @@ const AboutUsPage = (props) => {
               </div>
               <ClickedMemberCard className="clickedMemberCard" key={clickedMember.id} image={clickedMember.image} />
             </div>
-
             
-            {members.map(member => (
+            {( membersList.map(member => (
                   <>
                       <div className="memberCardContainer" onClick={() => setClickedMember(member)}>
                           <MemberCard key={member.id} name={member.name} image={member.image} />
                       </div>
                   </>
-            ))}
+            )))}
             
           </>
           )}
         </div>
       </section>
     </AnimatedPage>
+
   );
 };
 
