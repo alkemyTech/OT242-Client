@@ -4,6 +4,7 @@ import React from 'react';
 import './backofficeNews.css'
 import { getReq } from '../../../helpers/ReqToApi';
 import Button from '../../../components/buttons/Button';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const BackNewsPage = (props) => {
@@ -11,6 +12,7 @@ const BackNewsPage = (props) => {
   const [news, setNews] = useState([]);
   const [cats, setCats] = useState([]);
   const [value, setValue] = useState("");
+  const navigate = useNavigate();
 
   const loadNews = async () => {
     setLoading(true);
@@ -64,6 +66,7 @@ const BackNewsPage = (props) => {
   return (
     <section className="holder">
       <h2>Listado de Novedades</h2>
+      <Button text="Agregar +" className={"button-primary"} onClick={()=> navigate("/newsform")}/>
       <table className="news-table">
         <thead>
           <th>Nombre</th>

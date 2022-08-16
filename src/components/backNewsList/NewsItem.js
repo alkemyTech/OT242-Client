@@ -2,8 +2,11 @@ import React from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { delReq } from "../../helpers/ReqToApi";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const NewsItem = (props) => {
+
+  const navigate = useNavigate();
 
   const { id, name, image, createdAt, loadNews } = props;
 
@@ -51,7 +54,11 @@ const NewsItem = (props) => {
           >
             <FaTrash></FaTrash>
           </button>
-          <FaEdit></FaEdit>
+          <button
+            onClick={() => navigate(`/newsForm/${id}`)}
+          >
+            <FaEdit></FaEdit>
+          </button>
         </td>
       </tbody>
     </>
