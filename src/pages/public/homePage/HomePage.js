@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 import AnimatedPage from '../../../components/AnimatedPage';
 
 
-
 function HomePage() {
 
 const { membersList } = useSelector(state => state.members)
@@ -91,7 +90,7 @@ useEffect(() => {
         <div className="card_container">
           {newsList.map((item) => (
             <div className="news_cards" key={item.id}>
-              <Card imageSource={item.image} title={item.name} text={item.content} />
+              <Card imageSource={"./images/Novedades/" + item.image } title={item.name} text={item.content} />
             </div>
          ))}
           </div>

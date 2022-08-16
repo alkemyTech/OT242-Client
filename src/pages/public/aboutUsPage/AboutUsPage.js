@@ -19,9 +19,10 @@ const dispatch = useDispatch();
 
 useEffect(() => {
   dispatch(loadMembers());
+  
 
 }, [dispatch]);
-
+console.log(membersList);
   return (
 
     <AnimatedPage>
