@@ -7,15 +7,15 @@ import { FaInstagram } from 'react-icons/fa';
 const Footer = () => {
     let publicData = [
         {companyName: 'Somos Más'},
-        {social: [{user: 'Somos_Más', icon: <FaFacebook className='icon-footer'/>, url: 'facebook.com/'},{user: 'SomosMás', icon: <FaInstagram className='icon-footer'/>, url: 'instagram.com/'}]},
+        {social: [{user: 'Somos_Más', icon: <FaFacebook className='icon-footer'/>, url: 'https://www.facebook.com/'},{user: 'SomosMás', icon: <FaInstagram className='icon-footer'/>, url: 'https://www.instagram.com/'}]},
         {logo: './LOGO-SOMOS-MAS.png'}
     ]
     let webLinks = [{name: 'Inicio', url: '/'},
-        {name: 'Nosotros', url: '/nosotros'},
-        {name: 'Novedades', url: '/novedades'},
-        {name: 'Testimonios', url: '/testimonios'},
-        {name: 'Contacto', url: '/contacto'},
-        {name: 'Contribuye', url: '/contribuye'}]
+        {name: 'Nosotros', url: '/aboutUs'},
+        {name: 'Novedades', url: '/news'},
+        {name: 'Testimonios', url: '/testimonials'},
+        {name: 'Contacto', url: '/contact'},
+        {name: 'Contribuye', url: '/contribute'}]
     
   return (
     <div className="main-footer">
@@ -40,7 +40,7 @@ const Footer = () => {
                 <div className="col-footer">
                     <h3>Redes Sociales</h3>
                     <ul className='list-unstyled-footer'>
-                        {publicData[1].social.map(site => <li><a className='a-footer' href={site.url}>{site.icon} {site.user}</a></li>)}
+                        {publicData[1].social.map(site => <li><a className='a-footer' target='_blank' href={site.url}>{site.icon} {site.user}</a></li>)}
                     </ul>
                 </div>
             </div>
