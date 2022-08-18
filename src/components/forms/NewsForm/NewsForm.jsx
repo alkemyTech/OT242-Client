@@ -1,32 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Field, ErrorMessage, useFormik, FormikProvider} from 'formik';
 import { NewsValidationSchema } from '../../../utils/validationSchemas';
-import { postReq, putReq } from '../../../helpers/ReqToApi';
-import customEditor from 'ckeditor5-custom-build/build/ckeditor';
-import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { postReq, putReq, getReq } from '../../../helpers/ReqToApi';
 import './NewsForm.css'
 
 const NewsForm = (props) => {
+    const [ categories, setCategories] = useState([]);
+
+    const getData = async () => {
+        const {data} = await getReq('/categories');
+        setCategories(data);
+    };
+
+    useEffect(() => {
+        getData();
+    }, [])
+
+    console.log(categories)
     var data = {
         name: '',
-        image: '',
         content: '',
-        categoryId: '',
         type: 'POST',
     }
 
     if (props.newsDetail){
         data = {
             name: props.newsDetail.name,
-            image: props.newsDetail.image,
             content: props.newsDetail.content,
-            categoryId: props.newsDetail.categoryId,
-            type: 'PATCH',
+            type: 'PUT',
         }
-    }
-    
-    const inputHandler = (_, editor) => {
-        formik.setFieldValue('content', editor.getData());
     }
 
     const handleSubmit = async (values, {setSubmitting}) => {
@@ -46,24 +48,17 @@ const NewsForm = (props) => {
                 <Form className="news-form">
                     <Field placeholder='Título' name="name" className="news-field"/> 
                     <ErrorMessage name='name'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
-                    <Field type='file' placeholder='Imagen' name="image" className="news-field"/> 
+                    <Field type="file" name="image" className="news-field"/> 
                     <ErrorMessage name='image'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
-                    <CKEditor
-                        name="content"
-                        className="news-field"
-                        config={{placeholder: 'Contenido'}}
-                        data={formik.values.content}
-                        editor={customEditor}
-                        onChange={inputHandler}
-                    />
+                    <Field as='textarea' name="content" className="news-field"/>
                     <ErrorMessage name='content'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
                     <Field as="select" placeholder='Categoría' name="categoryId" className="news-field">
-                            <option value="1">categoría 1</option>
-                            <option value="2">categoría 2</option>
-                            <option value="3">categoría 3</option>
-                        </Field> 
+                        {categories.map(category => (
+                            <option value={category.id}>{category.id} {category.name}</option>
+                        ))}
+                    </Field> 
                     <ErrorMessage name='categoryId'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
-                    <button type="submit" disabled={formik.isSubmitting}>Enviar</button>
+                    <button type="submit" disabled={formik.isSubmitting} className="button-primary">Enviar</button>
                 </Form>
             </FormikProvider>
         </section>
