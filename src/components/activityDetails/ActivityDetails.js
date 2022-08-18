@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { getReq } from "../../helpers/ReqToApi";
 import "./ActivityDetails.css";
+import { loadActivities } from "../../app/slices/activities";
+import { useSelector, useDispatch } from "react-redux";
 
 // function ActivityDetails(activity) {
 //     console.log(activity);
@@ -15,29 +17,45 @@ import "./ActivityDetails.css";
 //     )
 // }
 
-function ActivityDetails() {
-  const { id } = useParams();
+function ActivityDetails(props) {
+
+  const { id, name, image, content } = props
+/*   const { id } = useParams();
   const [activity, setActivity] = useState({});
 
   useEffect(() => {
     getActivityDetail();
-  }, []);
+  }, []); */
 
-  const getActivityDetail = async () => {
+/* const { activityList } = useSelector(state => state.activity)
+
+console.log(activityList)
+ */
+/* 
+const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch(loadActivities());
+  
+
+}, [dispatch]);
+ */
+  /* const getActivityDetail = async () => {
     try {
       const res = await getReq(`/admin/activities/${id}`);
+      console.log("mi console" + res.data)
       setActivity(res.data);
     } catch (err) {
       return(<h1 className="activity-container">ERROR</h1>) 
-    }
-  };
+    } */
+  
   return (
     <div className="activity-container">
-      <img src={activity.image}></img>
+      <img src={image}></img>
 
       <p>
-        <h1>{activity.name}</h1>
-        {activity.content} <br></br>
+        <h1>{name}</h1>
+        {content} <br></br>
       </p>
       <div className="btn">
         <Button variant="danger" href="/actividades">

@@ -3,8 +3,9 @@
 }
 
 .backOffice {
-  margin-top: 50px;
+  padding-top: 60px;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
 }
 
 /* Con el width controlo cuantas columnas x fila */
