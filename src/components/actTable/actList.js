@@ -1,44 +1,58 @@
-import React from "react";
-import { useSelector,useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {Table} from "reactstrap";
-import { softDeleteActivity } from "../../app/slices/activities/activitiesSlice";
+import { useState, useEffect } from 'react';
+import React from 'react';
+import '../../pages/backOffice/newsPage/backofficeNews.css'
+import { getReq } from '../../helpers/ReqToApi';
+import { useNavigate } from 'react-router-dom';
+import ActItem from './ActItem';
 
-function ActList() {
-    const activity = useSelector(state => state.activity)
-    const dispatch = useDispatch();
 
-    const handleClick = (id) => {
-        dispatch(softDeleteActivity(id));
-        console.log(activity);
-    }
-    return (
-        <div className="table-responsive-md" style={{ margin: 100 }}>
-            <Table className="table">
-                <thead className="tableHead">
-                    <tr className="tableTr">
-                        <th>Nombre</th>
-                        <th>Contenido</th>
-                        <th>Eliminado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody className="tableBody">
-                    {activity.map(activity => (
-                        <tr className="tableTr" key={activity.id}>
-                            <td className="tableTd">{activity.name}</td>
-                            <td className="tableTd">{activity.content}</td>
-                            <td className="tableTd">{activity.deletedAt}</td>
-                            <td className="tableTd">
-                                <Link to={`/backoffice/activities/edit/${activity.id}`}> Edit </Link>
-                                <button onClick={() => handleClick(activity.id)}>delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
-        </div>
-    )
-}
+
+const ActList = (props) => {
+  const [loading, setLoading] = useState(false);
+  const [news, setNews] = useState([]);
+  //const [value, setValue] = useState("");
+  const navigate = useNavigate()
+  const loadNews = async () => {
+    setLoading(true);
+    const response = await getReq(`/admin/activities`);
+    setNews(response.data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    loadNews();
+  }, []);
+
+
+  return (
+    <section className="holder">
+      <h2>Listado de Actividades</h2><br/>
+      <button className='button-primary' onClick={()=>navigate('/backoffice/activitiesform/')}>Agregar Actividad +</button>
+      <table className="news-table">
+        <thead>
+          <th>Nombre</th>
+          {/* <th>Imagen</th> */}
+          <th>Contenido</th>
+          <th>Fecha de creacion</th>
+          <th>Acciones</th>
+        </thead>
+        {loading ? (
+          <p>Cargando...</p>
+        ) : (
+          news.map((item) => (
+            <ActItem
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              content={item.content.slice(0, 130) + '...'}
+              loadNews={loadNews}
+              createdAt={item.createdAt.slice(0, 10)}
+            />
+          ))
+        )}
+      </table>
+    </section>
+  );
+};
+
 export default ActList;

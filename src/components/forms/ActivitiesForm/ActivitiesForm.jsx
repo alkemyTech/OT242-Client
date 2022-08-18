@@ -1,64 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Field, ErrorMessage, useFormik, FormikProvider} from 'formik';
 import { ActivitiesSchema } from '../../../utils/validationSchemas';
 import { postReq, patchReq } from '../../../helpers/ReqToApi';
+import '../NewsForm/NewsForm.css'
+import { useNavigate } from 'react-router-dom';
 
-import customEditor from 'ckeditor5-custom-build/build/ckeditor';
-import { CKEditor } from "@ckeditor/ckeditor5-react";
+const ActivitiesForm = (props) => {
+    
+    const navigate = useNavigate()
 
-import s from './ActivitiesForm.module.css';
-import './ckeditor.css'
-
-const ActivitiesForm = ({activity = null}) => {
-  let initialState = {};
-  if (!activity){
-    initialState = {
-      name: '',
-      content: '',
-      type: 'POST',
+    var data = {
+        name: '',
+        content: '',
+        type: 'POST',
     }
-  }
-  else {
-    initialState = {
-      name: activity.name,
-      content: activity.content,
-      type: 'PATCH',
+
+    if (props.activities){
+        data = {
+            name: props.activities.name,
+            content: props.activities.content,
+            type: 'PATCH',
+        }
     }
-  }
-
-  const inputHandler = (_, editor) => {
-    formik.setFieldValue('content', editor.getData());
-  }
-
-  const handleSubmit = async (values, {setSubmitting}) => {
-    values.type === 'POST'
-      ? postReq('/activities', {name: values.name, content: values.content})// create new activity
-      : patchReq('/activities', {name: values.name, content: values.content})// update activity 
-    setSubmitting(false)
-  }
-
-  const formik = useFormik({initialValues: initialState, validationSchema: ActivitiesSchema, onSubmit: handleSubmit});
-  return (
-    <section className={s.main_container}>
-      <h1>{initialState.type === 'POST' ? 'Crea una nueva actividad' : 'Actualiza la actividad'}</h1>
-      <FormikProvider value={formik}>
-        <Form className={s.form}>
-          <Field placeholder='Nombre de la actividad' name="name" className={`${s.activityName} ${formik.errors.name ? s.focus_error : null}`}/> 
-          <ErrorMessage name='name'>{msg => <span className={s.error}>{msg}</span>}</ErrorMessage>
-          <CKEditor
-              name="content"
-              className={`${s.activityContent} ${formik.errors.content ? s.focus_error : null}`}
-              config={{placeholder: 'Contenido de la actividad'}}
-              data={formik.values.content}
-              editor={customEditor}
-              onChange={inputHandler}
-          />
-          <ErrorMessage name='content'>{msg => <span className={s.error}>{msg}</span>}</ErrorMessage>
-          <button type="submit" disabled={formik.isSubmitting}>Actualizar</button>
-        </Form>
-      </FormikProvider>
-    </section>
-  )
+    console.log(props.activities)
+    const handleSubmit = async (values, {setSubmitting}) => {
+        values.type === 'POST'
+        ? postReq('/admin/activities', {name: values.name, image: values.image, content: values.content})
+        : patchReq('/admin/activities/' + props.activities.id, {name: values.name, image: values.image, content: values.content})
+        setSubmitting(false)
+        navigate('/backoffice/activities')
+        window.location.reload()
+    }
+    
+    const formik = useFormik({enableReinitialize:true, initialValues: data, validationSchema: ActivitiesSchema, onSubmit: handleSubmit});
+    
+    return (
+        <>
+        <section className="newsFormContainer">
+            <h1>{data.type === 'POST' ? 'Crear una actividad' : 'Actualizar una actividad'}</h1>
+            <FormikProvider value={formik}>
+                <Form className="news-form">
+                    <Field placeholder='Título' name="name" className="news-field"/> 
+                    <ErrorMessage name='name'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
+                    <Field type="file" name="image" className="news-field"/> 
+                    <ErrorMessage name='image'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
+                    <Field as='textarea' name="content" className="news-field"/>
+                    <ErrorMessage name='content'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
+                    <button type="submit" disabled={formik.isSubmitting} className="button-primary">Enviar</button>
+                </Form>
+            </FormikProvider>
+        </section>
+        </>
+    )
 }
 
 export default ActivitiesForm
