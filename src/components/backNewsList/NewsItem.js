@@ -1,11 +1,15 @@
 import React from "react";
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { FiEdit } from "react-icons/fi";
+import { MdOutlineDeleteOutline } from "react-icons/md";
 import { delReq } from "../../helpers/ReqToApi";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const NewsItem = (props) => {
 
   const { id, name, image, createdAt, loadNews } = props;
+
+  const navigate = useNavigate()
 
 // función para eliminar novedad
   const deleteNew = async (id) => {
@@ -44,14 +48,12 @@ const NewsItem = (props) => {
         <td>{image}</td>
         <td>{createdAt}</td>
         <td class="acciones">
-          <button
-            onClick={() => {
+          
+            <MdOutlineDeleteOutline className="icon" onClick={() => {
               confirmDelete(id);
-            }}
-          >
-            <FaTrash></FaTrash>
-          </button>
-          <FaEdit></FaEdit>
+            }}/>
+          
+          <FiEdit className="icon" onClick={() => {navigate(`/newsform/${id}`)}}/>
         </td>
       </tbody>
     </>

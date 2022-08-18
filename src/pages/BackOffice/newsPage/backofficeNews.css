@@ -1,4 +1,11 @@
-
+.icon {
+    font-size: 2rem;
+    margin: 5px;
+    cursor: pointer;
+}
+.icon:hover{
+    color: #DB5752;
+}
 .holder {
 
     width: 100%;

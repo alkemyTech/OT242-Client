@@ -3,10 +3,11 @@ import { Form, Field, ErrorMessage, useFormik, FormikProvider} from 'formik';
 import { NewsValidationSchema } from '../../../utils/validationSchemas';
 import { postReq, putReq, getReq } from '../../../helpers/ReqToApi';
 import './NewsForm.css'
+import { useNavigate } from 'react-router-dom';
 
 const NewsForm = (props) => {
     const [ categories, setCategories] = useState([]);
-
+    const navigate = useNavigate()
     const getData = async () => {
         const {data} = await getReq('/categories');
         setCategories(data);
@@ -34,10 +35,12 @@ const NewsForm = (props) => {
     const handleSubmit = async (values, {setSubmitting}) => {
         values.type === 'POST'
         ? postReq('/admin/news', {name: values.name, image: values.image, content: values.content, categoryId: values.categoryId})
-        : putReq('/news/' + props.newsDetail.id, {name: values.name, image: values.image, content: values.content, categoryId: values.categoryId})
+        : putReq('/admin/news/' + props.newsDetail.id, {name: values.name, image: values.image, content: values.content, categoryId: values.categoryId})
         setSubmitting(false)
+        navigate('/backoffice/news')
+        window.location.reload()
     }
-
+    
     const formik = useFormik({enableReinitialize:true, initialValues: data, validationSchema: NewsValidationSchema, onSubmit: handleSubmit});
     
     return (

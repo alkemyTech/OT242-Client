@@ -25,8 +25,6 @@ function BackOffice() {
     ["Actividades", <TbListCheck className="backOffIcon" />, "/backoffice/activities"],
     ["Categorias", <BiCategory className="backOffIcon" />, "/backoffice/categories"],
     ["Testimonios", <BiMessageDetail className="backOffIcon" />, "/backoffice/testimonials"],
-    ["Organizacion", <RiOrganizationChart className="backOffIcon" />, "/backoffice/organization"],
-    ["Slides", <BiSlideshow className="backOffIcon" />, "/backoffice/slides"],
     ["Usuarios", <FaRegUser className="backOffIcon" />, "/backoffice/users"],
     ["Miembros", <FiUsers className="backOffIcon" />, "/backoffice/members"]
   ];
@@ -44,13 +42,13 @@ function BackOffice() {
                       </div>
                     </div>
                 ))}
-                  <div className="backOffColumn">
+                  {/* <div className="backOffColumn">
                   <div className="backOffCard">
                       <h3>Edit</h3>
                       <div><BiEditAlt className="backOffIcon"/></div>
                       <Link to="/userInfo"><button className="backOffButton">Ir</button></Link>
                     </div>
-                  </div>
+                  </div> */}
             
           </div>
         </>
