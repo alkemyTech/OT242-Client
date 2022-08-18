@@ -18,6 +18,10 @@ const { membersList } = useSelector(state => state.members)
 const { testimonialList } = useSelector(state => state.testimonials)
 const { newsList } = useSelector(state => state.news)
 
+const membersSlice = membersList.slice(0, 4);
+const testimonialSlice = testimonialList.slice(0, 5);
+const newsSlice = newsList.slice(0, 2);
+
 const dispatch = useDispatch();
 
 useEffect(() => {
@@ -57,42 +61,42 @@ useEffect(() => {
 
       <div className="titles_container">
         <h2>Nuestro Staff</h2>
-        <Link to="/aboutUs"><Button text='Ver todos...' className='button-secondary' /></Link>
+        
         </div>
-        <div className="card_container">
+        <div className="home_card_container">
         {(
-          membersList.map((item) => (
+          membersSlice.map((item) => (
             <MemberCard key={item.id} name={item.name} image={item.image} />
           ))
-        )}
+        )} <Link to="/aboutUs"><Button text='Ver todos...' className='button-secondary' /></Link>
         
         </div>
 
       
       <div className="titles_container">
       <h2>Testimonios</h2>
-        <Link to="/testimonials"><Button text='Ver todos...' className='button-secondary' /></Link>
+        
         </div>
 
-        <div className="card_container">
-          {testimonialList.map((item) => (
+        <div className="home_card_container">
+          {testimonialSlice.map((item) => (
             <div className="testimonials-item"key={item.id}>
               <img src={"./images/Testimonios/" + item.image} alt={item.name}></img>
               <h2>{item.name}</h2>
               <h4>{item.content}</h4>
-            </div>))};
+            </div>))}; <Link to="/testimonials"><Button text='Ver todos...' className='button-secondary' /></Link>
         </div>
 
       <div className="titles_container">
       <h2>Últimas novedades</h2>
-        <Link to="/news"><Button text='Ver todas...' className='button-secondary' /></Link>
+        
         </div>
-        <div className="card_container">
-          {newsList.map((item) => (
+        <div className="home_card_container">
+          {newsSlice.map((item) => (
             <div className="news_cards" key={item.id}>
-              <Card imageSource={"./images/Novedades/" + item.image } title={item.name} text={item.content} />
+              <Card imageSource={"./images/Novedades/" + item.image } title={item.name} text={item.content} url={`/news/${item.id}`}/>
             </div>
-         ))}
+         ))} <Link to="/news"><Button text='Ver todas...' className='button-secondary' /></Link>
           </div>
         
       </div>

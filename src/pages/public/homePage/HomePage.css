@@ -15,6 +15,7 @@
 }
 .welcome_text { 
     width: 40%;
+    justify-content: left;
 }
 
 .welcome_text p {
@@ -50,24 +51,21 @@
 
 .titles_container h2 {
     font-weight: bold;
-    width: 70%;
+    width: 90%;
 }
-.card_container {
+.home_card_container {
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden;
-    justify-content: left;
+    justify-content: space-around;
+    align-items: center;
     height: 270px;
-    width: 70%;
+    width: 90%;
     margin-left: 50px;
 }
 
-.card_container h5 {
-    visibility: hidden;
-}
 
 .news_cards {
     display: flex;
     margin-right: 50px;
+    
 }
-

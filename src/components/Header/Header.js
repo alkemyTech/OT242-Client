@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 // Librerias
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ function Header() {
 
             <header className="header">
                 <figure className="logo-container">
-                    <img className='img-header' src={logo} />
+                <Link to={"/"}><img className='img-header' src={logo} /></Link>
                 </figure>
         
                 {/* Responsive Icons */}
