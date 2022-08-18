@@ -33,7 +33,7 @@ const NewsPage = () => {
         <div className="row">
           {news.map(oneNews => (
             <div className="db-item col-md-6 newsItem">
-              <Link to={`/news/:${oneNews.id}`}>
+              <Link to={`/news/${oneNews.id}`}>
                 <img className="img_new" src={oneNews.image} width={300} />
                 <h3 className="title_new">{oneNews.name}</h3>
               </Link>

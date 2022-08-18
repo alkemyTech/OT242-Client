@@ -16,7 +16,7 @@ export default function Slider(props) {
               <div
                 className="img_container"
                 style={{
-                  backgroundImage: `url('images/Actividades/Foto${e.imageUrl}.jpg')`,
+                  backgroundImage: `url('images/Actividades/Foto ${e.imageUrl}.jpg')`,
                 }}
               >
               </div>
