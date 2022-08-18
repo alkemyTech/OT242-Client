@@ -9,15 +9,19 @@ import { useState } from 'react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 // Logout
 import { useDispatch } from 'react-redux'
 import { logout } from '../../app/slices/userAuth'
 
 function Header() {
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
-
+    //traigo usuario logeado para ver si es admin o no
+    let user = JSON.parse(localStorage.getItem('dataUser002'))
+    
     // traigo token de localStorage para render boton de login o logout
     let token = localStorage.getItem('token');
 
@@ -39,7 +43,6 @@ function Header() {
 
 
     }
-
     return (
         <>
 
@@ -58,7 +61,8 @@ function Header() {
                     {navItems.map(navItem => (
                         <li className='li-header' key={navItem[0]}><NavLink activeClassName='active' className='navItem' to={navItem[2]} onClick={HandleMobileMenu}>{navItem[1]}</NavLink></li>
                     ))}
-
+                    {user  && user.roleId === 1 
+                    ? <button className='navBtn navRegisBtn' onClick={() => navigate('/backoffice')}>BackOffice</button> : <></>}
                     {token 
                         ?   <li className='li-header'>
                                 <button className='navBtn navLoginBtn' onClick={() => dispatch(logout())}>Logout</button>
