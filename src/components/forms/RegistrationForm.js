@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function RegistrationForm(props) {
 
   const [alert, setAlert] = useState({})
+  
   const navigate = useNavigate();
 
     const initialValues = {
@@ -37,12 +38,13 @@ function RegistrationForm(props) {
         .required('Required'),
     })
 
-    const onSubmit = async values => {
+    const signUp = async (values) => {
 
       try {
-
+      console.log(values)
       const {data} = await postReq('/auth/register', values)
       await postReq('/auth/login', values)
+      console.log(data)
       
       const {firstName, lastName, email, image, roleId } = data.subject
       
@@ -56,10 +58,10 @@ function RegistrationForm(props) {
 
     } catch (error) {
         error.response.data.errors.map(err => {
-          
+          return(
           setAlert({
             msg: err.msg
-          })
+          }))
         })
         
       setTimeout(() =>{
@@ -73,44 +75,53 @@ function RegistrationForm(props) {
         <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={onSubmit}
+            onSubmit={signUp}
         >
-        {formik => {
+        {({values, errors, touched, handleChange}) => {
         return (<Form className='form'>
             <Inputs
               control='input'
               type='text'
+              onChange={handleChange}
               label='Nombre:'
               name='firstName'
+              value={values.firstName}
             />
             <Inputs
               control='input'
               type='text'
+              onChange={handleChange}
               label='Apellido:'
               name='lastName'
+              value={values.lastName}
             />
             <Inputs
               control='input'
               type='email'
+              onChange={handleChange}
               label='Email:'
               name='email'
               place_holder='Email'
+              value={values.email}
             />
             <Inputs
               control='input'
               type='password'
+              onChange={handleChange}
               label='Contraseña:'
               name='password'
               place_holder='Contraseña'
+              value={values.password}
             />
             <Inputs
               control='input'
               type='password'
+              onChange={handleChange}
               label='Confirmar contraseña:'
               name='confirmPassword'
               place_holder='Repetir contraseña'
             />
-            <button type='submit' disabled={!formik.isValid} className="button-primary">
+            <button type='submit' onClick={signUp} className="button-primary">
               Registrate
             </button>
 

@@ -26,7 +26,7 @@ function Header() {
     let token = localStorage.getItem('token');
 
     // array con los items de navegacion [key, "Nombre", "path"] (dejo fuera botones de loggeo xq quieren importarlos como componente externo)
-    const navItems = [[0, "Inicio", "/"],[1, "Nosotros", "/aboutUs"],[2, "Novedades", "/news"],[3, "Testimonios", "/testimonials"],[4, "Contacto", "/contact"], [5, "Contribuye", "/contribute"]];
+    const navItems = [[0, "Inicio", "/"],[1, "Nosotros", "/aboutUs"],[2, "Novedades", "/news"],[3, "Testimonios", "/testimonials"], [4, "Actividades", "/activities"],[5, "Contacto", "/contact"] ];
 
     //  DISPLAY DE MENU CUANDO PANTALLA CHICA
 

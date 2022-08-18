@@ -22,7 +22,7 @@ export const memberSlice = createSlice({
   export const loadMembers = () => async (dispatch) => {
     
     try {
-        const response = await getReq(`/members`);
+        const response = await getReq(`/admin/members`);
 
         dispatch(setMembers(response.data))
       } catch (err) {
