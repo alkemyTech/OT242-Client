@@ -18,6 +18,8 @@ const [clickedMember, setClickedMember] = useState({});
 const [members, setMembers] = useState([])
 const navigate = useNavigate()
 
+const scrolling = window.scroll(0,0, 'smooth')
+
 //const dispatch = useDispatch();
 const URI = 'http://localhost:3000/admin/members'
 
@@ -54,7 +56,7 @@ useEffect(() => {
             {( members.map(member => (
                   <>
                       <div className="memberCardContainer" onClick={() => setClickedMember(member)}>
-                          <a href="#main"><MemberCard key={member.id} name={member.name} image={member.image} /></a>
+                      <MemberCard onClick={scrolling} key={member.id} name={member.name} image={member.image} />
                       </div>
                   </>
             )))}
