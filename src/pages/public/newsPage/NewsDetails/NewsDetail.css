@@ -12,23 +12,22 @@
 .newsDetailTextAndImg {
    width: 100%;
    display: flex;
-   margin-bottom: 20px;
+   margin-bottom: 40px;
 }
 
 /* TEXT CSS */
 .newsDetailText {
    width: 100%;
-
 }
 
 .newsDetailTitle {
    text-align: left;
    font-size: 2.75em;
-   margin-bottom: 100px;
+   margin-bottom: 200px;
 }
 
 /* IMG */
 .NewsDetailImg {
-   width: 100%;
-   height: 200px;
+   width: 700px;
+   height: 300px;
 }
