@@ -1,12 +1,12 @@
 import { React, useEffect, useState } from "react";
 import MemberCard from "./../../../components/cards/membersCard/MemberCard";
-import '../aboutUsPage/AboutUs.css';
+import '../aboutUsPage/AboutUsPage.css';
 import Button from '../../../components/buttons/Button';
 import { useSelector, useDispatch } from "react-redux";
 import { loadMembers } from "../../../app/slices/members";
 import ClickedMemberCard from "../../../components/cards/membersCard/clickedMemberCard/ClickedMemberCard";
 import AnimatedPage from '../../../components/AnimatedPage';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 
@@ -16,6 +16,7 @@ const AboutUsPage = (props) => {
 
 const [clickedMember, setClickedMember] = useState({});
 const [members, setMembers] = useState([])
+const navigate = useNavigate()
 
 //const dispatch = useDispatch();
 const URI = 'http://localhost:3000/admin/members'
@@ -33,16 +34,18 @@ useEffect(() => {
   return (
 
     <AnimatedPage>
-      <section className="aboutSection">
-        <h1 className="aboutTitle">¡Nuestro Staff!</h1>
+      <section className="aboutSection" >
+        
+        <h1 className="aboutTitle" id="main">¡Nuestro Staff!</h1>
 
         <div className="aboutContainer">
           {(
-
           <>
             <div className="clickedMemberContainer">
               <div className="clickedMemberAndBtn">
-                  <h5 className="clickedMemberName">{clickedMember.name}</h5>
+                  <h2 className="clickedMemberName">{clickedMember.name}</h2>
+                  <h5>{clickedMember.role}</h5>
+                  <p>{clickedMember.content}</p>
                   <Link to="/contact"><Button className="serParteBtn" text='Quiero ser parte!' type="button"/></Link>
               </div>
               <ClickedMemberCard className="clickedMemberCard" key={clickedMember.id} image={clickedMember.image} />
@@ -51,11 +54,11 @@ useEffect(() => {
             {( members.map(member => (
                   <>
                       <div className="memberCardContainer" onClick={() => setClickedMember(member)}>
-                          <MemberCard key={member.id} name={member.name} image={member.image} />
+                          <a href="#main"><MemberCard key={member.id} name={member.name} image={member.image} /></a>
                       </div>
                   </>
             )))}
-            
+          
           </>
           )}
         </div>
