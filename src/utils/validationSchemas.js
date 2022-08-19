@@ -37,3 +37,8 @@ export const MembersValidationSchema = Yup.object().shape({
   role: Yup.string().required('Requerido'),
   content: Yup.string().required('Requerido'),
 })
+
+export const CategoriesValidationSchema = Yup.object().shape({
+  name: Yup.string().required('Requerido'),
+  description: Yup.string().required('Requerido')
+})

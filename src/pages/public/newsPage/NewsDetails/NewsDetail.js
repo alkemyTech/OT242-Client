@@ -1,7 +1,14 @@
+// react and style
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import './NewsDetail.css';
+
+// files and components
 import { getReq } from "../../../../helpers/ReqToApi";
+import AnimatedPage from "../../../../components/AnimatedPage";
+
+//dependencies
+import { Link, useParams, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";  
 
 
 const NewsDetail = () => {
@@ -17,7 +24,7 @@ const NewsDetail = () => {
   const getNewsDetail = async () => {
     try {
       const res = await getReq(`/admin/news/${id}`);
-      console.log(res.data)
+      res.data.createdAt= res.data.createdAt.slice(0, 10);
       setNews(res.data);
     } catch (err) {
       Swal.fire("Error 404", "Esta novedad no existe", "error");
@@ -25,15 +32,25 @@ const NewsDetail = () => {
     }
   };
 
+
   return (
-    <div className="container">
-      <h1 className="New-Details-title">{news.name}</h1>
-      <h5 className="New-Details-type">{news.type}</h5>
-      <img src={'/images/Novedades/novedadImagen.jpg'} className="New-Details-img"></img>
-      <h3 className="New-Details-content">{news.content}</h3>
-      <br /><br />
-      <Link to="/news" className="New-Details-go-back">Volver</Link>
+   <AnimatedPage>
+      <div className="newsDetailSection">
+         <div className="newsDetailTextAndImg">
+            <div className="newsDetailText">
+               <h2 className="newsDetailTitle">{news.name}</h2>
+               <h6 className="NewsDetailType">Categoria: {news.type}</h6>
+               <h6 className="NewsDetailDate">Fecha de creacion: {news.createdAt}</h6>
+            </div>
+            <img src={"/images/Novedades/" + news.image} className="NewsDetailImg"></img>
+
+         </div>
+         
+         <p className="NewsDetailContent">{news.content}</p>
+         <br /><br />
+         <Link to="/news" className="button-primary">Volver a listado de novedades</Link>
     </div>
+   </AnimatedPage>
   );
 };
 
