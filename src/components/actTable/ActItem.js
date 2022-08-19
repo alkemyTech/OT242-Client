@@ -30,7 +30,7 @@ const ActItem = (props) => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Si, borrar novedad!",
+      confirmButtonText: "Si, borrar actividad!",
     }).then((result) => {
       if (result.isConfirmed) {
         deleteNew(id);
