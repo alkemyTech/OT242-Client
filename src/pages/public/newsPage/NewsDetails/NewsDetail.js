@@ -24,7 +24,7 @@ const NewsDetail = () => {
   const getNewsDetail = async () => {
     try {
       const res = await getReq(`/admin/news/${id}`);
-      console.log(res.data)
+      res.data.createdAt= res.data.createdAt.slice(0, 10);
       setNews(res.data);
     } catch (err) {
       Swal.fire("Error 404", "Esta novedad no existe", "error");
@@ -40,9 +40,10 @@ const NewsDetail = () => {
             <div className="newsDetailText">
                <h2 className="newsDetailTitle">{news.name}</h2>
                <h6 className="NewsDetailType">Categoria: {news.type}</h6>
-               <h6 className="NewsDetailDate">Fecha de creacion: {news.createdAt.slice(0, 10)}</h6>
+               <h6 className="NewsDetailDate">Fecha de creacion: {news.createdAt}</h6>
             </div>
-            <img src={"./images/Novedades/" + news.image} className="NewsDetailImg"></img>
+            <img src={`./images/Novedades/${news.image}`} className="NewsDetailImg"></img>
+
          </div>
          
          <p className="NewsDetailContent">{news.content}</p>
