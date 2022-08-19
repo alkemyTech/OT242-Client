@@ -27,6 +27,8 @@ import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
 import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
 import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestimonials';
 import ActivitiesFormPage from './pages/backOffice/activitiesPage/ActivitiesFormPage';
+import MembersList from './components/membersTable/MembersList';
+import MembersFormPage from './pages/backOffice/membersPage/MembersFormPage';
 
 function App() {
   return (
@@ -57,6 +59,9 @@ function App() {
             <Route path="/backoffice/activities" element={<PrivateRoute><ActList /></PrivateRoute>} />
             <Route path="/backoffice/activitiesform/" element={<PrivateRoute><ActivitiesFormPage /></PrivateRoute>} />
             <Route path="/backoffice/activitiesform/:id" element={<PrivateRoute><ActivitiesFormPage /></PrivateRoute>} />
+            <Route path="/backoffice/members" element={<PrivateRoute><MembersList /></PrivateRoute>} />
+            <Route path="/backoffice/membersform/" element={<PrivateRoute><MembersFormPage /></PrivateRoute>} />
+            <Route path="/backoffice/membersform/:id" element={<PrivateRoute><MembersFormPage /></PrivateRoute>} />
             <Route path="/backoffice/testimonials" element={<PrivateRoute><BackTestimonialPage /></PrivateRoute>} />
             <Route path="/newsForm/:id" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
             <Route path="/newsForm/" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
