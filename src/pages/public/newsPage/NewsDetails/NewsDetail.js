@@ -42,7 +42,7 @@ const NewsDetail = () => {
                <h6 className="NewsDetailType">Categoria: {news.type}</h6>
                <h6 className="NewsDetailDate">Fecha de creacion: {news.createdAt}</h6>
             </div>
-            <img src={`./images/Novedades/${news.image}`} className="NewsDetailImg"></img>
+            <img src={"/images/Novedades/" + news.image} className="NewsDetailImg"></img>
 
          </div>
          
