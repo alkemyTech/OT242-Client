@@ -132,15 +132,12 @@ const ContactForm = () => {
              Enviar consulta
           </button>
           <br /><br />
-          <button  className="contactInicioBtn" onClick={() => navigate("/")}>
-            Ir al inicio
-          </button>
+
 
           <div className="state_msg">
                 {isSubmitting && <Loader className='loader' size='small' colors={[]} children={<p>Enviando...</p>}/>}
                 {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
                 {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
-
           </div>
 
          </Form>

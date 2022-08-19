@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Form, Field, ErrorMessage, useFormik, FormikProvider} from 'formik';
 import { MembersValidationSchema } from '../../../utils/validationSchemas';
 import { postReq, patchReq } from '../../../helpers/ReqToApi';
@@ -27,12 +27,14 @@ const MembersForm = (props) => {
     console.log(props.members)
     const handleSubmit = async (values, {setSubmitting}) => {
         values.type === 'POST'
-        ? postReq('/admin/members', {name: values.name, image: values.image, content: values.content})
+        ? postReq('/admin/members', {name: values.name, role:values.role, image: values.image, content: values.content})
         : patchReq('/admin/members/' + props.members.id, {name: values.name, role: values.role, image: values.image, content: values.content})
         setSubmitting(false)
         navigate('/backoffice/members')
         window.location.reload()
     }
+    
+
     
     const formik = useFormik({enableReinitialize:true, initialValues: data, validationSchema: MembersValidationSchema, onSubmit: handleSubmit});
     

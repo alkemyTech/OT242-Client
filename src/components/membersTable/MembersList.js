@@ -27,7 +27,7 @@ const MembersList = (props) => {
   return (
     <section className="holder">
       <h2>Listado de Miembros</h2><br/>
-      <button className='button-primary' onClick={()=>navigate('/backoffice/activitiesform/')}>Agregar Miembro +</button>
+      <button className='button-primary' onClick={()=>navigate('/backoffice/membersform/')}>Agregar Miembro +</button>
       <table className="news-table">
         <thead>
           <th>Nombre</th>
