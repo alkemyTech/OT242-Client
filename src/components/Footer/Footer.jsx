@@ -18,8 +18,9 @@ const Footer = () => {
         {name: 'Nosotros', url: '/aboutUs'},
         {name: 'Novedades', url: '/news'},
         {name: 'Testimonios', url: '/testimonials'},
-        {name: 'Contacto', url: '/contact'},
-        {name: 'Contribuye', url: '/contribute'}]
+        {name: 'Actividades', url: '/activities'},
+        {name: 'Contacto', url: '/contact'}
+        ]
 
    const icons = <BsFillXCircleFill className='footerIcon'/>
 
