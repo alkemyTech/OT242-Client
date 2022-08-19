@@ -3,6 +3,9 @@ import React from 'react';
 import Logo from './LOGO-SOMOS-MAS.png';
 import { FaFacebook } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
+import { BsFillXCircleFill } from 'react-icons/bs'
+
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     let publicData = [
@@ -10,18 +13,38 @@ const Footer = () => {
         {social: [{user: 'Somos_Más', icon: <FaFacebook className='icon-footer'/>, url: 'https://www.facebook.com/'},{user: 'SomosMás', icon: <FaInstagram className='icon-footer'/>, url: 'https://www.instagram.com/'}]},
         {logo: './LOGO-SOMOS-MAS.png'}
     ]
-    let webLinks = [{name: 'Inicio', url: '/'},
+    let webLinks = [
+        {name: 'Inicio', url: '/'},
         {name: 'Nosotros', url: '/aboutUs'},
         {name: 'Novedades', url: '/news'},
         {name: 'Testimonios', url: '/testimonials'},
         {name: 'Contacto', url: '/contact'},
         {name: 'Contribuye', url: '/contribute'}]
-    
+
+   const icons = <BsFillXCircleFill className='footerIcon'/>
+
+
   return (
-    <div className="main-footer">
+   <div className='footerSection'>
+      <li className='footerList'>{webLinks.map(webLink => 
+         <ul><Link className='footerItem' to={webLink.url}>{webLink.name}</Link></ul>
+         )}
+      </li>
+      <div className='footerIcons'>
+         {icons}{icons}{icons}{icons}
+      </div>
+      <p className='footerRights'>2022 by Alkemy. All Rights Reserved.</p>
+      <img className='footerLogo' alt="logo" src={Logo} />
+   </div>
+  )
+}
+
+export default Footer;
+
+/*<div className="main-footer">
         <div className="container-footer">
             <div className="row-footer">
-                {/* Column 1 */}
+                // Column 1 
                 <div className="col-footer">
                     <ul className='list-unstyled-footer'>
                         <h3>{publicData[0].companyName}</h3>
@@ -29,14 +52,14 @@ const Footer = () => {
                     </ul>
                     
                 </div>
-                {/* Column 2 */}
+                // Column 2
                 <div className="col-footer">
                     <h3>Links</h3>
                     <ul className='list-unstyled-footer'>
                         {webLinks.map(link => <li><a className="a-footer" href={link.url}>{link.name}</a></li>)}
                     </ul>
                 </div>
-                {/* Column 3 */}
+                // Column 3 
                 <div className="col-footer">
                     <h3>Redes Sociales</h3>
                     <ul className='list-unstyled-footer'>
@@ -44,14 +67,10 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            {/* Bottom */}
+            // Bottom
             <div className="row-footer">
                 <p>2022 by Alkemy. All Rights Reserved.</p>
             </div>
         </div>
       
-    </div>
-  )
-}
-
-export default Footer
+   </div>*/
