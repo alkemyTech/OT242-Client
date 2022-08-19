@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.badge {
+.new_badge {
   display: block;
   position: relative;
   width: 20rem !important;
@@ -12,11 +12,11 @@
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.75);
 }
-.badge:hover {
+.new_badge:hover {
   box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.75);
   background-position: 0% 50%;
 }
-.badge:hover .text {
+.new_badge:hover .text {
   transform: rotate(-45deg) translate(0px) rotate(-315deg);
   background: #d3241e7b;
   width: 20rem;
@@ -27,7 +27,7 @@
   margin-left: -10rem;
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1), letter-spacing 1.5s ease-out;
 }
-.badge .text {
+.new_badge .text {
   display: block;
   position: absolute;
   width: 10rem;
