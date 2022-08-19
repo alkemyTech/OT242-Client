@@ -1,0 +1,33 @@
+/* GENERAL STYLE */
+
+.newsDetailSection {
+   margin-top: 150px;
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+   justify-content: center;
+   margin-bottom: 100px;
+}
+
+.newsDetailTextAndImg {
+   width: 100%;
+   display: flex;
+   margin-bottom: 40px;
+}
+
+/* TEXT CSS */
+.newsDetailText {
+   width: 100%;
+}
+
+.newsDetailTitle {
+   text-align: left;
+   font-size: 2.75em;
+   margin-bottom: 200px;
+}
+
+/* IMG */
+.NewsDetailImg {
+   width: 700px;
+   height: 300px;
+}
