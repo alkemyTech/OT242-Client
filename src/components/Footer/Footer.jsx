@@ -27,8 +27,8 @@ const Footer = () => {
          )}
       </li>
       <div className='footerIcons'>
-         <Link className='footerItem' to="https://www.facebook.com/" target="_blank"><FaFacebook className='footerIcon'/></Link>
-         <Link className='footerItem' to="https://www.instagram.com/" target="_blank"><FaInstagram className='footerIcon'/></Link>
+         <a className='footerItem' href="https://www.facebook.com/" target="_blank"><FaFacebook className='footerIcon'/></a>
+         <a className='footerItem' href="https://www.instagram.com/" target="_blank"><FaInstagram className='footerIcon'/></a>
       </div>
       <p className='footerRights'>2022 by Alkemy. All Rights Reserved.</p>
       <img className='footerLogo' alt="logo" src={Logo} />
