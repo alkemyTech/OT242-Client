@@ -1,10 +1,7 @@
 import './Footer.css';
 import React from 'react';
 import Logo from './LOGO-SOMOS-MAS.png';
-import { FaFacebook } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { BsFillXCircleFill } from 'react-icons/bs'
-
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -22,8 +19,6 @@ const Footer = () => {
         {name: 'Contacto', url: '/contact'}
         ]
 
-   const icons = <BsFillXCircleFill className='footerIcon'/>
-
 
   return (
    <div className='footerSection'>
@@ -32,7 +27,8 @@ const Footer = () => {
          )}
       </li>
       <div className='footerIcons'>
-         {icons}{icons}{icons}{icons}
+         <Link className='footerItem' to="https://www.facebook.com/" target="_blank"><FaFacebook className='footerIcon'/></Link>
+         <Link className='footerItem' to="https://www.instagram.com/" target="_blank"><FaInstagram className='footerIcon'/></Link>
       </div>
       <p className='footerRights'>2022 by Alkemy. All Rights Reserved.</p>
       <img className='footerLogo' alt="logo" src={Logo} />
