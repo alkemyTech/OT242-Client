@@ -29,7 +29,7 @@ const NewsDetail = () => {
     <div className="container">
       <h1 className="New-Details-title">{news.name}</h1>
       <h5 className="New-Details-type">{news.type}</h5>
-      <img src={news.image} className="New-Details-img"></img>
+      <img src={'/images/Novedades/novedadImagen.jpg'} className="New-Details-img"></img>
       <h3 className="New-Details-content">{news.content}</h3>
       <br /><br />
       <Link to="/news" className="New-Details-go-back">Volver</Link>
