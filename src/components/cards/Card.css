@@ -22,13 +22,16 @@
     width: 150px !important;
     border-radius: 5%;
     margin: 25px 15px;
+    object-fit: cover;
   }
 
 
-  .newcard_text {
-    font-size: 0.8rem;
-    overflow: hidden;
-  }
+.newcard_text {
+   margin-top: 25px;
+   font-size: 0.8rem;
+   overflow: hidden;
+   text-align: left;
+}
 
   .newcard_btn {
     background-color: #0038FF;
@@ -37,5 +40,6 @@
     border-radius: 3px;
     width: 150px;
     text-decoration: none;
+    justify-content: left;
   }
   

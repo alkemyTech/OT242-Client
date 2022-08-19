@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Swal from "sweetalert2";
 import { getReq } from '../../../helpers/ReqToApi';
 import AnimatedPage from '../../../components/AnimatedPage';
-
+import Card from '../../../components/cards/Card';
 
 const NewsPage = () => {
 
@@ -29,17 +29,12 @@ const NewsPage = () => {
     <AnimatedPage>
     <div className="container_news">
       <h1 className="NewsTitle">Novedades</h1>
-      <div className="container">
-        <div className="row">
-          {news.map(oneNews => (
-            <div className="db-item col-md-6 newsItem">
-              <Link to={`/news/:${oneNews.id}`}>
-                <img className="img_new" src={oneNews.image} width={300} />
-                <h3 className="title_new">{oneNews.name}</h3>
-              </Link>
-            </div>
+      <div className='newsContainer'>
+         {news.map(oneNews => (
+               <div className='newsCardContainer'>
+                  <Card imageSource={"./images/Novedades/" + oneNews.image } title={oneNews.name} text={oneNews.content} url={`/news/${oneNews.id}`}/>
+               </div>
           ))}
-        </div>
       </div>
 
       </div>
