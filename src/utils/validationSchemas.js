@@ -31,3 +31,14 @@ export const NewsValidationSchema = Yup.object().shape({
   content: Yup.string().required('*Requerido'),
   categoryId: Yup.number().required('*Requerido'),
 })
+
+export const MembersValidationSchema = Yup.object().shape({
+  name: Yup.string().required('Requerido'),
+  role: Yup.string().required('Requerido'),
+  content: Yup.string().required('Requerido'),
+})
+
+export const CategoriesValidationSchema = Yup.object().shape({
+  name: Yup.string().required('Requerido'),
+  description: Yup.string().required('Requerido')
+})

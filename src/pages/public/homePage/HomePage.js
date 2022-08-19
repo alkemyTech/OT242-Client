@@ -1,5 +1,4 @@
 import { React, useEffect } from "react";
-import Card from "../../../components/cards/Card";
 import "./HomePage.css";
 import "../testimonialsPage/TestimonialsPage.css"
 import Button from "../../../components/buttons/Button";
@@ -10,6 +9,8 @@ import { loadNews } from "../../../app/slices/news";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import AnimatedPage from '../../../components/AnimatedPage';
+import ButtonVM from "../../../components/buttons/Button_VM";
+import NewsCard from "../../../components/cards/newsCards/NewsCard";
 
 
 function HomePage() {
@@ -68,7 +69,7 @@ useEffect(() => {
           membersSlice.map((item) => (
             <MemberCard key={item.id} name={item.name} image={item.image} />
           ))
-        )} <Link to="/aboutUs"><Button text='Ver todos...' className='button-secondary' /></Link>
+        )} <Link to="/aboutUs"><ButtonVM text='VER MAS'/></Link>
         
         </div>
 
@@ -84,21 +85,20 @@ useEffect(() => {
               <img src={"./images/Testimonios/" + item.image} alt={item.name}></img>
               <h2>{item.name}</h2>
               <h4>{item.content}</h4>
-            </div>))}; <Link to="/testimonials"><Button text='Ver todos...' className='button-secondary' /></Link>
+            </div>))} <Link to="/testimonials"><ButtonVM text='VER MAS'/></Link>
         </div>
 
       <div className="titles_container">
       <h2>Últimas novedades</h2>
         
         </div>
-        <div className="home_card_container">
+        <div className="home_new_card_container">
           {newsSlice.map((item) => (
             <div className="news_cards" key={item.id}>
-              <Card imageSource={"./images/Novedades/" + item.image } title={item.name} text={item.content} url={`/news/${item.id}`}/>
+              <NewsCard image={ item.image } title={item.name} text={item.content} url={`/news/${item.id}`}/>
             </div>
-         ))} <Link to="/news"><Button text='Ver todas...' className='button-secondary' /></Link>
+         ))} <Link to="/news"><ButtonVM text='VER MAS'/></Link>
           </div>
-        
       </div>
 
     </AnimatedPage>    

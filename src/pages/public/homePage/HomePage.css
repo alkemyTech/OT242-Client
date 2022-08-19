@@ -63,9 +63,14 @@
     margin-left: 50px;
 }
 
-
-.news_cards {
+.home_new_card_container {
     display: flex;
-    margin-right: 50px;
-    
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    width: 90%;
+    margin-left: 50px;
 }
+
+
