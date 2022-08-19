@@ -51,7 +51,8 @@
     background-color: #d3241e;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    height: 60px;
+    border-radius: 13px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin-top: 100px;

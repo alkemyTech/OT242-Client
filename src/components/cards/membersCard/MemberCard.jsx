@@ -2,7 +2,7 @@ import React from "react";
 import "./MemberCard.css";
 
 const MemberCard = (props) => {
-  const { id, name, image } = props;
+  const { id, name, image, role } = props;
 
   return (
     <>
@@ -15,6 +15,7 @@ const MemberCard = (props) => {
       >
         <div className="memberCardInfo">
           <h5 className="memberCardName">{name}</h5>
+          <p className="memberCarRole">{role}</p>
         </div>
       </div>
     </>
