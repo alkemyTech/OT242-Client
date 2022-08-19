@@ -138,7 +138,6 @@ const ContactForm = () => {
                 {isSubmitting && <Loader className='loader' size='small' colors={[]} children={<p>Enviando...</p>}/>}
                 {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
                 {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
-
           </div>
 
          </Form>
