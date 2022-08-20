@@ -28,7 +28,7 @@ useEffect(() => {
   axios.get(URI).then((response)=>{
     console.log(response.data) 
     setMembers(response.data)
-    setClickedMember(response.data[0])
+    setClickedMember(response.data[1])
   })
   //dispatch(loadMembers());
 }, [ URI ]);
@@ -48,7 +48,7 @@ useEffect(() => {
                   <h2 className="clickedMemberName">{clickedMember.name}</h2>
                   <h5>{clickedMember.role}</h5>
                   <p>{clickedMember.content}</p>
-                  <Link to="/contact"><Button className="serParteBtn" text='Quiero ser parte!' type="button"/></Link>
+                  <Link to="/contact"><Button className="serParteBtn" text='¡Quiero ser parte!' type="button"/></Link>
               </div>
               <ClickedMemberCard className="clickedMemberCard" key={clickedMember.id} image={clickedMember.image} />
             </div>

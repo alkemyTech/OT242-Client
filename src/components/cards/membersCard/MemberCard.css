@@ -33,13 +33,16 @@
 .memberCardInfo {
     color: #fff;
     position: relative;
-    top: 220px;
+    top: 200px;
     text-align: center;
     
 }
-
+.memberCard.role{
+    font-size: 0.8rem;
+}
 .memberCardName {
     font-size: 1rem;
+    font-weight: 800;
 }
 
 @media all and (max-width: 800px) {
