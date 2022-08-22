@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PrivateRoute from './components/ProtectedRoutes/PrivateRoute';
 import LoggedRoute from './components/ProtectedRoutes/LoggedRoute';
+import NotLoggedRoute from './components/ProtectedRoutes/NotLoggedRoute';
 
 // public
 import Header from './components/header/Header';
@@ -68,7 +69,7 @@ function App() {
             <Route path="/backoffice/categoriesform/" element={<PrivateRoute><CategoriesFormPage /></PrivateRoute>} />
             <Route path="/backoffice/categoriesform/:id" element={<PrivateRoute><CategoriesFormPage /></PrivateRoute>} />
             <Route path="/backoffice/testimonials" element={<PrivateRoute><TestimonialsList /></PrivateRoute>} />
-            <Route path="/backoffice/testimonialsform/" element={<TestimonialsFormPage />} />
+            <Route path="/backoffice/testimonialsform/" element={<NotLoggedRoute><TestimonialsFormPage /></NotLoggedRoute>} />
             <Route path="/backoffice/testimonialsform/:id" element={<PrivateRoute><TestimonialsFormPage /></PrivateRoute>} />
             <Route path="/newsForm/:id" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
             <Route path="/newsForm/" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
