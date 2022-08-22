@@ -8,7 +8,7 @@ function NewsCard({ image, title, text, url }) {
 <>
   
 <div className='new_badge' style={{
-          backgroundImage: `url('images/Novedades/${image}')`,
+          backgroundImage: `url('https://s3.sa-east-1.amazonaws.com/ot242-server/${image}')`,
         }}>
    <a
           href={url ? url : "#!"}

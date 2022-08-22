@@ -87,7 +87,7 @@ const ContactForm = () => {
         }) => (
 
           <Form className="contactForm">
-                <h2 className="contactTitle">Contactate con nosotros!</h2>
+                <h2 className="contactTitle">¡Contactate con nosotros!</h2>
                <Field 
                className = "contactInput"
                name="name"
@@ -121,7 +121,7 @@ const ContactForm = () => {
                <Field 
                className = "contactText"
                name="message"
-               type="message"
+               as="textarea"
                placeholder="Escribe tu consulta"
                 /> <br /><br />
               {errors.message && touched.message ? (

@@ -5,6 +5,7 @@ import './NewsDetail.css';
 // files and components
 import { getReq } from "../../../../helpers/ReqToApi";
 import AnimatedPage from "../../../../components/AnimatedPage";
+import Button from '../../../../components/buttons/Button'
 
 //dependencies
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -42,13 +43,13 @@ const NewsDetail = () => {
                <h6 className="NewsDetailType">Categoria: {news.type}</h6>
                <h6 className="NewsDetailDate">Fecha de creacion: {news.createdAt}</h6>
             </div>
-            <img src={"/images/Novedades/" + news.image} className="NewsDetailImg"></img>
+            <img src={"https://s3.sa-east-1.amazonaws.com/ot242-server/" + news.image} className="NewsDetailImg"></img>
 
          </div>
          
          <p className="NewsDetailContent">{news.content}</p>
          <br /><br />
-         <Link to="/news" className="button-primary">Volver a listado de novedades</Link>
+         <Button onClick={()=> navigate("/news")} className="button-primary" text="Volver a listado de novedades"/>
     </div>
    </AnimatedPage>
   );

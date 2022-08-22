@@ -32,7 +32,7 @@ const NewsPage = () => {
       <div className='newsContainer'>
          {news.map(oneNews => (
                <div className='newsCardContainer'>
-                  <Card imageSource={"/images/Novedades/" + oneNews.image } title={oneNews.name} text={oneNews.content} url={`/news/${oneNews.id}`}/>
+                  <Card imageSource={"https://s3.sa-east-1.amazonaws.com/ot242-server/"+ oneNews.image } title={oneNews.name} text={oneNews.content} url={`/news/${oneNews.id}`}/>
                </div>
           ))}
       </div>

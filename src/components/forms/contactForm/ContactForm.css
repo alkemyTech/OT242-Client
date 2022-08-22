@@ -4,30 +4,40 @@
 /* TITULO */
 .contactTitle {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     font-weight: 575;
+    font-weight: bold;
 
 }
 
 /* INPUTS */
 .contactInput {
     width: 70%;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgb(84, 82, 82);
+    border: none;
+    border-radius: 10px;
 }
 
 .contactText {
     width: 70%;
-    padding-bottom: 200px;
+    height: 300px;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgb(84, 82, 82);
+    border: none;
+    border-radius: 10px;
 }
 
 /* BUTTON */
 .contactSubmit {
-    width: 150px;
-    background-color: blue;
+    width: 200px;
+    background-color: rgba(0, 56, 255);
     color: white;
     border-radius: 10px;
     border-width: 0;
     border-style: none;
-    height: 30px;
+    height: 50px;
+    font-weight: 600;
 }
 
 .contactInicioBtn {

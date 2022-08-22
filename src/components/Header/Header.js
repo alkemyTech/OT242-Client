@@ -66,7 +66,7 @@ function Header() {
                     {token 
                         ?   <>
                             <li className='li-header'>
-                                <p>{user.firstName}</p>
+                                <p>{`Hola, ${user.firstName}`}</p>
                             </li>
                             <li className='li-header'>
                                 <button className='navBtn navLoginBtn' onClick={() => dispatch(logout())}>Logout</button> 

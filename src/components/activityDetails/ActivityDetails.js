@@ -58,9 +58,6 @@ useEffect(() => {
         {content} <br></br>
       </p>
       <div className="btn">
-        <Button variant="danger" href="/actividades">
-          Volver a actividades
-        </Button>
       </div>
     </div>
   );
