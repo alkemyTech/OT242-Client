@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NewsForm = (props) => {
     const [ categories, setCategories] = useState([]);
+    const [ image, setImage ] = useState(null)
     const navigate = useNavigate()
     const getData = async () => {
         const {data} = await getReq('/categories');
@@ -33,9 +34,14 @@ const NewsForm = (props) => {
     }
 
     const handleSubmit = async (values, {setSubmitting}) => {
+        const data_im = new FormData();
+        data_im.append('image', image);
+        data_im.append('name', values.name);
+        data_im.append('content', values.content);
+        data_im.append('categoryId', values.categoryId);
         values.type === 'POST'
-        ? postReq('/admin/news', {name: values.name, image: values.image, content: values.content, categoryId: values.categoryId})
-        : putReq('/admin/news/' + props.newsDetail.id, {name: values.name, image: values.image, content: values.content, categoryId: values.categoryId})
+        ? postReq('/admin/news', data_im)
+        : putReq('/admin/news/' + props.newsDetail.id, data_im)
         setSubmitting(false)
         navigate('/backoffice/news')
         window.location.reload()
@@ -51,7 +57,7 @@ const NewsForm = (props) => {
                 <Form className="news-form">
                     <Field placeholder='Título' name="name" className="news-field"/> 
                     <ErrorMessage name='name'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
-                    <Field type="file" name="image" className="news-field"/> 
+                    <Field type="file" name="image" className="news-field" onChange={(e)=>setImage(e.target.files[0])} /> 
                     <ErrorMessage name='image'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
                     <Field as='textarea' name="content" className="news-field"/>
                     <ErrorMessage name='content'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
