@@ -22,15 +22,15 @@ import BackOfficeUsers from './pages/backOffice/BackOfficeUsers/BackOfficeUsers'
 import BackOffice from './pages/backOffice/BackOffice';
 import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
 import ActList from './components/actTable/actList';
-import ActivitiesForm from './components/forms/ActivitiesForm/ActivitiesForm';
 import NewsFormPage from './pages/backOffice/newsPage/NewsFormPage';
 import BackNewsPage from './pages/backOffice/newsPage/backofficeNews';
-import BackTestimonialPage from './pages/backOffice/testimonial/BackOfficeTestimonials';
 import ActivitiesFormPage from './pages/backOffice/activitiesPage/ActivitiesFormPage';
 import MembersList from './components/membersTable/MembersList';
 import MembersFormPage from './pages/backOffice/membersPage/MembersFormPage';
 import CategoriesList from './components/categoriesTable/CategoryList';
 import CategoriesFormPage from './pages/backOffice/categoriesPage/CategoriesFormPage';
+import TestimonialsList from './components/testimonialsTable/TestimonyList';
+import TestimonialsFormPage from './pages/backOffice/testimonialsPage/TestimonialsFormPage';
 
 function App() {
   return (
@@ -67,7 +67,9 @@ function App() {
             <Route path="/backoffice/categories" element={<PrivateRoute><CategoriesList /></PrivateRoute>} />
             <Route path="/backoffice/categoriesform/" element={<PrivateRoute><CategoriesFormPage /></PrivateRoute>} />
             <Route path="/backoffice/categoriesform/:id" element={<PrivateRoute><CategoriesFormPage /></PrivateRoute>} />
-            <Route path="/backoffice/testimonials" element={<PrivateRoute><BackTestimonialPage /></PrivateRoute>} />
+            <Route path="/backoffice/testimonials" element={<PrivateRoute><TestimonialsList /></PrivateRoute>} />
+            <Route path="/backoffice/testimonialsform/" element={<TestimonialsFormPage />} />
+            <Route path="/backoffice/testimonialsform/:id" element={<PrivateRoute><TestimonialsFormPage /></PrivateRoute>} />
             <Route path="/newsForm/:id" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
             <Route path="/newsForm/" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
 
