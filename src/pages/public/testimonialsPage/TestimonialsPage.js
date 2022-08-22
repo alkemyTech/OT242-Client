@@ -26,7 +26,7 @@ const TestimonialsPage = () => {
         <ul className="testimonials-container">
             {testimonials.map((item) => (
             <li className="testimonials-item"key={item.id}>
-                <img src={"./images/Testimonios/" + item.image}></img>
+                <img src={"https://s3.sa-east-1.amazonaws.com/ot242-server/" + item.image}></img>
                 <h2>{item.name}</h2>
                 <h4>{item.content}</h4>
             </li>

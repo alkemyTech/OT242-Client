@@ -45,6 +45,5 @@ export const CategoriesValidationSchema = Yup.object().shape({
 
 export const TestimonialsValidationSchema = Yup.object().shape({
   name: Yup.string().required('*Requerido'),
-  image: Yup.string().required('*Requerido'),
   content: Yup.string().required('*Requerido')
 })
