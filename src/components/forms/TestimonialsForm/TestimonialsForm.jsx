@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const TestimonialsForm = (props) => {
     
     const navigate = useNavigate()
+    const [ image, setImage ] = useState(null)
 
     var data = {
         name: '',
@@ -23,9 +24,15 @@ const TestimonialsForm = (props) => {
         }
     }
     const handleSubmit = async (values, {setSubmitting}) => {
+        console.log("enviando")
+        const data_im = new FormData();
+        data_im.append('image', image);
+        data_im.append('name', values.name);
+        data_im.append('content', values.content);
+        
         values.type === 'POST'
-        ? postReq('/testimonials', {name: values.name, image: values.image, content: values.content})
-        : putReq('/testimonials/' + props.testimonials.id, {name: values.name, image: values.image, content: values.content})
+        ? postReq('/testimonials', data_im)
+        : putReq('/testimonials/' + props.testimonials.id, data_im)
         setSubmitting(false)
         navigate('/backoffice/testimonials')
         window.location.reload()
@@ -41,7 +48,7 @@ const TestimonialsForm = (props) => {
                 <Form className="news-form">
                     <Field placeholder='Nombre' name="name" className="news-field"/> 
                     <ErrorMessage name='name'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
-                    <Field type="file" name="image" className="news-field"/> 
+                    <Field type="file" name="image" className="news-field" onChange={(e)=>setImage(e.target.files[0])} /> 
                     <ErrorMessage name='image'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
                     <Field as='textarea' name="content" className="news-field"/>
                     <ErrorMessage name='content'>{msg => <span className="error">{msg}</span>}</ErrorMessage>

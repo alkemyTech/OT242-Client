@@ -62,11 +62,17 @@ function Header() {
                         <li className='li-header' key={navItem[0]}><NavLink activeClassName='active' className='navItem' to={navItem[2]} onClick={HandleMobileMenu}>{navItem[1]}</NavLink></li>
                     ))}
                     {user  && user.roleId === 1 
-                    ? <button className='navBtn navRegisBtn' onClick={() => navigate('/backoffice')}>BackOffice</button> : <></>}
+                    ? <button className='navBtn navRegisBtn' onClick={() => navigate('/backoffice')}>BackOffice</button>: <></>}
                     {token 
-                        ?   <li className='li-header'>
-                                <button className='navBtn navLoginBtn' onClick={() => dispatch(logout())}>Logout</button>
+                        ?   <>
+                            <li className='li-header'>
+                                <p>{user.firstName}</p>
                             </li>
+                            <li className='li-header'>
+                                <button className='navBtn navLoginBtn' onClick={() => dispatch(logout())}>Logout</button> 
+                            </li>
+
+                            </>
                         :   <>  
                                 <li className='li-header'><NavLink activeClassName='active' className='navItem' to="/login"  onClick={HandleMobileMenu}><button className='navBtn navLoginBtn'>Login</button></NavLink></li>
                                 <li className='li-header'><NavLink activeClassName='active' className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></NavLink></li>
