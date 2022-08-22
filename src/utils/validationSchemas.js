@@ -27,7 +27,6 @@ export const ActivitiesSchema = Yup.object().shape({
 
 export const NewsValidationSchema = Yup.object().shape({
   name: Yup.string().required('*Requerido'),
-  image: Yup.string().required('*Requerido'),
   content: Yup.string().required('*Requerido'),
   categoryId: Yup.number().required('*Requerido'),
 })

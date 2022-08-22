@@ -32,7 +32,7 @@ const TestimonialsPage = () => {
             </li>
             ))}
         </ul>
-            <Button variant="danger" href="/" className="btn-add">
+            <Button variant="danger" href="/backoffice/testimonialsform/" className="btn-add">
             <h2>¡Agregar mi testimonio!</h2>
             </Button><br></br>
             <Button variant="outline-dark" href="/" className="btn-back">

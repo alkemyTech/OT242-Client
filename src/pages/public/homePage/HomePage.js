@@ -82,7 +82,7 @@ useEffect(() => {
         <div className="home_card_container">
           {testimonialSlice.map((item) => (
             <div className="testimonials-item"key={item.id}>
-              <img src={"./images/Testimonios/" + item.image} alt={item.name}></img>
+              <img src={"https://s3.sa-east-1.amazonaws.com/ot242-server/" + item.image} alt={item.name}></img>
               <h2>{item.name}</h2>
               <h4>{item.content}</h4>
             </div>))} <Link to="/testimonials"><ButtonVM text='VER MAS'/></Link>
