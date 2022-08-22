@@ -59,8 +59,8 @@ useEffect(() => {
                       <MemberCard onClick={scrolling} key={member.id} name={member.name} image={member.image} />
                       </div>
                   </>
+                  
             )))}
-          
           </>
           )}
         </div>

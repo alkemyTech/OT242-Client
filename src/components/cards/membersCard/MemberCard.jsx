@@ -10,7 +10,7 @@ const MemberCard = (props) => {
         key={id}
         className="memberCard"
         style={{
-          backgroundImage: `url('images/Miembros_del_equipo/${image}')`,
+          backgroundImage: `url('https://s3.sa-east-1.amazonaws.com/ot242-server/${image}')`,
         }}
       >
         <div className="memberCardInfo">

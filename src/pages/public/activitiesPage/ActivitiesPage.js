@@ -73,7 +73,7 @@ const ActivitiesPage = (props) => {
             {activityList.map(item => {
                 return (
                     <div key={item.id}>
-                    <ActivityDetails id={item.id} name={item.name} content={item.content} image={"./images/Actividades/" + item.image}/>
+                    <ActivityDetails id={item.id} name={item.name} content={item.content} image={"https://s3.sa-east-1.amazonaws.com/ot242-server/"+ item.image}/>
                     </div>
                 )
             })}
