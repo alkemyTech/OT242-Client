@@ -18,3 +18,8 @@
     font-weight: 700;
     color: #DB5752;
 }
+.dont_have_account span:hover{
+    font-weight: 1000;
+    color: #570705;
+    cursor: pointer;
+}

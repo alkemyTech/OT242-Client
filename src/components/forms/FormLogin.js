@@ -7,12 +7,12 @@ import { postReq } from '../../helpers/ReqToApi'
 import {useDispatch} from 'react-redux'
 import { login} from '../../app/slices/userAuth'
 import './form.css'
-
+import { useNavigate } from 'react-router-dom'
 
 const FormLogin = () => {
 
     const [alert, setAlert] = useState({})
-    
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const handleLogin = async (values) => {
@@ -121,7 +121,7 @@ const FormLogin = () => {
                 
                 {/* add the register path when ready */}
                 <div className="dont_have_account">
-                    <p >¿No tienes una cuenta? <span>Registrate</span></p>
+                    <p >¿No tienes una cuenta? <span onClick={()=>navigate('/registrate')}>Registrate</span></p>
                 </div>
 
             </>
