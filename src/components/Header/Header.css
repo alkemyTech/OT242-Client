@@ -45,6 +45,8 @@
   }
   .li-header {
       margin-left: 25px;
+      margin: 0;
+      height: 20px;
   }
   li .active {
     color: #fe1d1deb;
@@ -53,7 +55,7 @@
   .navItem {
       text-decoration: none;
       color: black;
-      margin-right: 10px;
+      margin-right: 20px;
   }
   .navItem:hover {
       color: #DB5752;
@@ -92,6 +94,22 @@
       /* Menu Hamburguesa */
   .hamburger {
       display: none;
+  }
+
+  .header p {
+    margin: 0;
+    margin-right: 20px;
+  }
+
+  .user_data {
+    display: flex;
+  }
+
+  .user_avatar {
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50%;
+    background-size: contain;
   }
   
   

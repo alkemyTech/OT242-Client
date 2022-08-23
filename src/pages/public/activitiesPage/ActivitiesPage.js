@@ -4,6 +4,7 @@ import AnimatedPage from '../../../components/AnimatedPage';
 import { loadActivities } from "../../../app/slices/activities";
 import { useSelector, useDispatch } from "react-redux";
 import Slider from '../../../components/carousel/Slider';
+import './ActivitiesPage.css'
 
 
 
@@ -69,11 +70,11 @@ const ActivitiesPage = (props) => {
             <Slider slidesData={sliderData}/>
            
         </div>
-        <div>
+        <div className='preview_container'>
             {activityList.map(item => {
                 return (
                     <div key={item.id}>
-                    <ActivityDetails id={item.id} name={item.name} content={item.content} image={"https://s3.sa-east-1.amazonaws.com/ot242-server/"+ item.image}/>
+                    <ActivityDetails id={item.id} name={item.name} content={item.content} image={"https://s3.sa-east-1.amazonaws.com/ot242-server/"+ item.image} url={`/activities/${item.id}`}/>
                     </div>
                 )
             })}
