@@ -127,19 +127,12 @@ const ContactForm = () => {
               {errors.message && touched.message ? (
              <AlertForm error={errors.message}/>
              ) : null}
-
+         <div className="state_msg">
           <button type="submit" disabled={isSubmitting} className="contactSubmit">
-             Enviar consulta
-          </button>
-          <br /><br />
-
-
-          <div className="state_msg">
-                {isSubmitting && <Loader className='loader' size='small' colors={[]} children={<p>Enviando...</p>}/>}
-                {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
-                {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
+             Enviar consulta {isSubmitting && <Loader className='loader' size='small' colors={[]} />}
+          </button> {alert && <AlertForm error={"El mensaje no fue enviado"}/>}
+                    {confirmation && <Success prop={"El mensaje fue enviado exitosamente"}/>}
           </div>
-
          </Form>
        )}
      </Formik>

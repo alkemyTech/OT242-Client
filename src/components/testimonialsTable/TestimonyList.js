@@ -4,6 +4,7 @@ import '../../pages/backOffice/newsPage/backofficeNews.css'
 import { getReq } from '../../helpers/ReqToApi';
 import { useNavigate } from 'react-router-dom';
 import TestimonyItem from './TestimonyItem';
+import Loader from '../Loader/Loader';
 
 
 
@@ -35,9 +36,7 @@ const TestimonyList = (props) => {
           <th>Fecha de creacion</th>
           <th>Acciones</th>
         </thead>
-        {loading ? (
-          <p>Cargando...</p>
-        ) : (
+        {loading ? <Loader className='loader' size='small' colors={[]} /> : (
           news.map((item) => (
             <TestimonyItem
               key={item.id}

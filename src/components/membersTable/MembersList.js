@@ -4,6 +4,7 @@ import '../../pages/backOffice/newsPage/backofficeNews.css'
 import { getReq } from '../../helpers/ReqToApi';
 import { useNavigate } from 'react-router-dom';
 import MemberItem from './MemberItem';
+import Loader from '../Loader/Loader';
 
 
 
@@ -36,9 +37,7 @@ const MembersList = (props) => {
           <th>Fecha de creacion</th>
           <th>Acciones</th>
         </thead>
-        {loading ? (
-          <p>Cargando...</p>
-        ) : (
+        {loading ? <Loader className='loader' size='small' colors={[]} /> : (
           members.map((item) => (
             <MemberItem
               key={item.id}
