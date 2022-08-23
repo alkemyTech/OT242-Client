@@ -7,10 +7,12 @@
   height: 20rem !important;
   cursor: pointer;
   background: no-repeat 100% 50%;
-  background-size: 120%;
+  background-size: cover;
   border-radius: 50% !important;
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.75);
+  text-align: center;
+  word-wrap: break-word;
 }
 .new_badge:hover {
   box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.75);
@@ -20,12 +22,11 @@
   transform: rotate(-45deg) translate(0px) rotate(-315deg);
   background: #d3241e7b;
   width: 20rem;
-  letter-spacing: 1rem;
   line-height: 20rem;
   height: 20rem;
   margin-top: -10rem;
   margin-left: -10rem;
-  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1), letter-spacing 1.5s ease-out;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 .new_badge .text {
   display: block;

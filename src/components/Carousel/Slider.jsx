@@ -9,7 +9,7 @@ export default function Slider(props) {
 
   return (
     <div>
-      <Carousel variant="dark">
+      <Carousel variant="dark" >
         {slidesData.map((e) => (
           <Carousel.Item>
             <div className="slide_container">
@@ -21,8 +21,7 @@ export default function Slider(props) {
               >
               </div>
               <div className="data_container">
-                <h1 className="text">{e.title}</h1>
-                <p className="text">{e.description}</p>
+                <h2 className="text">{e.title}</h2>
               </div>
             </div>
           </Carousel.Item>

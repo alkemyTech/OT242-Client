@@ -15,15 +15,16 @@ const ActivitiesForm = (props) => {
         content: '',
         type: 'POST',
     }
+    console.log(props.activities)
 
-    if (props.activities){
+    if (props.activities.length > 0){
         data = {
             name: props.activities.name,
             content: props.activities.content,
             type: 'PATCH',
         }
     }
-    console.log(props.activities)
+
     const handleSubmit = async (values, {setSubmitting}) => {
         const data_im = new FormData();
         data_im.append('image', image);

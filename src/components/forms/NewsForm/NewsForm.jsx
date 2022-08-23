@@ -12,6 +12,7 @@ const NewsForm = (props) => {
     const getData = async () => {
         const {data} = await getReq('/categories');
         setCategories(data);
+        console.log(data)
     };
 
     useEffect(() => {
@@ -63,7 +64,7 @@ const NewsForm = (props) => {
                     <ErrorMessage name='content'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
                     <Field as="select" placeholder='Categoría' name="categoryId" className="news-field">
                         {categories.map(category => (
-                            <option value={category.id}>{category.id} {category.name}</option>
+                            <option value={category.id} placeholder="Escoge una categoria">{category.id} {category.name}</option>
                         ))}
                     </Field> 
                     <ErrorMessage name='categoryId'>{msg => <span className="error">{msg}</span>}</ErrorMessage>
