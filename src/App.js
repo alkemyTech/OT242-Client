@@ -19,7 +19,6 @@ import Register from './pages/public/formsPage/RegistrationPage';
 import Footer from './components/footer/Footer';
 
 // BackOffice
-import BackOfficeUsers from './pages/backOffice/BackOfficeUsers/BackOfficeUsers';
 import BackOffice from './pages/backOffice/BackOffice';
 import ContactsTable from './components/BackOffice/ContactsTable/ContactsTable';
 import ActList from './components/actTable/actList';
@@ -32,6 +31,9 @@ import CategoriesList from './components/categoriesTable/CategoryList';
 import CategoriesFormPage from './pages/backOffice/categoriesPage/CategoriesFormPage';
 import TestimonialsList from './components/testimonialsTable/TestimonyList';
 import TestimonialsFormPage from './pages/backOffice/testimonialsPage/TestimonialsFormPage';
+import UsersList from './components/usersTable/UserList';
+import UsersFormPage from './pages/backOffice/usersPage/UsersFormPage';
+import UserInfo from './components/UserInfo/UserInfo';
 
 function App() {
   return (
@@ -57,7 +59,6 @@ function App() {
             <Route path="/backoffice/news" element={<PrivateRoute><BackNewsPage /></PrivateRoute>} />
             <Route path="*" element={<Navigate replace to="/" />} />
             <Route path="/backoffice" element={<PrivateRoute><BackOffice /></PrivateRoute>} />
-            <Route path="/backoffice/users" element={<PrivateRoute><BackOfficeUsers /></PrivateRoute>} />
             <Route path="/backoffice/contacts" element={<PrivateRoute><ContactsTable /></PrivateRoute>} />
             <Route path="/backoffice/activities" element={<PrivateRoute><ActList /></PrivateRoute>} />
             <Route path="/backoffice/activitiesform/" element={<PrivateRoute><ActivitiesFormPage /></PrivateRoute>} />
@@ -71,12 +72,15 @@ function App() {
             <Route path="/backoffice/testimonials" element={<PrivateRoute><TestimonialsList /></PrivateRoute>} />
             <Route path="/backoffice/testimonialsform/" element={<NotLoggedRoute><TestimonialsFormPage /></NotLoggedRoute>} />
             <Route path="/backoffice/testimonialsform/:id" element={<PrivateRoute><TestimonialsFormPage /></PrivateRoute>} />
+            <Route path="/backoffice/users" element={<PrivateRoute><UsersList /></PrivateRoute>} />
+            <Route path="/backoffice/usersform/:id" element={<PrivateRoute><UsersFormPage /></PrivateRoute>} />
             <Route path="/newsForm/:id" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
             <Route path="/newsForm/" element={<PrivateRoute><NewsFormPage /></PrivateRoute>} />
 
             {/* Users */}
             <Route path="/login" element={<LoggedRoute><Login /></LoggedRoute>} />
             <Route path="/registrate" element={<LoggedRoute><Register /></LoggedRoute>} />
+            <Route path="/profile/" element={<NotLoggedRoute><UserInfo /></NotLoggedRoute>} />
 
           </Routes>
         <Footer />
