@@ -8,45 +8,22 @@ import './ActivitiesPage.css'
 
 
 
-export const sliderData = [{
-    imageUrl: 1,
-    title: "Misión",
-    description: "Trabajar articuladamente con los distintos aspectos de la vida de las familias."
-  },
-  {
-    imageUrl: 3,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
-  },
+export const sliderData = [
   {
     imageUrl: 4,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
+    title: "Programa de Voluntarios 2022"
   },
   {
     imageUrl: 5,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
-  },
-  {
-    imageUrl: 6,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
+    title: "Talleres de Artes Plásticas"
   },
   {
     imageUrl: 7,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
-  },
-  {
-    imageUrl: 10,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
+    title: "Clases de Apoyo para Primaria y Secundaria",
   },
   {
     imageUrl: 11,
-    title: "Nosotros",
-    description: "Desde 1997 vecinos del barrio La Cava."
+    title: "El deporte como Salud Individual y Social",
   }
 ];
 
@@ -74,7 +51,7 @@ const ActivitiesPage = (props) => {
             {activityList.map(item => {
                 return (
                     <div key={item.id}>
-                    <ActivityDetails id={item.id} name={item.name} content={item.content} image={"https://s3.sa-east-1.amazonaws.com/ot242-server/"+ item.image} url={`/activities/${item.id}`}/>
+                    <ActivityDetails id={item.id} name={item.name} content={item.content} image={item.image} url={`/activities/${item.id}`}/>
                     </div>
                 )
             })}

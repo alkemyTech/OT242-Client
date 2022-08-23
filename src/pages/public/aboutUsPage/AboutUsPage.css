@@ -112,6 +112,11 @@ h1 {
     text-decoration: none;
 }
 
+.MV_container {
+    display: flex;
+    margin-top: 50px;
+}
+
 /* RESPONSIVE */
 @media all and (max-width: 1000px) {
   .memberCardContainer {

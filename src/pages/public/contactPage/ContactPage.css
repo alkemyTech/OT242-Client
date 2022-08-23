@@ -105,3 +105,9 @@
     width: 100%;
     padding: 0;
 }
+
+.location_map {
+    margin: 20px;
+    width: 60%;
+    cursor: pointer;
+}

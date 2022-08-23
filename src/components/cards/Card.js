@@ -15,12 +15,12 @@ function Card({ imageSource, title, text, url }) {
       </div>
       <div className="newcard_text">
         <h4 className="newcard_title">{title}</h4>
-        <p className="newcard_secondary">
+ {/*        <p className="newcard_secondary">
           {text
             ? text
             : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga accusantium excepturi quia,"+
              "voluptates obcaecati nam in voluptas perferendis velit harum dignissimos quasi ex? Tempore repellat quo doloribus magnam."}
-        </p>
+        </p> */}
         <Link
           to={url}
           className="newcard_btn"

@@ -54,8 +54,12 @@ useEffect(() => {
     } */
   
   return (
-    <Link to={url} className="link_ad"><div className="activity-container">
-      <img src={image} alt={name}></img>
+    
+    <Link to={url} className="link_ad">
+      <div className="activity-container">
+      <div className="actcard_img" style={{
+          backgroundImage: `url('https://s3.sa-east-1.amazonaws.com/ot242-server/${image}')`,
+        }} ></div>
       <div>
         <h4>{name}</h4>
       </div> 

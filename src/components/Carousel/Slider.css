@@ -1,6 +1,6 @@
 .img_container {
   text-align: center;
-  width: 50%;
+  width: 60%;
   height: 70vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,6 +8,7 @@
 
 .slide_container {
   display: flex;
+
 }
 
 .data_container {
@@ -17,4 +18,5 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  width: 30%;
 }
