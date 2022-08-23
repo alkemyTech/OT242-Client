@@ -4,6 +4,7 @@ import React from 'react';
 import './backofficeNews.css'
 import { getReq } from '../../../helpers/ReqToApi';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../../../components/Loader/Loader';
 
 
 
@@ -35,9 +36,7 @@ const BackNewsPage = (props) => {
           <th>Fecha de creacion</th>
           <th>Acciones</th>
         </thead>
-        {loading ? (
-          <p>Cargando...</p>
-        ) : (
+        {loading ? <Loader className='loader' size='small' colors={[]} /> : (
           news.map((item) => (
             <NewsItem
               key={item.id}

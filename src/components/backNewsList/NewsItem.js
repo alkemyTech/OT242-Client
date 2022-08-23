@@ -45,7 +45,7 @@ const NewsItem = (props) => {
           {id}
         </th>
         <td>{name}</td>
-        <td>{image}</td>
+        <td><img src={'https://s3.sa-east-1.amazonaws.com/ot242-server/' + image} style={{ width: "70px", height: "50px" }}/> </td>
         <td>{createdAt}</td>
         <td class="acciones">
           
@@ -56,6 +56,7 @@ const NewsItem = (props) => {
           <FiEdit className="icon" onClick={() => {navigate(`/newsform/${id}`)}}/>
         </td>
       </tbody>
+
     </>
   );
 };

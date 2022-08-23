@@ -12,7 +12,7 @@
 
 /* INPUTS */
 .contactInput {
-    width: 70%;
+    width: 90%;
     padding: 1rem;
     box-shadow: 2px 2px 5px rgb(84, 82, 82);
     border: none;
@@ -20,7 +20,7 @@
 }
 
 .contactText {
-    width: 70%;
+    width: 90%;
     height: 300px;
     padding: 1rem;
     box-shadow: 2px 2px 5px rgb(84, 82, 82);
@@ -30,7 +30,7 @@
 
 /* BUTTON */
 .contactSubmit {
-    width: 200px;
+    width: 250px;
     background-color: rgba(0, 56, 255);
     color: white;
     border-radius: 10px;
@@ -38,6 +38,9 @@
     border-style: none;
     height: 50px;
     font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .contactInicioBtn {
@@ -50,5 +53,7 @@
     height: 30px;
 }
 .state_msg {
-    margin: 60px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
 }

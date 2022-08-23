@@ -78,10 +78,30 @@
 */
 /* TITULO */
 .contactPage {
-    width: 80%;
+    width: 90%;
     margin-top: 150px;
     margin-bottom: 50px;
     margin-left: 10%;
     margin-right: 10%;
     justify-content: left;
+    display: flex;
+}
+
+.contact_details {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 100px;
+}
+
+.form_container {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.contactForm {
+    margin: 0;
+    width: 100%;
+    padding: 0;
 }
