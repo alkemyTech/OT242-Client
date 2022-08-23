@@ -21,7 +21,7 @@ const { newsList } = useSelector(state => state.news)
 
 const membersSlice = membersList.slice(0, 4);
 const testimonialSlice = testimonialList.slice(0, 5);
-const newsSlice = newsList.slice(0, 2);
+const newsSlice = newsList.slice(0, 3);
 
 const dispatch = useDispatch();
 

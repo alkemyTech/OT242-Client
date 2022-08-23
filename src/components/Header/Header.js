@@ -10,6 +10,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { MdOutlineSettingsSuggest, MdOutlineLogout } from 'react-icons/md'
 
 // Logout
 import { useDispatch } from 'react-redux'
@@ -61,15 +62,25 @@ function Header() {
                     {navItems.map(navItem => (
                         <li className='li-header' key={navItem[0]}><NavLink activeClassName='active' className='navItem' to={navItem[2]} onClick={HandleMobileMenu}>{navItem[1]}</NavLink></li>
                     ))}
-                    {user  && user.roleId === 1 
-                    ? <button className='navBtn navRegisBtn' onClick={() => navigate('/backoffice')}>BackOffice</button>: <></>}
+
                     {token 
                         ?   <>
                             <li className='li-header'>
-                                <p>{`Hola, ${user.firstName}`}</p>
+                                <div className='user_data'>
+                                <p>{`Hola, ${user.firstName}!`}</p>
+                                {user.image ? <div className="user_avatar" style={{
+                                    backgroundImage: `url('https://s3.sa-east-1.amazonaws.com/ot242-server/${user.image}')`,
+                                     }}>
+                                    </div> : <div className="user_avatar" style={{
+                                    backgroundImage: `url('/images/user.jpeg')`,
+                                     }}>
+                                    </div>}
+                                
+                                </div>
+                               
                             </li>
                             <li className='li-header'>
-                                <button className='navBtn navLoginBtn' onClick={() => dispatch(logout())}>Logout</button> 
+                                <MdOutlineLogout className="icon" onClick={() => dispatch(logout())}/>
                             </li>
 
                             </>
@@ -78,6 +89,8 @@ function Header() {
                                 <li className='li-header'><NavLink activeClassName='active' className='navItem' to="/registrate"  onClick={HandleMobileMenu}><button className='navBtn navRegisBtn'>Registrate</button></NavLink></li>
                             </>
                     }
+                                        {user  && user.roleId === 1 
+                    ? <MdOutlineSettingsSuggest className="icon" onClick={() => {navigate('/backoffice/')}} /> : <></>}
                 </ul>
                 
             </header>

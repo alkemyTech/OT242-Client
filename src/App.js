@@ -10,7 +10,7 @@ import NewsPage from "./pages/public/newsPage/NewsPage";
 import NewsDetail from './pages/public/newsPage/NewsDetails/NewsDetail';
 import AboutUsPage from "./pages/public/aboutUsPage/AboutUsPage";
 import ActivitiesPage from "./pages/public/activitiesPage/ActivitiesPage";
-import ActivityDetails from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetails';
+import ActivityDetails from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetailsPage';
 import TestimonialsPage from './pages/public/testimonialsPage/TestimonialsPage';
 import ContactPage from "./pages/public/contactPage/ContactPage";
 import Login from './pages/public/formsPage/LoginPage';
@@ -31,6 +31,7 @@ import CategoriesList from './components/categoriesTable/CategoryList';
 import CategoriesFormPage from './pages/backOffice/categoriesPage/CategoriesFormPage';
 import TestimonialsList from './components/testimonialsTable/TestimonyList';
 import TestimonialsFormPage from './pages/backOffice/testimonialsPage/TestimonialsFormPage';
+import ActivitiesDetailsPage from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetailsPage';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
             <Route path="/aboutUs" element={<AboutUsPage />} />
 
             <Route path="/activities" element={<ActivitiesPage />} />
-            <Route path="/actividades/:id" element={<ActivityDetails />} />
+            <Route path="/activities/:id" element={<ActivitiesDetailsPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<Navigate replace to="/" />} />

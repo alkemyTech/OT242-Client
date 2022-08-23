@@ -5,6 +5,8 @@ import { getReq } from "../../helpers/ReqToApi";
 import "./ActivityDetails.css";
 import { loadActivities } from "../../app/slices/activities";
 import { useSelector, useDispatch } from "react-redux";
+import ButtonVM from "../buttons/Button_VM";
+import { Link } from "react-router-dom";
 
 // function ActivityDetails(activity) {
 //     console.log(activity);
@@ -19,7 +21,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 function ActivityDetails(props) {
 
-  const { id, name, image, content } = props
+  const { id, name, image, content, url } = props
+
+  const content_slice = content.slice(0,100)
 /*   const { id } = useParams();
   const [activity, setActivity] = useState({});
 
@@ -50,16 +54,13 @@ useEffect(() => {
     } */
   
   return (
-    <div className="activity-container">
-      <img src={image}></img>
-
-      <p>
-        <h1>{name}</h1>
-        {content} <br></br>
-      </p>
-      <div className="btn">
-      </div>
-    </div>
+    <Link to={url} className="link_ad"><div className="activity-container">
+      <img src={image} alt={name}></img>
+      <div>
+        <h4>{name}</h4>
+      </div> 
+      
+    </div></Link> 
   );
 }
 export default ActivityDetails;
