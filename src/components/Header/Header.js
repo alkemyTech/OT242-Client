@@ -66,6 +66,7 @@ function Header() {
                     {token 
                         ?   <>
                             <li className='li-header'>
+                                <Link className='linke' to={`/userset/${user.id}`}>
                                 <div className='user_data'>
                                 <p>{`Hola, ${user.firstName}!`}</p>
                                 {user.image ? <div className="user_avatar" style={{
@@ -76,7 +77,7 @@ function Header() {
                                      }}>
                                     </div>}
                                 
-                                </div>
+                                </div></Link>
                                
                             </li>
                             <li className='li-header'>

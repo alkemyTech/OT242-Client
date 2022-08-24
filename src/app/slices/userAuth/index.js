@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useNavigate } from 'react-router-dom';
+
 
 const initialState = {
   user: null
@@ -8,6 +10,7 @@ const initialState = {
 localStorage.getItem('dataUser002')
 ? (initialState.user = JSON.parse(localStorage.getItem('dataUser002')) )
 : (initialState.user = null)
+
 
 
 export const userAuthSlice = createSlice({

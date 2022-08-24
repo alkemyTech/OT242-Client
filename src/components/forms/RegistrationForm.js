@@ -46,12 +46,12 @@ function RegistrationForm(props) {
       await postReq('/auth/login', values)
       console.log(data)
       
-      const {firstName, lastName, email, image, roleId } = data.subject
+      const {id, firstName, lastName, email, image, roleId } = data.subject
       
       localStorage.setItem('token', data.token)
 
 
-      localStorage.setItem("dataUser002", JSON.stringify({firstName, lastName, email, image, roleId}))
+      localStorage.setItem("dataUser002", JSON.stringify({id, firstName, lastName, email, image, roleId}))
 
       navigate('/');
       window.location.reload();

@@ -35,6 +35,7 @@ import UsersList from './components/usersTable/UserList';
 import UsersFormPage from './pages/backOffice/usersPage/UsersFormPage';
 import UserInfo from './components/UserInfo/UserInfo';
 import ActivitiesDetailsPage from './pages/public/activitiesPage/ActivitiesDetail/ActivityDetailsPage';
+import UserSetPage from './pages/public/aboutUsPage/userPage/UserSetPage';
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
             <Route path="/login" element={<LoggedRoute><Login /></LoggedRoute>} />
             <Route path="/registrate" element={<LoggedRoute><Register /></LoggedRoute>} />
             <Route path="/profile/" element={<NotLoggedRoute><UserInfo /></NotLoggedRoute>} />
+            <Route path="/userset/:id" element={<NotLoggedRoute><UserSetPage /></NotLoggedRoute>} />
 
           </Routes>
         <Footer />

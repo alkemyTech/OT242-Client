@@ -19,14 +19,15 @@ const FormLogin = () => {
 
         try {
             const {data} = await postReq('/auth/login', values)
-            const {firstName, lastName, email, image, roleId } = data.subject
+            const {id, firstName, lastName, email, image, roleId } = data.subject
             
             localStorage.setItem('token', data.token)
 
 
-            localStorage.setItem("dataUser002", JSON.stringify({firstName, lastName, email, image, roleId}))
+            localStorage.setItem("dataUser002", JSON.stringify({id, firstName, lastName, email, image, roleId}))
 
             dispatch(login({
+                id,
                 firstName,
                 lastName,
                 email,
