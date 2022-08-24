@@ -17,7 +17,7 @@ const ActivitiesForm = (props) => {
     }
     console.log(props.activities)
 
-    if (props.activities.length > 0){
+    if (props.activities){
         data = {
             name: props.activities.name,
             content: props.activities.content,
