@@ -5,6 +5,7 @@
    height: 400px;
    background-color: lightgrey;
    padding-top: 95px;
+   transition: 400ms all ease;
 }
 
 .footerLogo {
@@ -45,6 +46,12 @@
 }
 
 .footerIcon {
+   text-decoration: none;
+   color: black;
+   font-weight: 500;
+}
+
+.footerIcon {
    margin-top: 20px;
    margin-bottom: 20px;
    font-size: 2em;
@@ -56,3 +63,34 @@
    text-align: center;
 }
 
+
+
+ 
+/* QUERY DE TAMAÑO DE PANTALLA */
+@media all and (max-width: 700px) {
+   .footerSection {
+      height: 600px;
+   }
+
+   .footerLogo {
+
+      bottom: 550px;
+   }
+   
+   .footerList {
+      
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom-width: 0.15em;
+      border-bottom-style: solid;
+      border-top-width: 0.15em;
+      border-top-style: solid;
+      padding-top: 100px;
+      display: block;
+
+   }
+   .footerList ul{
+      padding-left: 0;
+      text-align: center;
+   }
+}
