@@ -13,9 +13,9 @@ function NewsCard({ image, title, text, url }) {
    <a
           href={url ? url : "#!"}
           rel="noopener noreferrer"
-        ><div className='text'>{title}</div></a>
+        ><div className='text'>Ver novedad</div></a>
 </div>
-
+<h5 className="epig_card">{title}</h5>
 
         </>
   

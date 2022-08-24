@@ -4,7 +4,7 @@
 /* TITULO */
 .contactTitle {
     font-size: 2.5em;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-weight: 575;
     font-weight: bold;
 
@@ -21,7 +21,7 @@
 
 .contactText {
     width: 90%;
-    height: 300px;
+    height: 200px;
     padding: 1rem;
     box-shadow: 2px 2px 5px rgb(84, 82, 82);
     border: none;
@@ -53,7 +53,7 @@
     height: 30px;
 }
 .state_msg {
-    margin: 20px;
+    margin: 0px;
     display: flex;
     align-items: center;
 }
