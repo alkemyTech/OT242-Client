@@ -5,7 +5,7 @@ import MembersForm from '../../../components/forms/membersForm/MembersForm'
 
 
 const MembersFormPage = () => {
-    const [ members, setMembers] = useState([]);
+    const [ members, setMembers] = useState(null);
     const {id} = useParams();
     const getData = async () => {
         const {data} = await getReq(`/admin/members/${id}`);

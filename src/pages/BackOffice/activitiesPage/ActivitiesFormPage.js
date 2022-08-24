@@ -6,7 +6,7 @@ import ActivitiesForm from '../../../components/forms/ActivitiesForm/ActivitiesF
 
 
 const ActivitiesFormPage = () => {
-    const [ activities, setActivities] = useState([]);
+    const [ activities, setActivities] = useState(null);
     const {id} = useParams();
     const getData = async () => {
         const {data} = await getReq(`/admin/activities/${id}`);

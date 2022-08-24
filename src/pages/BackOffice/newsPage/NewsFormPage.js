@@ -6,7 +6,7 @@ import Form from '../../../components/forms/NewsForm/NewsForm'
 
 
 const NewsFormPage = () => {
-    const [ newsDetail, setNewsDetail] = useState([]);
+    const [ newsDetail, setNewsDetail] = useState(null);
     const {id} = useParams();
 
     const getData = async () => {

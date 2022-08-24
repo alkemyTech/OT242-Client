@@ -6,7 +6,7 @@ import CategoriesForm from '../../../components/forms/CategoriesForm/CategoriesF
 
 
 const CategoriesFormPage = () => {
-    const [ categories, setCategories] = useState([]);
+    const [ categories, setCategories] = useState(null);
     const {id} = useParams();
     const getData = async () => {
         const {data} = await getReq(`/categories/${id}`);

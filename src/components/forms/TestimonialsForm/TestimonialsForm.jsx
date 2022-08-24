@@ -16,6 +16,8 @@ const TestimonialsForm = (props) => {
         type: 'POST',
     }
 
+    console.log(props.testimonials)
+
     if (props.testimonials){
         data = {
             name: props.testimonials.name,

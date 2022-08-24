@@ -6,7 +6,7 @@ import TestimonialsForm from '../../../components/forms/TestimonialsForm/Testimo
 
 
 const TestimonialsFormPage = () => {
-    const [ testimonials, setTestimonials] = useState([]);
+    const [ testimonials, setTestimonials] = useState(null);
     const {id} = useParams();
     const getData = async () => {
         const {data} = await getReq(`/testimonials/${id}`);
